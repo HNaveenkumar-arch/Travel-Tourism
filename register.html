@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Travel - Create Account</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy-blue: #0A192F;    
+            --gold: #D4AF37;         
+            --gold-faded: rgba(212, 175, 55, 0.2); 
+            --white: #FFFFFF;
+            --navy-card-pill: #112240; 
+            --navy-input: #112240; 
+            --error-red: #ff4d4d; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            overflow-x: hidden; 
+            position: relative;
+        }
+
+        .gold-text { color: var(--gold); }
+        .gold-bg { background-color: var(--gold); }
+        .navy-text { color: var(--navy-blue); }
+        .text-white { color: var(--white); }
+
+        .back-to-home {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            transform: translateX(-5px);
+            color: #F3E5AB; 
+        }
+
+        .login-page {
+            min-height: 100vh;
+            padding: 80px 20px 40px 20px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .login-image-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            position: relative;
+        }
+
+        .login-image-wrapper.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .side-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .login-image-wrapper:hover .side-image {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .login-image-wrapper:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .overlay-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+
+        .overlay-desc {
+            font-size: 16px;
+            line-height: 1.5;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+            transition-delay: 0.1s;
+        }
+
+        .login-image-wrapper:hover .overlay-title,
+        .login-image-wrapper:hover .overlay-desc {
+            transform: translateY(0);
+        }
+
+        .login-form-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: 0.2s;
+        }
+
+        .login-form-wrapper.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-branding {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 5px;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .welcome-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .welcome-subtitle {
+            font-size: 16px;
+            color: #a8b2d1;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .role-card {
+            background-color: var(--navy-card-pill);
+            border: 1px solid var(--gold-faded);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .role-card.active {
+            border-color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .role-card i { font-size: 28px; }
+        .role-title { font-size: 16px; font-weight: 600; }
+        .role-desc { font-size: 12px; color: #a8b2d1; }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #e6f1ff;
+        }
+
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-control {
+            width: 100%;
+            background-color: var(--navy-input);
+            color: var(--white);
+            border: 1px solid var(--gold-faded);
+            border-radius: 8px;
+            padding: 14px 15px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .form-control.error-input {
+            border-color: var(--error-red);
+        }
+
+        .error-msg {
+            color: var(--error-red);
+            font-size: 12px;
+            display: none; 
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+            color: #a8b2d1;
+        }
+
+        .login-button {
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .login-button:hover {
+            background-color: #F3E5AB;
+            transform: translateY(-2px);
+        }
+
+        .or-separator {
+            text-align: center;
+            color: #a8b2d1;
+            position: relative;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .or-separator::before, .or-separator::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: var(--gold-faded);
+        }
+
+        .or-separator::before { left: 0; }
+        .or-separator::after { right: 0; }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold-faded);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            border-color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .create-account {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a8b2d1;
+        }
+
+        .create-account a {
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .create-account a:hover { text-decoration: underline; }
+
+        @media (max-width: 960px) {
+            .back-to-home {
+                top: 20px;
+                left: 20px;
+                font-size: 14px;
+            }
+
+            .login-page {
+                padding-top: 70px;
+            }
+
+            .login-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .login-form-wrapper {
+                padding: 10px;
+                order: 1;
+                transform: translateY(-40px);
+            }
+
+            .login-form-wrapper.show {
+                transform: translateY(0);
+            }
+
+            .login-image-wrapper {
+                min-height: 300px;
+                order: 2; 
+                transform: translateY(40px); 
+            }
+
+            .login-image-wrapper.show {
+                transform: translateY(0);
+            }
+
+            .role-selector {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-to-home">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <main class="login-page">
+        <div class="login-container">
+            
+            <div class="login-image-wrapper anim-element">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop" alt="Travel Airplane" class="side-image">
+                <div class="image-overlay">
+                    <h2 class="overlay-title gold-text">Explore the World</h2>
+                    <p class="overlay-desc text-white">Join thousands of travelers and tour organizers today.</p>
+                </div>
+            </div>
+
+            <div class="login-form-wrapper anim-element">
+                
+                <div class="form-branding gold-text">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>STACKLY</span>
+                </div>
+                
+                <h1 class="welcome-title">Join Us Today</h1>
+                <p class="welcome-subtitle">Create an account to access your dashboard</p>
+
+                <div class="role-selector">
+                    <div class="role-card active Traveler" onclick="selectRole('Traveler')">
+                        <i class="fa-solid fa-rocket gold-text"></i>
+                        <span class="role-title">Traveler</span>
+                        <span class="role-desc">Manage your trips, itineraries & bookings.</span>
+                    </div>
+                    <div class="role-card Organizer" onclick="selectRole('Tour Organizer')">
+                        <i class="fa-solid fa-users-gear gold-text"></i>
+                        <span class="role-title">Tour Organizer</span>
+                        <span class="role-desc">Manage group tours, itineraries & bookings.</span>
+                    </div>
+                </div>
+
+                <form id="registerForm" class="login-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="fullname" class="form-label">Full Name</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Enter full name">
+                        <span class="error-msg" id="nameErrorMsg">Full name is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter email">
+                        <span class="error-msg" id="emailErrorMsg">Valid email is required</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" class="form-control" placeholder="Create password">
+                            <i class="fa-regular fa-eye password-toggle" id="togglePassword"></i>
+                        </div>
+                        <span class="error-msg" id="passwordErrorMsg">Password must be at least 6 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password">
+                            <i class="fa-regular fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                        </div>
+                        <span class="error-msg" id="confirmPasswordErrorMsg">Passwords do not match</span>
+                    </div>
+
+                    <button type="submit" class="login-button gold-bg navy-text">
+                        Create Account as <span id="selectedRoleText">Traveler</span>
+                    </button>
+                </form>
+
+                <div class="or-separator">or sign up with</div>
+                <div class="social-login">
+                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+
+                <div class="create-account">
+                    Already have an account? <a href="login.html" class="gold-text">Login Here</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function selectRole(roleName) {
+            const travelerCard = document.querySelector('.Traveler');
+            const organizerCard = document.querySelector('.Organizer');
+            const buttonText = document.getElementById('selectedRoleText');
+
+            travelerCard.classList.remove('active');
+            organizerCard.classList.remove('active');
+
+            if(roleName === 'Traveler') {
+                travelerCard.classList.add('active');
+                buttonText.innerText = 'Traveler';
+            } else {
+                organizerCard.classList.add('active');
+                buttonText.innerText = 'Tour Organizer';
+            }
+        }
+
+        function setupPasswordToggle(toggleId, inputId) {
+            const toggleBtn = document.getElementById(toggleId);
+            const inputField = document.getElementById(inputId);
+            
+            toggleBtn.addEventListener('click', function () {
+                const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
+                inputField.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        setupPasswordToggle('togglePassword', 'password');
+        setupPasswordToggle('toggleConfirmPassword', 'confirmPassword');
+
+        const registerForm = document.getElementById('registerForm');
+        const fullnameField = document.getElementById('fullname');
+        const emailField = document.getElementById('email');
+        const passwordField = document.getElementById('password');
+        const confirmPasswordField = document.getElementById('confirmPassword');
+        
+        const nameErrorMsg = document.getElementById('nameErrorMsg');
+        const emailErrorMsg = document.getElementById('emailErrorMsg');
+        const passwordErrorMsg = document.getElementById('passwordErrorMsg');
+        const confirmPasswordErrorMsg = document.getElementById('confirmPasswordErrorMsg');
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            let isFormValid = true;
+
+            if (fullnameField.value.trim() === "") {
+                fullnameField.classList.add('error-input');
+                nameErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                fullnameField.classList.remove('error-input');
+                nameErrorMsg.style.display = "none";
+            }
+
+            if (emailField.value.trim() === "") {
+                emailField.classList.add('error-input');
+                emailErrorMsg.innerText = "Email cannot be empty";
+                emailErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else if (!emailField.value.match(emailPattern)) {
+                emailField.classList.add('error-input');
+                emailErrorMsg.innerText = "Please enter a valid email address";
+                emailErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                emailField.classList.remove('error-input');
+                emailErrorMsg.style.display = "none";
+            }
+
+            const pwdLength = passwordField.value.trim().length;
+            if (pwdLength === 0) {
+                passwordField.classList.add('error-input');
+                passwordErrorMsg.innerText = "Password cannot be empty";
+                passwordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else if (pwdLength < 6) {
+                passwordField.classList.add('error-input');
+                passwordErrorMsg.innerText = "Password must be at least 6 characters";
+                passwordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                passwordField.classList.remove('error-input');
+                passwordErrorMsg.style.display = "none";
+            }
+
+            if (confirmPasswordField.value.trim() === "") {
+                confirmPasswordField.classList.add('error-input');
+                confirmPasswordErrorMsg.innerText = "Please confirm your password";
+                confirmPasswordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else if (confirmPasswordField.value !== passwordField.value) {
+                confirmPasswordField.classList.add('error-input');
+                confirmPasswordErrorMsg.innerText = "Passwords do not match";
+                confirmPasswordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                confirmPasswordField.classList.remove('error-input');
+                confirmPasswordErrorMsg.style.display = "none";
+            }
+
+            if (isFormValid) {
+                alert("Account Created Successfully! Redirecting...");
+            }
+        });
+
+        const inputs = [fullnameField, emailField, passwordField, confirmPasswordField];
+        const errors = [nameErrorMsg, emailErrorMsg, passwordErrorMsg, confirmPasswordErrorMsg];
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                input.classList.remove('error-input');
+                errors[index].style.display = 'none';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animElements = document.querySelectorAll('.anim-element');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Menu Navy & Gold Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <a href="index.html">
+            <img src="./asset/yellow_logo.webp" alt="logo"></a>
+        </div>
+
+        <div class="menu-container" id="menuContainer">
+            <div class="mobile-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./asset/yellow_logo.webp" alt="logo"></a>
+                </div>
+                <div class="close-btn" id="closeBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li class="active-pill"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="destination.html"><i class="fa-solid fa-map-location-dot"></i> Destinations</a></li>
+                <li><a href="tours.html"><i class="fa-solid fa-compass"></i> Tours</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-rss"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="cta-btn">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="hero">
+        <div class="hero-slider">
+            <div class="slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop');">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop');">
+            </div>
+        </div>
+
+        <div class="overlay-gradient"></div>
+
+        <div class="animated-bg-elements">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <div class="bird bird-1"><i class="fa-solid fa-dove"></i></div>
+            <div class="bird bird-2"><i class="fa-solid fa-dove"></i></div>
+            <div class="bird bird-3"><i class="fa-solid fa-dove"></i></div>
+        </div>
+
+        <div class="parallax-mountains" id="mountains"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Explore The World With Unforgettable Journeys</h1>
+            <p class="hero-subtitle">Discover hidden gems, experience vibrant cultures, and create memories that will
+                last a lifetime. Your ultimate travel adventure starts right here.</p>
+
+            <div class="hero-cta-group">
+                <a href="#" class="glow-btn primary-glow">Plan Your Trip</a>
+                <a href="#" class="glow-btn secondary-glow"><i class="fa-solid fa-play"></i> Watch Video</a>
+            </div>
+
+            <form id="heroSearchForm" class="glass-search-bar" novalidate>
+                <div class="search-field-group">
+                    <div class="search-field" id="fieldLocation">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="searchLocation" placeholder="Where do you want to go?">
+                    </div>
+                    <span class="search-error" id="errorLocation">Destination is required</span>
+                </div>
+
+                <div class="search-divider"></div>
+
+                <div class="search-field-group">
+                    <div class="search-field" id="fieldDates">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="text" id="searchDates" placeholder="Check-in - Check-out"
+                            onfocus="(this.type='date')" onblur="(this.type='text')">
+                    </div>
+                    <span class="search-error" id="errorDates">Dates are required</span>
+                </div>
+
+                <div class="search-divider"></div>
+
+                <div class="search-field-group">
+                    <div class="search-field" id="fieldGuests">
+                        <i class="fa-solid fa-user-group"></i>
+                        <input type="number" id="searchGuests" placeholder="Guests" min="1">
+                    </div>
+                    <span class="search-error" id="errorGuests">Add guests</span>
+                </div>
+
+                <button type="submit" class="search-submit">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <section class="destinations-section" id="destinations">
+        <div class="section-header scroll-anim">
+            <h2 class="section-title">Trending Destinations Around The Globe</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Discover the most sought-after locations for your next unforgettable getaway.
+            </p>
+        </div>
+
+        <div class="dest-grid">
+            <div class="dest-card scroll-anim" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop"
+                    class="dest-img" alt="Bali">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">Bali, Indonesia</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                            <span class="dest-price">From $899</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card scroll-anim" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=2020&auto=format&fit=crop"
+                    class="dest-img" alt="Paris">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">Paris, France</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                            <span class="dest-price">From $1,200</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card scroll-anim" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
+                    class="dest-img" alt="Dubai">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">Dubai, UAE</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                            <span class="dest-price">From $1,500</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card scroll-anim" style="transition-delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1498661819584-601783cf6a6b?q=80&w=2015&auto=format&fit=crop"
+                    class="dest-img" alt="Santorini">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">Santorini, Greece</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                            <span class="dest-price">From $1,100</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card scroll-anim" style="transition-delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1994&auto=format&fit=crop"
+                    class="dest-img" alt="Tokyo">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">Tokyo, Japan</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                            <span class="dest-price">From $1,350</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-card scroll-anim" style="transition-delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1974&auto=format&fit=crop"
+                    class="dest-img" alt="New York">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3 class="dest-name">New York, USA</h3>
+                    <div class="dest-hidden-content">
+                        <div class="dest-meta">
+                            <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                            <span class="dest-price">From $1,400</span>
+                        </div>
+                        <a href="#" class="dest-btn">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="why-section" id="why-choose-us">
+        <div class="why-container">
+
+            <div class="why-left">
+                <div class="sticky-content scroll-anim">
+                    <h4 class="gold-subtitle">Why Choose Us</h4>
+                    <h2 class="why-title">Why Travelers Love Us</h2>
+                    <p class="why-desc">We go above and beyond to make your journey extraordinary. From handpicked
+                        destinations to 24/7 support, we ensure every moment is perfect.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3 class="stat-number"><span class="counter" data-target="15">0</span>K+</h3>
+                            <p class="stat-text">Happy Travelers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number"><span class="counter" data-target="500">0</span>+</h3>
+                            <p class="stat-text">Destinations</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number"><span class="counter" data-target="99">0</span>%</h3>
+                            <p class="stat-text">Satisfaction Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number"><span class="counter" data-target="10">0</span>+</h3>
+                            <p class="stat-text">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-right">
+
+                <div class="glass-card scroll-anim">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"
+                            class="card-img" alt="Curated Itineraries">
+                        <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Curated Itineraries</h3>
+                        <p class="card-desc">Every trip is carefully planned by travel experts to ensure you get the
+                            most authentic and immersive experience possible.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card scroll-anim">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop"
+                            class="card-img" alt="Safe & Secure">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Safe & Secure</h3>
+                        <p class="card-desc">Your safety is our top priority. We partner with verified guides and secure
+                            accommodations for complete peace of mind.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card scroll-anim">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop"
+                            class="card-img" alt="24/7 Premium Support">
+                        <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">24/7 Premium Support</h3>
+                        <p class="card-desc">No matter where you are in the world, our dedicated support team is just a
+                            call or message away, anytime.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card scroll-anim">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1553531384-cc64ac80f931?q=80&w=800&auto=format&fit=crop"
+                            class="card-img" alt="Best Price Guarantee">
+                        <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Best Price Guarantee</h3>
+                        <p class="card-desc">We offer transparent pricing with no hidden fees, ensuring you get the
+                            absolute best value for your dream vacation.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card scroll-anim">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+                            class="card-img" alt="Luxury Accommodations">
+                        <div class="card-icon"><i class="fa-solid fa-hotel"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Luxury Accommodations</h3>
+                        <p class="card-desc">Rest and recharge in premium, handpicked hotels and resorts that offer
+                            world-class comfort and stunning views.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="packages-section" id="packages">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Our Best Offers</h4>
+            <h2 class="section-title">Curated Travel Experiences</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="packages-grid">
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.1s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1000&auto=format&fit=crop"
+                            alt="Maldives">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Maldives Paradise</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Maldives Paradise</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+                            <span class="back-price">$1,299</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> Luxury Water Villa</li>
+                            <li><i class="fa-solid fa-check"></i> All-inclusive Meals</li>
+                            <li><i class="fa-solid fa-check"></i> Scuba Diving Session</li>
+                            <li><i class="fa-solid fa-check"></i> Airport Transfers</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.2s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=1000&auto=format&fit=crop"
+                            alt="Swiss Alps">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Swiss Alps Adventure</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Swiss Alps Adventure</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+                            <span class="back-price">$2,450</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> Premium Ski Resort</li>
+                            <li><i class="fa-solid fa-check"></i> Skiing Equipment Included</li>
+                            <li><i class="fa-solid fa-check"></i> Guided Mountain Tour</li>
+                            <li><i class="fa-solid fa-check"></i> Hot Spring Access</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.3s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1000&auto=format&fit=crop"
+                            alt="Kyoto, Japan">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Kyoto Cultural Tour</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Kyoto Cultural Tour</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+                            <span class="back-price">$1,850</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> Traditional Ryokan Stay</li>
+                            <li><i class="fa-solid fa-check"></i> Authentic Tea Ceremony</li>
+                            <li><i class="fa-solid fa-check"></i> Bullet Train Pass</li>
+                            <li><i class="fa-solid fa-check"></i> Temple & Shrine Guide</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.4s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1000&auto=format&fit=crop"
+                            alt="African Safari">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Serengeti Wildlife Safari</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Serengeti Wildlife Safari</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+                            <span class="back-price">$3,100</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> 4x4 Jeep Safari Tour</li>
+                            <li><i class="fa-solid fa-check"></i> Luxury Tent Lodge</li>
+                            <li><i class="fa-solid fa-check"></i> Expert Wildlife Guide</li>
+                            <li><i class="fa-solid fa-check"></i> Sunrise Hot Air Balloon</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.5s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=1000&auto=format&fit=crop"
+                            alt="Machu Picchu">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Inca Trail Expedition</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Inca Trail Expedition</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+                            <span class="back-price">$1,950</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> Guided Inca Trail Trek</li>
+                            <li><i class="fa-solid fa-check"></i> Boutique Cusco Hotel</li>
+                            <li><i class="fa-solid fa-check"></i> Train to Aguas Calientes</li>
+                            <li><i class="fa-solid fa-check"></i> Local Culture & Food Tour</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card scroll-anim" style="transition-delay: 0.6s;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://images.unsplash.com/photo-1579033461387-adb4712d59ae?q=80&w=1000&auto=format&fit=crop"
+                            alt="Northern Lights">
+                        <div class="front-overlay"></div>
+                        <h3 class="front-title">Arctic Aurora Adventure</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3 class="back-title">Arctic Aurora Adventure</h3>
+                        <div class="back-meta">
+                            <span><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+                            <span class="back-price">$2,200</span>
+                        </div>
+                        <ul class="back-features">
+                            <li><i class="fa-solid fa-check"></i> Nightly Aurora Hunting</li>
+                            <li><i class="fa-solid fa-check"></i> Geothermal Spa Access</li>
+                            <li><i class="fa-solid fa-check"></i> Glacier Hiking Tour</li>
+                            <li><i class="fa-solid fa-check"></i> Ice Cave Exploration</li>
+                        </ul>
+                        <a href="#" class="back-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="categories-section" id="categories">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Pick Your Vibe</h4>
+            <h2 class="section-title">Find Your Perfect Adventure</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="categories-grid">
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.1s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop"
+                        alt="Beach">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <h3 class="cat-initial-title">Beach</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Beach Escapes</h3>
+                    <p>Relax on pristine white sands and crystal clear waters.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.2s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop"
+                        alt="Mountain">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-solid fa-mountain"></i>
+                    <h3 class="cat-initial-title">Mountain</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Mountain Treks</h3>
+                    <p>Conquer high peaks and enjoy breathtaking views.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.3s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop"
+                        alt="Wildlife">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-solid fa-paw"></i>
+                    <h3 class="cat-initial-title">Wildlife</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Wildlife Safari</h3>
+                    <p>Get up close with nature's most majestic animals.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.4s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?q=80&w=800&auto=format&fit=crop"
+                        alt="Cruise">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-solid fa-ship"></i>
+                    <h3 class="cat-initial-title">Cruise</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Ocean Cruises</h3>
+                    <p>Sail across the seas with premium luxury and comfort.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.5s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1504280390267-314208b31a5e?q=80&w=800&auto=format&fit=crop"
+                        alt="Camping">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-solid fa-tent"></i>
+                    <h3 class="cat-initial-title">Camping</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Camp & RV</h3>
+                    <p>Sleep under the stars and reconnect with the wild.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="cat-card scroll-anim" style="transition-delay: 0.6s;">
+                <div class="cat-bg">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+                        alt="Luxury">
+                    <div class="cat-overlay"></div>
+                </div>
+                <div class="cat-icon-wrapper">
+                    <i class="fa-regular fa-gem"></i>
+                    <h3 class="cat-initial-title">Luxury</h3>
+                </div>
+                <div class="cat-content">
+                    <h3 class="cat-hover-title">Luxury Resorts</h3>
+                    <p>Experience world-class VIP treatment and stays.</p>
+                    <a href="#" class="cat-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="timeline-section" id="how-it-works">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">How It Works</h4>
+            <h2 class="section-title">Your Journey In Simple Steps</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line">
+                <div class="timeline-progress" id="timelineProgress"></div>
+            </div>
+
+            <div class="timeline-item left scroll-anim">
+                <div class="timeline-dot"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="timeline-content card-with-img">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop"
+                        class="timeline-card-img" alt="Choose Destination">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-inner-text">
+                        <span class="step-num">Step 1</span>
+                        <h3 class="timeline-title">Choose Destination</h3>
+                        <p class="timeline-desc">Browse through our curated list of exotic locations and pick the
+                            perfect spot that matches your travel dreams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right scroll-anim">
+                <div class="timeline-dot"><i class="fa-solid fa-pen-to-square"></i></div>
+                <div class="timeline-content card-with-img">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop"
+                        class="timeline-card-img" alt="Customize Tour">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-inner-text">
+                        <span class="step-num">Step 2</span>
+                        <h3 class="timeline-title">Customize Tour</h3>
+                        <p class="timeline-desc">Work with our expert agents to tailor your itinerary, activities, and
+                            accommodations to your exact preferences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left scroll-anim">
+                <div class="timeline-dot"><i class="fa-solid fa-credit-card"></i></div>
+                <div class="timeline-content card-with-img">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop"
+                        class="timeline-card-img" alt="Book Trip">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-inner-text">
+                        <span class="step-num">Step 3</span>
+                        <h3 class="timeline-title">Book Trip</h3>
+                        <p class="timeline-desc">Confirm your details and make a secure payment through our trusted
+                            platform with a best-price guarantee.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right scroll-anim">
+                <div class="timeline-dot"><i class="fa-solid fa-plane-departure"></i></div>
+                <div class="timeline-content card-with-img">
+                    <img src="https://images.unsplash.com/photo-1500835595337-f740268f4322?q=80&w=800&auto=format&fit=crop"
+                        class="timeline-card-img" alt="Enjoy Vacation">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-inner-text">
+                        <span class="step-num">Step 4</span>
+                        <h3 class="timeline-title">Enjoy Vacation</h3>
+                        <p class="timeline-desc">Pack your bags and embark on an unforgettable adventure with 24/7
+                            support ensuring everything goes smoothly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left scroll-anim">
+                <div class="timeline-dot"><i class="fa-solid fa-camera-retro"></i></div>
+                <div class="timeline-content card-with-img">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=800&auto=format&fit=crop"
+                        class="timeline-card-img" alt="Share Memories">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-inner-text">
+                        <span class="step-num">Step 5</span>
+                        <h3 class="timeline-title">Share Memories</h3>
+                        <p class="timeline-desc">Capture beautiful snapshots during your journey, tag us, and share your
+                            unique travel stories with the global community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="testimonials-carousel-section" id="customer-stories">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Customer Stories</h4>
+            <h2 class="section-title">Memories Shared By Travelers</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="carousel-container scroll-anim">
+            <div class="carousel-track" id="carouselTrack">
+
+                <div class="testi-card-glass">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                            alt="David Michael" class="testi-avatar">
+                        <div class="testi-info">
+                            <h4 class="testi-name">David Michael</h4>
+                            <p class="testi-location"><i class="fa-solid fa-location-dot"></i> London, UK</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testi-body">
+                        <div class="testi-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">Absolutely mind-blowing experience! The entire trip to the Swiss Alps was
+                            perfectly organized. I didn't have to worry about a single thing.</p>
+                    </div>
+                </div>
+
+                <div class="testi-card-glass">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+                            alt="Sarah Jenkins" class="testi-avatar">
+                        <div class="testi-info">
+                            <h4 class="testi-name">Sarah Jenkins</h4>
+                            <p class="testi-location"><i class="fa-solid fa-location-dot"></i> Sydney, AU</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testi-body">
+                        <div class="testi-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="testi-text">The Maldives package was a dream come true. The luxury water villa and the
+                            scuba diving session were the highlights of my year! Premium service all the way.</p>
+                    </div>
+                </div>
+
+                <div class="testi-card-glass">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
+                            alt="Elena Rodriguez" class="testi-avatar">
+                        <div class="testi-info">
+                            <h4 class="testi-name">Elena Rodriguez</h4>
+                            <p class="testi-location"><i class="fa-solid fa-location-dot"></i> Madrid, ES</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testi-body">
+                        <div class="testi-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">From the boutique hotel in Cusco to the breathtaking Inca Trail, every
+                            detail was handled with utmost care. This agency is the best for luxury travel in Peru.</p>
+                    </div>
+                </div>
+
+                <div class="testi-card-glass">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop"
+                            alt="Kenji Sato" class="testi-avatar">
+                        <div class="testi-info">
+                            <h4 class="testi-name">Kenji Sato</h4>
+                            <p class="testi-location"><i class="fa-solid fa-location-dot"></i> Tokyo, JP</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testi-body">
+                        <div class="testi-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">The African Safari exceeded all my expectations. Our expert guide was
+                            incredibly knowledgeable, and the luxury tents were fabulous! A must-try adventure.</p>
+                    </div>
+                </div>
+
+                <div class="testi-card-glass">
+                    <div class="testi-header">
+                        <img src="https://images.unsplash.com/photo-1537944434965-cf4679d1a598?q=80&w=150&auto=format&fit=crop"
+                            alt="Maria Rossi" class="testi-avatar">
+                        <div class="testi-info">
+                            <h4 class="testi-name">Maria Rossi</h4>
+                            <p class="testi-location"><i class="fa-solid fa-location-dot"></i> Rome, IT</p>
+                        </div>
+                        <i class="fa-solid fa-quote-right quote-icon"></i>
+                    </div>
+                    <div class="testi-body">
+                        <div class="testi-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="testi-text">I booked the Santorini package for my honeymoon, and it was perfect. The
+                            views, the hotels, and the private boat tour were unforgettable. Highly recommend!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="stats-section" id="statistics">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Our Impact</h4>
+            <h2 class="section-title">Trusted By Thousands Of Travelers</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="stats-grid-container">
+            <div class="stat-glass-card scroll-anim" style="transition-delay: 0.1s;">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <h3 class="stat-number"><span class="stat-counter" data-target="50">0</span>K+</h3>
+                <p class="stat-label">Happy Travelers</p>
+            </div>
+
+            <div class="stat-glass-card scroll-anim" style="transition-delay: 0.2s;">
+                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <h3 class="stat-number"><span class="stat-counter" data-target="200">0</span>+</h3>
+                <p class="stat-label">Destinations</p>
+            </div>
+
+            <div class="stat-glass-card scroll-anim" style="transition-delay: 0.3s;">
+                <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3 class="stat-number"><span class="stat-counter" data-target="500">0</span>+</h3>
+                <p class="stat-label">Tour Packages</p>
+            </div>
+
+            <div class="stat-glass-card scroll-anim" style="transition-delay: 0.4s;">
+                <div class="stat-icon"><i class="fa-solid fa-face-smile-beam"></i></div>
+                <h3 class="stat-number"><span class="stat-counter" data-target="98">0</span>%</h3>
+                <p class="stat-label">Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gallery-section" id="gallery">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Travel Gallery</h4>
+            <h2 class="section-title">Captured Moments From Around The World</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="masonry-grid">
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=800&auto=format&fit=crop"
+                    alt="Venice">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Venice, Italy</h3>
+                    <p class="masonry-desc">Drift through the grand canals and experience romantic gondola rides at
+                        sunset.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800&auto=format&fit=crop"
+                    alt="Thailand">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Phuket, Thailand</h3>
+                    <p class="masonry-desc">Discover hidden beaches, crystal clear waters, and vibrant nightlife.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=800&auto=format&fit=crop"
+                    alt="Beach Cove">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Secret Cove, Greece</h3>
+                    <p class="masonry-desc">Escape to secluded islands and enjoy the peaceful Mediterranean breeze.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=800&auto=format&fit=crop"
+                    alt="Dubai">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Dubai Desert, UAE</h3>
+                    <p class="masonry-desc">Experience thrilling dune bashing and luxurious desert camps under the
+                        stars.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"
+                    alt="Lake Bled">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Lake Bled, Slovenia</h3>
+                    <p class="masonry-desc">A fairy-tale destination surrounded by stunning alpine mountains.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1516483638261-f40889eba30e?q=80&w=800&auto=format&fit=crop"
+                    alt="Aurora">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Tromso, Norway</h3>
+                    <p class="masonry-desc">Witness the magical Northern Lights dancing across the Arctic sky.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="masonry-item scroll-anim" style="transition-delay: 0.7s;">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop"
+                    alt="Taj Mahal">
+                <div class="masonry-overlay">
+                    <i class="fa-solid fa-camera floating-icon"></i>
+                    <h3 class="masonry-title">Agra, India</h3>
+                    <p class="masonry-desc">Marvel at the ultimate symbol of love and architectural brilliance.</p>
+                    <a href="#" class="masonry-link">View Gallery <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="blogs-section" id="blogs">
+        <div class="section-header scroll-anim">
+            <h4 class="gold-subtitle">Travel Guides</h4>
+            <h2 class="section-title">Travel Tips & Inspiration</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="blogs-container">
+
+            <div class="blog-card scroll-anim" style="transition-delay: 0.1s;">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop"
+                        alt="Packing Guide" class="blog-img">
+                    <div class="blog-category">Travel Tips</div>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 12, 2023</span>
+                            <span><i class="fa-regular fa-clock"></i> 5 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">The Ultimate Packing List for Your Next Big Adventure</h3>
+                        <p class="blog-excerpt">Never forget a travel essential again. Discover our comprehensive guide
+                            on how to pack smart, light, and efficiently for any destination around the globe.</p>
+                    </div>
+                    <a href="#" class="blog-read-more">Read Full Article <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card scroll-anim" style="transition-delay: 0.2s;">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop"
+                        alt="Budget Travel" class="blog-img">
+                    <div class="blog-category">Budget Guide</div>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 05, 2023</span>
+                            <span><i class="fa-regular fa-clock"></i> 7 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">How to Travel the World on a Budget Without Compromising</h3>
+                        <p class="blog-excerpt">Traveling doesn't have to break the bank. Learn the best insider secrets
+                            to finding cheap flights, affordable luxury stays, and hidden local food spots without
+                            sacrificing comfort.</p>
+                    </div>
+                    <a href="#" class="blog-read-more">Read Full Article <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card scroll-anim" style="transition-delay: 0.3s;">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=800&auto=format&fit=crop"
+                        alt="Photography" class="blog-img">
+                    <div class="blog-category">Photography</div>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Dec 18, 2023</span>
+                            <span><i class="fa-regular fa-clock"></i> 6 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">Capture Memories: A Beginner's Guide to Travel Photography</h3>
+                        <p class="blog-excerpt">Bring your stories to life. Get expert tips on lighting, framing, and
+                            equipment to take breathtaking travel photos using just your smartphone or a DSLR camera on
+                            your next trip.</p>
+                    </div>
+                    <a href="#" class="blog-read-more">Read Full Article <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card scroll-anim" style="transition-delay: 0.4s;">
+                <div class="blog-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+                        alt="Food & Culture" class="blog-img">
+                    <div class="blog-category">Culture & Food</div>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Jan 22, 2024</span>
+                            <span><i class="fa-regular fa-clock"></i> 8 Min Read</span>
+                        </div>
+                        <h3 class="blog-title">A Culinary Journey: Tasting the World's Best Street Foods</h3>
+                        <p class="blog-excerpt">Food is the gateway to culture. Join us as we explore the vibrant,
+                            spicy, and unforgettable street food markets from Bangkok to Mexico City.</p>
+                    </div>
+                    <a href="#" class="blog-read-more">Read Full Article <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="cta-section" id="cta">
+        <div class="particle p-1"></div>
+        <div class="particle p-2"></div>
+        <div class="particle p-3"></div>
+        <div class="particle p-4"></div>
+        <div class="particle p-5"></div>
+
+        <div class="cta-container scroll-anim">
+            <div class="cta-glass-card">
+                <h4 class="gold-subtitle">Let's Go</h4>
+                <h2 class="cta-title">Ready For Your Next Adventure?</h2>
+                <p class="cta-desc">Start planning your dream vacation today. Discover hidden gems, experience vibrant
+                    cultures, and create memories that will last a lifetime.</p>
+
+                <div class="cta-buttons">
+                    <a href="#" class="glow-btn primary-glow">Start Exploring</a>
+                    <a href="#" class="glow-btn secondary-glow">Book Your Journey</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+                    <div class="logo">
+                        <a href="index.html">
+                        <img src="./asset/yellow_logo.webp" alt="logo"></a>
+                    </div>
+                    <p class="brand-desc">
+                        "Curating extraordinary journeys for the modern traveler. Experience seamless planning, exclusive destinations, and world-class service for your ultimate getaway."
+                    </p>
+                    <div class="social-icons">
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                        <li><a href="destination.html"><i class="fa-solid fa-angle-right"></i> Destination</a></li>
+                        <li><a href="tours.html"><i class="fa-solid fa-angle-right"></i> Tours</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>support@stackly.travel</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Salem City, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Mon - Fri: 9 AM - 6 PM</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.stackly.travel</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Ready for your next adventure? Join our mailing list to get early access to special tour packages, seasonal discounts, and expert travel tips."
+                    </p>
+                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group" id="nlInputGroup">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="404page.html">Terms & Conditions</a>
+                    <a href="404page.html">Privacy Policy</a>
+                    <a href="404page.html">Cookie Policy</a>
+                    <a href="404page.html">Refund Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
