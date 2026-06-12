@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centered Menu Navy & Gold Navbar</title>
+  <title>Stackly - Destination</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -153,16 +153,14 @@
 
       <div class="cards-grid">
 
-        <!-- Card 1: Paris -->
         <div class="flip-card">
           <div class="flip-card-inner">
-            <!-- Front Side -->
+
             <div class="flip-card-front">
               <img src="./asset/a2.webp" alt="Paris" class="front-image">
               <div class="front-overlay"></div>
               <h3 class="front-title">Paris</h3>
             </div>
-            <!-- Back Side -->
             <div class="flip-card-back">
               <h3>Paris</h3>
               <div class="back-details">
@@ -175,7 +173,6 @@
           </div>
         </div>
 
-        <!-- Card 2: Kyoto -->
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -195,7 +192,6 @@
           </div>
         </div>
 
-        <!-- Card 3: Maldives -->
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -711,7 +707,6 @@
 
     </div>
   </section>
-  <!-- CTA Section -->
   <section class="cta-section">
     <div class="particles"></div>
     <div class="container">
@@ -719,13 +714,11 @@
         <h2>Ready To Explore The World?</h2>
         <p>Join our community and get exclusive travel guides delivered to your inbox.</p>
 
-        <!-- Input Container with Validation -->
         <div class="input-container">
           <div class="input-group">
             <input type="email" id="cta-email" placeholder="Enter your email" required>
             <button id="subscribe-btn" class="btn-primary">Subscribe</button>
           </div>
-          <!-- Error Message Placeholder -->
           <span id="email-error" class="error-msg"></span>
         </div>
 
@@ -737,7 +730,6 @@
     </div>
   </section>
 
-  <!-- Include AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -839,20 +831,17 @@
 
     exploreBtn.addEventListener('click', () => {
       if (searchInput.value.trim() === "") {
-        // Save current placeholder to restore it later
         const originalPlaceholder = searchInput.getAttribute('placeholder');
 
-        // Change placeholder to error message
-        searchInput.value = ""; // clear input
+        searchInput.value = "";
         searchInput.setAttribute('placeholder', "Please enter a destination!");
         searchInput.classList.add('error-placeholder');
         searchInput.classList.add('shake-anim');
 
-        // Reset after 2 seconds
         setTimeout(() => {
           searchInput.classList.remove('shake-anim');
           searchInput.classList.remove('error-placeholder');
-          searchInput.setAttribute('placeholder', "Explore Maldives..."); // Or restore original
+          searchInput.setAttribute('placeholder', "Explore Maldives...");
         }, 2000);
       } else {
         window.location.href = '404page.html'
@@ -861,26 +850,23 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Select all destination cards
+
       const cards = document.querySelectorAll(".continent-card");
 
-      // Create an observer
+
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
-          // If the card is in the viewport
+
           if (entry.isIntersecting) {
             entry.target.classList.add("animate-in");
-            // Optional: Unobserve if you only want the animation to happen once
-            // observer.unobserve(entry.target); 
           }
         });
       }, {
-        root: null, // viewport
-        threshold: 0.15, // Trigger when 15% of the card is visible
-        rootMargin: "0px 0px -50px 0px" // Trigger slightly before it comes fully into view
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
       });
 
-      // Attach observer to each card
       cards.forEach((card) => {
         observer.observe(card);
       });
@@ -892,19 +878,17 @@
 
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
-          // Add animation class when card enters the viewport
           if (entry.isIntersecting) {
-            // Optional: add a slight delay based on the element's index for a "staggered" effect
             setTimeout(() => {
               entry.target.classList.add("animate-in");
-            }, 100); // 100ms delay
+            }, 100);
 
-            observer.unobserve(entry.target); // Animate only once
+            observer.unobserve(entry.target);
           }
         });
       }, {
         root: null,
-        threshold: 0.2, // Trigger when 20% of the card is visible
+        threshold: 0.2,
         rootMargin: "0px 0px -50px 0px"
       });
 
@@ -916,13 +900,12 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Select all circular experience cards
+
       const expCards = document.querySelectorAll(".experience-card");
 
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            // Adding a slight delay based on index for a cool wave effect
             setTimeout(() => {
               entry.target.classList.add("animate-in");
             }, index * 100);
@@ -941,14 +924,13 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. Intersection Observer (Fade-in steps as they appear)
       const steps = document.querySelectorAll(".timeline-step");
 
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("animate-in");
-            observer.unobserve(entry.target); // Animate only once
+            observer.unobserve(entry.target);
           }
         });
       }, {
@@ -958,32 +940,25 @@
 
       steps.forEach((step) => observer.observe(step));
 
-      // 2. Scroll Line Filling Animation
       const timeline = document.querySelector('.timeline');
       const progressBar = document.getElementById('timeline-progress');
 
       window.addEventListener('scroll', () => {
         if (!timeline) return;
 
-        // Viewport Center (This is where the line hits and fills)
-        const windowCenter = window.innerHeight / 2 + 100; // Offset slightly lower
+        const windowCenter = window.innerHeight / 2 + 100;
         const rect = timeline.getBoundingClientRect();
 
-        // Calculate how far we've scrolled past the top of the timeline
         let progress = (windowCenter - rect.top) / rect.height;
 
-        // Lock the value between 0 and 1
         progress = Math.max(0, Math.min(1, progress));
 
-        // Apply progress as height percentage to the Gold line
         progressBar.style.height = `${progress * 100}%`;
 
-        // Highlight the dot when the scroll line touches it
         steps.forEach((step) => {
           const dot = step.querySelector('.timeline-dot');
           const dotRect = dot.getBoundingClientRect();
 
-          // If dot hits our invisible trigger line
           if (dotRect.top < windowCenter) {
             step.classList.add('active-dot');
           } else {
@@ -996,7 +971,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
 
-      // 1. Scroll Animation Logic
       const scrollElements = document.querySelectorAll('.scroll-animate');
       const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -1009,22 +983,19 @@
 
       scrollElements.forEach(el => scrollObserver.observe(el));
 
-      // 2. Stacked Loop with Left Exit Logic
       let currentIndex = 0;
-      let isAnimating = false; // Prevents clicking rapidly and breaking the animation
+      let isAnimating = false;
       const cards = document.querySelectorAll('.testi-card');
       const totalCards = cards.length;
 
       function updateStack() {
         cards.forEach((card, i) => {
-          // Clear all classes
+
           card.classList.remove('testi-active', 'testi-next-1', 'testi-next-2', 'testi-next-3', 'testi-next-4', 'testi-hidden', 'testi-exit-left');
 
-          // Calculate circular position
           let position = i - currentIndex;
           if (position < 0) position += totalCards;
 
-          // Apply stack classes
           if (position === 0) {
             card.classList.add('testi-active');
           } else if (position === 1) {
@@ -1041,35 +1012,28 @@
         });
       }
 
-      // Function triggered by the Next button or clicking a card
       window.triggerNext = function () {
-        if (isAnimating) return; // Stop if currently animating
+        if (isAnimating) return;
         isAnimating = true;
 
-        // 1. Find current active card and animate it out to the left
         const activeCard = document.querySelector('.testi-active');
         if (activeCard) {
           activeCard.classList.add('testi-exit-left');
         }
 
-        // 2. Wait 600ms for the exit CSS transition to finish
         setTimeout(() => {
           if (activeCard) {
             activeCard.classList.remove('testi-exit-left');
           }
 
-          // 3. Shift index forward to make the next card active
           currentIndex = (currentIndex + 1) % totalCards;
 
-          // 4. Update the stack to pull the next cards forward
           updateStack();
 
-          // Unlock animation
           isAnimating = false;
-        }, 600); // 600ms matches the CSS transition time
+        }, 600);
       };
 
-      // Initialize the stack on load
       updateStack();
     });
 
@@ -1078,7 +1042,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
 
-      // 1. Scroll Animation Logic
       const scrollElements = document.querySelectorAll('.scroll-animate');
       const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -1092,74 +1055,60 @@
       scrollElements.forEach(el => scrollObserver.observe(el));
     });
 
-    // 2. Interactive Image Swap Logic
     function updateStickyImage(newSrc, newTitle, newDesc) {
-      // Only trigger on larger screens where the sticky layout is active
       if (window.innerWidth > 992) {
         const mainImg = document.getElementById('main-sticky-img');
         const titleElement = document.getElementById('sticky-title');
         const descElement = document.getElementById('sticky-desc');
 
-        // Prevent unnecessary updates if hovering the same image
         if (mainImg.src === newSrc) return;
 
-        // Fade out
         mainImg.classList.add('fade-out');
 
-        // Wait for fade out to complete, then swap source and fade back in
         setTimeout(() => {
           mainImg.src = newSrc;
           titleElement.textContent = newTitle;
           descElement.textContent = newDesc;
 
-          // Remove fade-out class to trigger fade-in CSS transition
           mainImg.classList.remove('fade-out');
-        }, 250); // This matches half the transition time in CSS
+        }, 250);
       }
     }
 
 
-    // Initialize AOS Animation
     AOS.init();
 
-    // Email Validation Logic
     document.addEventListener("DOMContentLoaded", function () {
       const emailInput = document.getElementById("cta-email");
       const subscribeBtn = document.getElementById("subscribe-btn");
       const errorMsg = document.getElementById("email-error");
 
-      // Regular Expression for proper Email format
       const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
       subscribeBtn.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevents page reload
+        e.preventDefault();
 
         const emailValue = emailInput.value.trim();
 
-        // 1. Check if empty
         if (emailValue === "") {
           emailInput.classList.add("error-border");
           errorMsg.innerText = "Email cannot be empty!";
           errorMsg.style.display = "block";
         }
-        // 2. Check if invalid format
         else if (!emailValue.match(emailPattern)) {
           emailInput.classList.add("error-border");
           errorMsg.innerText = "Please enter a valid email address!";
           errorMsg.style.display = "block";
         }
-        // 3. Success!
         else {
           emailInput.classList.remove("error-border");
           errorMsg.style.display = "none";
 
-          // Show Success Alert
           window.location.href = '404page.html'
-          emailInput.value = ""; // Clear input field after success
+          emailInput.value = "";
         }
       });
 
-      // Remove error message automatically when user starts typing again
       emailInput.addEventListener("input", function () {
         emailInput.classList.remove("error-border");
         errorMsg.style.display = "none";
@@ -1170,16 +1119,14 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-      // --- TIMELINE HIGHLIGHT & PROGRESS LINE ANIMATION ---
       const sections = document.querySelectorAll('.t-section');
       const navNodes = document.querySelectorAll('.t-node');
       const progressLine = document.getElementById('timeline-progress');
       const timelineArea = document.getElementById('timeline-scroll-area');
 
-      // 1. Highlight Active Section on Scroll
       const observerOptions = {
         root: null,
-        rootMargin: '-30% 0px -70% 0px', // Triggers when section is roughly in the middle
+        rootMargin: '-30% 0px -70% 0px',
         threshold: 0
       };
 
@@ -1188,10 +1135,8 @@
           if (entry.isIntersecting) {
             const targetId = entry.target.getAttribute('id');
 
-            // Remove active class from all
             navNodes.forEach(node => node.classList.remove('active'));
 
-            // Add active class to current
             const activeNode = document.querySelector(`.t-node[data-target="${targetId}"]`);
             if (activeNode) activeNode.classList.add('active');
           }
@@ -1202,24 +1147,20 @@
         sectionObserver.observe(section);
       });
 
-      // 2. Animate Progress Line Height on Scroll
       if (timelineArea && progressLine) {
         window.addEventListener('scroll', () => {
-          // Get total height of content area
+
           const areaRect = timelineArea.getBoundingClientRect();
 
-          // Calculate how far we've scrolled within the area
           const windowHeight = window.innerHeight;
           let scrollPercentage = 0;
 
-          // Start filling when area reaches top of screen
           if (areaRect.top < windowHeight / 2) {
             const scrolled = (windowHeight / 2) - areaRect.top;
             const maxScroll = areaRect.height;
             scrollPercentage = (scrolled / maxScroll) * 100;
           }
 
-          // Cap the percentage between 0 and 100
           if (scrollPercentage < 0) scrollPercentage = 0;
           if (scrollPercentage > 100) scrollPercentage = 100;
 
@@ -1227,7 +1168,6 @@
         });
       }
 
-      // 3. Smooth Scroll when clicking timeline links
       navNodes.forEach(node => {
         node.addEventListener('click', function (e) {
           e.preventDefault();
@@ -1235,7 +1175,6 @@
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
-            // Offset by 100px to account for sticky headers
             const yOffset = -120;
             const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly Travel Login</title>
     <link rel="stylesheet" href="common.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
-        /* --- ROOT VARIABLES --- */
         :root {
-            --navy-blue: #0A192F;    
-            --gold: #D4AF37;         
-            --gold-faded: rgba(212, 175, 55, 0.2); 
+            --navy-blue: #0A192F;
+            --gold: #D4AF37;
+            --gold-faded: rgba(212, 175, 55, 0.2);
             --white: #FFFFFF;
-            --navy-card-pill: #112240; 
-            --navy-input: #112240; 
-            --error-red: #ff4d4d; 
+            --navy-card-pill: #112240;
+            --navy-input: #112240;
+            --error-red: #ff4d4d;
         }
 
         * {
@@ -31,17 +32,26 @@
         body {
             background-color: var(--navy-blue);
             color: var(--white);
-            overflow-x: hidden; 
+            overflow-x: hidden;
             position: relative;
         }
 
-        /* --- Color Utilities --- */
-        .gold-text { color: var(--gold); }
-        .gold-bg { background-color: var(--gold); }
-        .navy-text { color: var(--navy-blue); }
-        .text-white { color: var(--white); }
+        .gold-text {
+            color: var(--gold);
+        }
 
-        /* --- BACK TO HOME BUTTON --- */
+        .gold-bg {
+            background-color: var(--gold);
+        }
+
+        .navy-text {
+            color: var(--navy-blue);
+        }
+
+        .text-white {
+            color: var(--white);
+        }
+
         .back-to-home {
             position: absolute;
             top: 30px;
@@ -59,13 +69,12 @@
 
         .back-to-home:hover {
             transform: translateX(-5px);
-            color: #F3E5AB; 
+            color: #F3E5AB;
         }
 
-        /* --- MAIN LOGIN SECTION --- */
         .login-page {
             min-height: 100vh;
-            padding: 80px 20px 40px 20px; 
+            padding: 80px 20px 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -81,7 +90,6 @@
             align-items: center;
         }
 
-        /* LEFT: Form Wrapper */
         .login-form-wrapper {
             display: flex;
             flex-direction: column;
@@ -120,7 +128,6 @@
             margin-bottom: 20px;
         }
 
-        /* Role Selector Cards */
         .role-selector {
             display: flex;
             gap: 15px;
@@ -152,11 +159,20 @@
             background-color: rgba(212, 175, 55, 0.1);
         }
 
-        .role-card i { font-size: 28px; }
-        .role-title { font-size: 16px; font-weight: 600; }
-        .role-desc { font-size: 12px; color: #a8b2d1; }
+        .role-card i {
+            font-size: 28px;
+        }
 
-        /* Login Form */
+        .role-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .role-desc {
+            font-size: 12px;
+            color: #a8b2d1;
+        }
+
         .login-form {
             display: flex;
             flex-direction: column;
@@ -199,7 +215,6 @@
             outline: none;
         }
 
-        /* Error States for Validation */
         .form-control.error-input {
             border-color: var(--error-red);
         }
@@ -207,7 +222,7 @@
         .error-msg {
             color: var(--error-red);
             font-size: 12px;
-            display: none; 
+            display: none;
             margin-top: 2px;
             font-weight: 500;
         }
@@ -244,7 +259,9 @@
             transition: color 0.3s;
         }
 
-        .forgot-password:hover { text-decoration: underline; }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
 
         .login-button {
             border: none;
@@ -262,7 +279,6 @@
             transform: translateY(-2px);
         }
 
-        /* Social Login */
         .or-separator {
             text-align: center;
             color: #a8b2d1;
@@ -271,7 +287,8 @@
             font-size: 14px;
         }
 
-        .or-separator::before, .or-separator::after {
+        .or-separator::before,
+        .or-separator::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -280,8 +297,13 @@
             background-color: var(--gold-faded);
         }
 
-        .or-separator::before { left: 0; }
-        .or-separator::after { right: 0; }
+        .or-separator::before {
+            left: 0;
+        }
+
+        .or-separator::after {
+            right: 0;
+        }
 
         .social-login {
             display: flex;
@@ -320,20 +342,21 @@
             text-decoration: none;
         }
 
-        .create-account a:hover { text-decoration: underline; }
+        .create-account a:hover {
+            text-decoration: underline;
+        }
 
-        /* RIGHT: Image Wrapper */
         .login-image-wrapper {
             width: 100%;
             height: 100%;
             min-height: 600px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateX(40px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            transition-delay: 0.2s; 
+            transition-delay: 0.2s;
         }
 
         .login-image-wrapper.show {
@@ -342,73 +365,67 @@
         }
 
         .side-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease; /* Itha puthusa add pannunga */
-}
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-/* Puthusa intha code-a add pannunga */
-.login-image-wrapper:hover .side-image {
-    transform: scale(1.1); /* Zoom in effect */
+        .login-image-wrapper:hover .side-image {
+            transform: scale(1.1);
 
-}
+        }
 
-/* 1. Existing login-image-wrapper class-la 'position: relative;' add pannunga */
-.login-image-wrapper {
-    /* ... unga pazhaiya styles apdiye irukkum (width, height, border-radius, etc.) ... */
-    position: relative; /* Itha mattum puthusa add pannunga */
-}
+        .login-image-wrapper {
+            position: relative;
+        }
 
-/* 2. Puthusa intha CSS lines-a style tag-kulla add pannunga */
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(10, 25, 47, 0.75); /* Navy blue with transparency */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.5s ease;
-}
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
 
-/* Hover pannum pothu overlay background theriyum */
-.login-image-wrapper:hover .image-overlay {
-    opacity: 1;
-}
+        .login-image-wrapper:hover .image-overlay {
+            opacity: 1;
+        }
 
-.overlay-title {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    transform: translateY(20px); /* Kela irunthu mela vara start position */
-    transition: transform 0.5s ease;
-}
+        .overlay-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
 
-.overlay-desc {
-    font-size: 16px;
-    line-height: 1.5;
-    transform: translateY(20px);
-    transition: transform 0.5s ease;
-    transition-delay: 0.1s; /* Title vantha udane description varum */
-}
+        .overlay-desc {
+            font-size: 16px;
+            line-height: 1.5;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+            transition-delay: 0.1s;
+        }
 
-/* Hover pannum pothu text mela varum (Slide up animation) */
-.login-image-wrapper:hover .overlay-title,
-.login-image-wrapper:hover .overlay-desc {
-    transform: translateY(0);
-}
-.logo img{
+        .login-image-wrapper:hover .overlay-title,
+        .login-image-wrapper:hover .overlay-desc {
+            transform: translateY(0);
+        }
+
+        .logo img {
             width: 138px;
         }
 
-        /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 960px) {
             .back-to-home {
                 top: 20px;
@@ -421,39 +438,40 @@
             }
 
             .login-container {
-                grid-template-columns: 1fr; /* Stacks image and form vertically */
+                grid-template-columns: 1fr;
                 gap: 30px;
             }
 
             .login-image-wrapper {
                 min-height: 300px;
-                order: 2; 
-                transform: translateY(40px); 
+                order: 2;
+                transform: translateY(40px);
             }
 
             .login-image-wrapper.show {
                 transform: translateY(0);
             }
-            
+
             .login-form-wrapper {
                 padding: 10px;
             }
 
             .role-selector {
-                flex-direction: column; /* Stacks roles on mobile */
+                flex-direction: column;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div id="stackly-loader" class="stackly-loader">
-  <div class="loader-content">
-    <div class="loader-ring"></div>
-    <h1 class="loader-brand">Stackly</h1>
-    <p class="loader-tagline">Travel & Tourism</p>
-  </div>
-</div>
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <h1 class="loader-brand">Stackly</h1>
+            <p class="loader-tagline">Travel & Tourism</p>
+        </div>
+    </div>
 
     <a href="index.html" class="back-to-home">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
@@ -461,14 +479,14 @@
 
     <main class="login-page">
         <div class="login-container">
-            
+
             <div class="login-form-wrapper anim-element">
-                
+
                 <div class="logo">
                     <a href="index.html">
-                    <img src="./asset/yellow_logo.webp" alt="logo"></a>
+                        <img src="./asset/yellow_logo.webp" alt="logo">
                 </div>
-                
+
                 <h1 class="welcome-title">Welcome Back</h1>
                 <p class="welcome-subtitle">Login to access your travel dashboard</p>
 
@@ -486,13 +504,13 @@
                 </div>
 
                 <form id="loginForm" class="login-form" novalidate>
-                    
+
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
                         <input type="email" id="email" class="form-control" placeholder="Enter email">
                         <span class="error-msg" id="emailErrorMsg">Valid email is required</span>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
                         <div class="password-wrapper">
@@ -528,13 +546,13 @@
             </div>
 
             <div class="login-image-wrapper anim-element">
-    <img src="./asset/t4.webp" alt="Travel Airplane" class="side-image">
-    
-    <div class="image-overlay">
-        <h2 class="overlay-title gold-text">Explore the World</h2>
-        <p class="overlay-desc text-white">Join thousands of travelers and tour organizers today.</p>
-    </div>
-</div>
+                <img src="./asset/t4.webp" alt="Travel Airplane" class="side-image">
+
+                <div class="image-overlay">
+                    <h2 class="overlay-title gold-text">Explore the World</h2>
+                    <p class="overlay-desc text-white">Join thousands of travelers and tour organizers today.</p>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -542,153 +560,137 @@
     <script>
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // Lock the scrollbar immediately when page starts loading
-  document.body.classList.add('loading-active');
+        document.addEventListener('DOMContentLoaded', () => {
 
-  const loader = document.getElementById('stackly-loader');
+            document.body.classList.add('loading-active');
 
-  if (loader) {
-    // Wait for exactly 2 seconds (2000 milliseconds)
-    setTimeout(() => {
-      // 1. Fade out the loader
-      loader.classList.add('fade-out');
-      
-      // 2. Unlock the scrollbar so user can scroll the website
-      document.body.classList.remove('loading-active');
+            const loader = document.getElementById('stackly-loader');
 
-      // 3. Optional cleanup: Remove the loader from DOM completely after fade finishes (0.6s)
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 600);
+            if (loader) {
+                setTimeout(() => {
+                    loader.classList.add('fade-out');
 
-    }, 2000);
-  }
+                    document.body.classList.remove('loading-active');
 
-});
-        // Default aaga Traveler role-a set panrom
-let currentSelectedRole = 'Traveler'; 
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 600);
 
-// 1. Role Selection Logic
-function selectRole(roleName) {
-    const travelerCard = document.querySelector('.Traveler');
-    const organizerCard = document.querySelector('.Organizer');
-    const buttonText = document.getElementById('selectedRoleText');
+                }, 2000);
+            }
 
-    travelerCard.classList.remove('active');
-    organizerCard.classList.remove('active');
+        });
+        let currentSelectedRole = 'Traveler';
 
-    // Namba select panra role-a intha variable-la store panrom
-    currentSelectedRole = roleName;
+        function selectRole(roleName) {
+            const travelerCard = document.querySelector('.Traveler');
+            const organizerCard = document.querySelector('.Organizer');
+            const buttonText = document.getElementById('selectedRoleText');
 
-    if(roleName === 'Traveler') {
-        travelerCard.classList.add('active');
-        if(buttonText) buttonText.innerText = 'Traveler';
-    } else {
-        organizerCard.classList.add('active');
-        if(buttonText) buttonText.innerText = 'Tour Organizer';
-    }
-}
+            travelerCard.classList.remove('active');
+            organizerCard.classList.remove('active');
 
-// 2. Password Visibility Toggle
-const togglePassword = document.querySelector('#togglePassword');
-const passwordInput = document.querySelector('#password');
+            currentSelectedRole = roleName;
 
-togglePassword.addEventListener('click', function () {
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    this.classList.toggle('fa-eye');
-    this.classList.toggle('fa-eye-slash');
-});
-
-// 3. Form Validation Logic
-const loginForm = document.getElementById('loginForm');
-const emailField = document.getElementById('email');
-const passwordField = document.getElementById('password');
-const emailErrorMsg = document.getElementById('emailErrorMsg');
-const passwordErrorMsg = document.getElementById('passwordErrorMsg');
-
-const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    
-    let isFormValid = true;
-
-    // Email Validation
-    if (emailField.value.trim() === "") {
-        emailField.classList.add('error-input');
-        emailErrorMsg.innerText = "Email cannot be empty";
-        emailErrorMsg.style.display = "block";
-        isFormValid = false;
-    } else if (!emailField.value.match(emailPattern)) {
-        emailField.classList.add('error-input');
-        emailErrorMsg.innerText = "Please enter a valid email address";
-        emailErrorMsg.style.display = "block";
-        isFormValid = false;
-    } else {
-        emailField.classList.remove('error-input');
-        emailErrorMsg.style.display = "none";
-    }
-
-    // Password Validation
-    const pwdLength = passwordField.value.trim().length;
-    if (pwdLength === 0) {
-        passwordField.classList.add('error-input');
-        passwordErrorMsg.innerText = "Password cannot be empty";
-        passwordErrorMsg.style.display = "block";
-        isFormValid = false;
-    } else if (pwdLength < 6) {
-        passwordField.classList.add('error-input');
-        passwordErrorMsg.innerText = "Password must be at least 6 characters";
-        passwordErrorMsg.style.display = "block";
-        isFormValid = false;
-    } else {
-        passwordField.classList.remove('error-input');
-        passwordErrorMsg.style.display = "none";
-    }
-
-    // Success action (Role-based Redirection)
-    if (isFormValid) {
-        // Dashboard-la display panrathukaga email-a localStorage-la save panrom
-        localStorage.setItem('loggedInEmail', emailField.value);
-
-        // Role check panni redirect panrom
-        if (currentSelectedRole === 'Traveler') {
-            window.location.href = 'dashboard1.html';
-        } else if (currentSelectedRole === 'Tour Organizer') {
-            window.location.href = 'dashboard2.html';
+            if (roleName === 'Traveler') {
+                travelerCard.classList.add('active');
+                if (buttonText) buttonText.innerText = 'Traveler';
+            } else {
+                organizerCard.classList.add('active');
+                if (buttonText) buttonText.innerText = 'Tour Organizer';
+            }
         }
-    }
-});
 
-// Remove error message on typing
-emailField.addEventListener('input', () => {
-    emailField.classList.remove('error-input');
-    emailErrorMsg.style.display = 'none';
-});
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#password');
 
-passwordField.addEventListener('input', () => {
-    passwordField.classList.remove('error-input');
-    passwordErrorMsg.style.display = 'none';
-});
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
 
-// 4. Scroll Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animElements = document.querySelectorAll('.anim-element');
+        const loginForm = document.getElementById('loginForm');
+        const emailField = document.getElementById('email');
+        const passwordField = document.getElementById('password');
+        const emailErrorMsg = document.getElementById('emailErrorMsg');
+        const passwordErrorMsg = document.getElementById('passwordErrorMsg');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let isFormValid = true;
+
+            if (emailField.value.trim() === "") {
+                emailField.classList.add('error-input');
+                emailErrorMsg.innerText = "Email cannot be empty";
+                emailErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else if (!emailField.value.match(emailPattern)) {
+                emailField.classList.add('error-input');
+                emailErrorMsg.innerText = "Please enter a valid email address";
+                emailErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                emailField.classList.remove('error-input');
+                emailErrorMsg.style.display = "none";
+            }
+
+            const pwdLength = passwordField.value.trim().length;
+            if (pwdLength === 0) {
+                passwordField.classList.add('error-input');
+                passwordErrorMsg.innerText = "Password cannot be empty";
+                passwordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else if (pwdLength < 6) {
+                passwordField.classList.add('error-input');
+                passwordErrorMsg.innerText = "Password must be at least 6 characters";
+                passwordErrorMsg.style.display = "block";
+                isFormValid = false;
+            } else {
+                passwordField.classList.remove('error-input');
+                passwordErrorMsg.style.display = "none";
+            }
+
+            if (isFormValid) {
+                localStorage.setItem('loggedInEmail', emailField.value);
+
+                if (currentSelectedRole === 'Traveler') {
+                    window.location.href = 'dashboard1.html';
+                } else if (currentSelectedRole === 'Tour Organizer') {
+                    window.location.href = 'dashboard2.html';
+                }
             }
         });
-    }, { threshold: 0.1 });
 
-    animElements.forEach(el => observer.observe(el));
-});
+        emailField.addEventListener('input', () => {
+            emailField.classList.remove('error-input');
+            emailErrorMsg.style.display = 'none';
+        });
+
+        passwordField.addEventListener('input', () => {
+            passwordField.classList.remove('error-input');
+            passwordErrorMsg.style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animElements = document.querySelectorAll('.anim-element');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animElements.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
+
 </html>

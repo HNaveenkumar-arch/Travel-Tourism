@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly Travel - Create Account</title>
     <link rel="stylesheet" href="common.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --navy-blue: #0A192F;    
-            --gold: #D4AF37;         
-            --gold-faded: rgba(212, 175, 55, 0.2); 
+            --navy-blue: #0A192F;
+            --gold: #D4AF37;
+            --gold-faded: rgba(212, 175, 55, 0.2);
             --white: #FFFFFF;
-            --navy-card-pill: #112240; 
-            --navy-input: #112240; 
-            --error-red: #ff4d4d; 
+            --navy-card-pill: #112240;
+            --navy-input: #112240;
+            --error-red: #ff4d4d;
         }
 
         * {
@@ -30,14 +32,25 @@
         body {
             background-color: var(--navy-blue);
             color: var(--white);
-            overflow-x: hidden; 
+            overflow-x: hidden;
             position: relative;
         }
 
-        .gold-text { color: var(--gold); }
-        .gold-bg { background-color: var(--gold); }
-        .navy-text { color: var(--navy-blue); }
-        .text-white { color: var(--white); }
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .gold-bg {
+            background-color: var(--gold);
+        }
+
+        .navy-text {
+            color: var(--navy-blue);
+        }
+
+        .text-white {
+            color: var(--white);
+        }
 
         .back-to-home {
             position: absolute;
@@ -56,12 +69,12 @@
 
         .back-to-home:hover {
             transform: translateX(-5px);
-            color: #F3E5AB; 
+            color: #F3E5AB;
         }
 
         .login-page {
             min-height: 100vh;
-            padding: 80px 20px 40px 20px; 
+            padding: 80px 20px 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,7 +96,7 @@
             min-height: 600px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateX(-40px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -218,9 +231,19 @@
             background-color: rgba(212, 175, 55, 0.1);
         }
 
-        .role-card i { font-size: 28px; }
-        .role-title { font-size: 16px; font-weight: 600; }
-        .role-desc { font-size: 12px; color: #a8b2d1; }
+        .role-card i {
+            font-size: 28px;
+        }
+
+        .role-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .role-desc {
+            font-size: 12px;
+            color: #a8b2d1;
+        }
 
         .login-form {
             display: flex;
@@ -271,7 +294,7 @@
         .error-msg {
             color: var(--error-red);
             font-size: 12px;
-            display: none; 
+            display: none;
             margin-top: 2px;
             font-weight: 500;
         }
@@ -307,7 +330,8 @@
             font-size: 14px;
         }
 
-        .or-separator::before, .or-separator::after {
+        .or-separator::before,
+        .or-separator::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -316,8 +340,13 @@
             background-color: var(--gold-faded);
         }
 
-        .or-separator::before { left: 0; }
-        .or-separator::after { right: 0; }
+        .or-separator::before {
+            left: 0;
+        }
+
+        .or-separator::after {
+            right: 0;
+        }
 
         .social-login {
             display: flex;
@@ -356,8 +385,11 @@
             text-decoration: none;
         }
 
-        .create-account a:hover { text-decoration: underline; }
-        .logo img{
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+
+        .logo img {
             width: 138px;
         }
 
@@ -389,8 +421,8 @@
 
             .login-image-wrapper {
                 min-height: 300px;
-                order: 2; 
-                transform: translateY(40px); 
+                order: 2;
+                transform: translateY(40px);
             }
 
             .login-image-wrapper.show {
@@ -403,15 +435,16 @@
         }
     </style>
 </head>
+
 <body>
 
     <div id="stackly-loader" class="stackly-loader">
-  <div class="loader-content">
-    <div class="loader-ring"></div>
-    <h1 class="loader-brand">Stackly</h1>
-    <p class="loader-tagline">Travel & Tourism</p>
-  </div>
-</div>
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <h1 class="loader-brand">Stackly</h1>
+            <p class="loader-tagline">Travel & Tourism</p>
+        </div>
+    </div>
 
     <a href="index.html" class="back-to-home">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
@@ -419,7 +452,7 @@
 
     <main class="login-page">
         <div class="login-container">
-            
+
             <div class="login-image-wrapper anim-element">
                 <img src="./asset/flight.webp" alt="Travel Airplane" class="side-image">
                 <div class="image-overlay">
@@ -429,12 +462,12 @@
             </div>
 
             <div class="login-form-wrapper anim-element">
-                
+
                 <div class="logo">
                     <a href="index.html">
-                    <img src="./asset/yellow_logo.webp" alt="logo"></a>
+                        <img src="./asset/yellow_logo.webp" alt="logo"></a>
                 </div>
-                
+
                 <h1 class="welcome-title">Join Us Today</h1>
                 <p class="welcome-subtitle">Create an account to access your dashboard</p>
 
@@ -452,7 +485,7 @@
                 </div>
 
                 <form id="registerForm" class="login-form" novalidate>
-                    
+
                     <div class="form-group">
                         <label for="fullname" class="form-label">Full Name</label>
                         <input type="text" id="fullname" class="form-control" placeholder="Enter full name">
@@ -464,7 +497,7 @@
                         <input type="email" id="email" class="form-control" placeholder="Enter email">
                         <span class="error-msg" id="emailErrorMsg">Valid email is required</span>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
                         <div class="password-wrapper">
@@ -477,7 +510,8 @@
                     <div class="form-group">
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <div class="password-wrapper">
-                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password">
+                            <input type="password" id="confirmPassword" class="form-control"
+                                placeholder="Confirm password">
                             <i class="fa-regular fa-eye password-toggle" id="toggleConfirmPassword"></i>
                         </div>
                         <span class="error-msg" id="confirmPasswordErrorMsg">Passwords do not match</span>
@@ -506,31 +540,26 @@
     <script>
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // Lock the scrollbar immediately when page starts loading
-  document.body.classList.add('loading-active');
+        document.addEventListener('DOMContentLoaded', () => {
 
-  const loader = document.getElementById('stackly-loader');
+            document.body.classList.add('loading-active');
 
-  if (loader) {
-    // Wait for exactly 2 seconds (2000 milliseconds)
-    setTimeout(() => {
-      // 1. Fade out the loader
-      loader.classList.add('fade-out');
-      
-      // 2. Unlock the scrollbar so user can scroll the website
-      document.body.classList.remove('loading-active');
+            const loader = document.getElementById('stackly-loader');
 
-      // 3. Optional cleanup: Remove the loader from DOM completely after fade finishes (0.6s)
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 600);
+            if (loader) {
+                setTimeout(() => {
+                    loader.classList.add('fade-out');
 
-    }, 2000);
-  }
+                    document.body.classList.remove('loading-active');
 
-});
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 600);
+
+                }, 2000);
+            }
+
+        });
         function selectRole(roleName) {
             const travelerCard = document.querySelector('.Traveler');
             const organizerCard = document.querySelector('.Organizer');
@@ -539,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
             travelerCard.classList.remove('active');
             organizerCard.classList.remove('active');
 
-            if(roleName === 'Traveler') {
+            if (roleName === 'Traveler') {
                 travelerCard.classList.add('active');
                 buttonText.innerText = 'Traveler';
             } else {
@@ -551,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function setupPasswordToggle(toggleId, inputId) {
             const toggleBtn = document.getElementById(toggleId);
             const inputField = document.getElementById(inputId);
-            
+
             toggleBtn.addEventListener('click', function () {
                 const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
                 inputField.setAttribute('type', type);
@@ -568,7 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailField = document.getElementById('email');
         const passwordField = document.getElementById('password');
         const confirmPasswordField = document.getElementById('confirmPassword');
-        
+
         const nameErrorMsg = document.getElementById('nameErrorMsg');
         const emailErrorMsg = document.getElementById('emailErrorMsg');
         const passwordErrorMsg = document.getElementById('passwordErrorMsg');
@@ -576,9 +605,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-        registerForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
+        registerForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
             let isFormValid = true;
 
             if (fullnameField.value.trim() === "") {
@@ -637,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isFormValid) {
-                window.location.href='login.html'
+                window.location.href = 'login.html'
             }
         });
 
@@ -667,4 +696,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     </script>
 </body>
+
 </html>
