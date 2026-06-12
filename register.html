@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly Travel - Create Account</title>
+    <link rel="stylesheet" href="common.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -356,6 +357,9 @@
         }
 
         .create-account a:hover { text-decoration: underline; }
+        .logo img{
+            width: 138px;
+        }
 
         @media (max-width: 960px) {
             .back-to-home {
@@ -401,6 +405,14 @@
 </head>
 <body>
 
+    <div id="stackly-loader" class="stackly-loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <h1 class="loader-brand">Stackly</h1>
+    <p class="loader-tagline">Travel & Tourism</p>
+  </div>
+</div>
+
     <a href="index.html" class="back-to-home">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
     </a>
@@ -409,7 +421,7 @@
         <div class="login-container">
             
             <div class="login-image-wrapper anim-element">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop" alt="Travel Airplane" class="side-image">
+                <img src="./asset/flight.webp" alt="Travel Airplane" class="side-image">
                 <div class="image-overlay">
                     <h2 class="overlay-title gold-text">Explore the World</h2>
                     <p class="overlay-desc text-white">Join thousands of travelers and tour organizers today.</p>
@@ -418,9 +430,9 @@
 
             <div class="login-form-wrapper anim-element">
                 
-                <div class="form-branding gold-text">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span>STACKLY</span>
+                <div class="logo">
+                    <a href="index.html">
+                    <img src="./asset/yellow_logo.webp" alt="logo"></a>
                 </div>
                 
                 <h1 class="welcome-title">Join Us Today</h1>
@@ -478,9 +490,9 @@
 
                 <div class="or-separator">or sign up with</div>
                 <div class="social-login">
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
 
                 <div class="create-account">
@@ -492,6 +504,33 @@
     </main>
 
     <script>
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Lock the scrollbar immediately when page starts loading
+  document.body.classList.add('loading-active');
+
+  const loader = document.getElementById('stackly-loader');
+
+  if (loader) {
+    // Wait for exactly 2 seconds (2000 milliseconds)
+    setTimeout(() => {
+      // 1. Fade out the loader
+      loader.classList.add('fade-out');
+      
+      // 2. Unlock the scrollbar so user can scroll the website
+      document.body.classList.remove('loading-active');
+
+      // 3. Optional cleanup: Remove the loader from DOM completely after fade finishes (0.6s)
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 600);
+
+    }, 2000);
+  }
+
+});
         function selectRole(roleName) {
             const travelerCard = document.querySelector('.Traveler');
             const organizerCard = document.querySelector('.Organizer');
@@ -598,7 +637,7 @@
             }
 
             if (isFormValid) {
-                alert("Account Created Successfully! Redirecting...");
+                window.location.href='login.html'
             }
         });
 

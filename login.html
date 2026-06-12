@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly Travel Login</title>
+    <link rel="stylesheet" href="common.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -403,6 +404,9 @@
 .login-image-wrapper:hover .overlay-desc {
     transform: translateY(0);
 }
+.logo img{
+            width: 138px;
+        }
 
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 960px) {
@@ -443,6 +447,14 @@
 </head>
 <body>
 
+    <div id="stackly-loader" class="stackly-loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <h1 class="loader-brand">Stackly</h1>
+    <p class="loader-tagline">Travel & Tourism</p>
+  </div>
+</div>
+
     <a href="index.html" class="back-to-home">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
     </a>
@@ -452,9 +464,9 @@
             
             <div class="login-form-wrapper anim-element">
                 
-                <div class="form-branding gold-text">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span>STACKLY</span>
+                <div class="logo">
+                    <a href="index.html">
+                    <img src="./asset/yellow_logo.webp" alt="logo"></a>
                 </div>
                 
                 <h1 class="welcome-title">Welcome Back</h1>
@@ -495,7 +507,7 @@
                             <input type="checkbox" id="remember">
                             <label for="remember">Remember me</label>
                         </div>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <a href="404page.html" class="forgot-password">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="login-button gold-bg navy-text">
@@ -505,9 +517,9 @@
 
                 <div class="or-separator">or continue with</div>
                 <div class="social-login">
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon gold-text"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" class="social-icon gold-text"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
 
                 <div class="create-account">
@@ -516,7 +528,7 @@
             </div>
 
             <div class="login-image-wrapper anim-element">
-    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop" alt="Travel Airplane" class="side-image">
+    <img src="./asset/t4.webp" alt="Travel Airplane" class="side-image">
     
     <div class="image-overlay">
         <h2 class="overlay-title gold-text">Explore the World</h2>
@@ -528,114 +540,155 @@
     </main>
 
     <script>
-        // 1. Role Selection Logic
-        function selectRole(roleName) {
-            const travelerCard = document.querySelector('.Traveler');
-            const organizerCard = document.querySelector('.Organizer');
-            const buttonText = document.getElementById('selectedRoleText');
 
-            travelerCard.classList.remove('active');
-            organizerCard.classList.remove('active');
 
-            if(roleName === 'Traveler') {
-                travelerCard.classList.add('active');
-                buttonText.innerText = 'Traveler';
-            } else {
-                organizerCard.classList.add('active');
-                buttonText.innerText = 'Tour Organizer';
-            }
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Lock the scrollbar immediately when page starts loading
+  document.body.classList.add('loading-active');
+
+  const loader = document.getElementById('stackly-loader');
+
+  if (loader) {
+    // Wait for exactly 2 seconds (2000 milliseconds)
+    setTimeout(() => {
+      // 1. Fade out the loader
+      loader.classList.add('fade-out');
+      
+      // 2. Unlock the scrollbar so user can scroll the website
+      document.body.classList.remove('loading-active');
+
+      // 3. Optional cleanup: Remove the loader from DOM completely after fade finishes (0.6s)
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 600);
+
+    }, 2000);
+  }
+
+});
+        // Default aaga Traveler role-a set panrom
+let currentSelectedRole = 'Traveler'; 
+
+// 1. Role Selection Logic
+function selectRole(roleName) {
+    const travelerCard = document.querySelector('.Traveler');
+    const organizerCard = document.querySelector('.Organizer');
+    const buttonText = document.getElementById('selectedRoleText');
+
+    travelerCard.classList.remove('active');
+    organizerCard.classList.remove('active');
+
+    // Namba select panra role-a intha variable-la store panrom
+    currentSelectedRole = roleName;
+
+    if(roleName === 'Traveler') {
+        travelerCard.classList.add('active');
+        if(buttonText) buttonText.innerText = 'Traveler';
+    } else {
+        organizerCard.classList.add('active');
+        if(buttonText) buttonText.innerText = 'Tour Organizer';
+    }
+}
+
+// 2. Password Visibility Toggle
+const togglePassword = document.querySelector('#togglePassword');
+const passwordInput = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+});
+
+// 3. Form Validation Logic
+const loginForm = document.getElementById('loginForm');
+const emailField = document.getElementById('email');
+const passwordField = document.getElementById('password');
+const emailErrorMsg = document.getElementById('emailErrorMsg');
+const passwordErrorMsg = document.getElementById('passwordErrorMsg');
+
+const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    let isFormValid = true;
+
+    // Email Validation
+    if (emailField.value.trim() === "") {
+        emailField.classList.add('error-input');
+        emailErrorMsg.innerText = "Email cannot be empty";
+        emailErrorMsg.style.display = "block";
+        isFormValid = false;
+    } else if (!emailField.value.match(emailPattern)) {
+        emailField.classList.add('error-input');
+        emailErrorMsg.innerText = "Please enter a valid email address";
+        emailErrorMsg.style.display = "block";
+        isFormValid = false;
+    } else {
+        emailField.classList.remove('error-input');
+        emailErrorMsg.style.display = "none";
+    }
+
+    // Password Validation
+    const pwdLength = passwordField.value.trim().length;
+    if (pwdLength === 0) {
+        passwordField.classList.add('error-input');
+        passwordErrorMsg.innerText = "Password cannot be empty";
+        passwordErrorMsg.style.display = "block";
+        isFormValid = false;
+    } else if (pwdLength < 6) {
+        passwordField.classList.add('error-input');
+        passwordErrorMsg.innerText = "Password must be at least 6 characters";
+        passwordErrorMsg.style.display = "block";
+        isFormValid = false;
+    } else {
+        passwordField.classList.remove('error-input');
+        passwordErrorMsg.style.display = "none";
+    }
+
+    // Success action (Role-based Redirection)
+    if (isFormValid) {
+        // Dashboard-la display panrathukaga email-a localStorage-la save panrom
+        localStorage.setItem('loggedInEmail', emailField.value);
+
+        // Role check panni redirect panrom
+        if (currentSelectedRole === 'Traveler') {
+            window.location.href = 'dashboard1.html';
+        } else if (currentSelectedRole === 'Tour Organizer') {
+            window.location.href = 'dashboard2.html';
         }
+    }
+});
 
-        // 2. Password Visibility Toggle
-        const togglePassword = document.querySelector('#togglePassword');
-        const passwordInput = document.querySelector('#password');
+// Remove error message on typing
+emailField.addEventListener('input', () => {
+    emailField.classList.remove('error-input');
+    emailErrorMsg.style.display = 'none';
+});
 
-        togglePassword.addEventListener('click', function () {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye');
-            this.classList.toggle('fa-eye-slash');
-        });
+passwordField.addEventListener('input', () => {
+    passwordField.classList.remove('error-input');
+    passwordErrorMsg.style.display = 'none';
+});
 
-        // 3. Form Validation Logic
-        const loginForm = document.getElementById('loginForm');
-        const emailField = document.getElementById('email');
-        const passwordField = document.getElementById('password');
-        const emailErrorMsg = document.getElementById('emailErrorMsg');
-        const passwordErrorMsg = document.getElementById('passwordErrorMsg');
+// 4. Scroll Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const animElements = document.querySelectorAll('.anim-element');
 
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
-            let isFormValid = true;
-
-            // Email Validation
-            if (emailField.value.trim() === "") {
-                emailField.classList.add('error-input');
-                emailErrorMsg.innerText = "Email cannot be empty";
-                emailErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else if (!emailField.value.match(emailPattern)) {
-                emailField.classList.add('error-input');
-                emailErrorMsg.innerText = "Please enter a valid email address";
-                emailErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                emailField.classList.remove('error-input');
-                emailErrorMsg.style.display = "none";
-            }
-
-            // Password Validation (Length check added)
-            const pwdLength = passwordField.value.trim().length;
-            if (pwdLength === 0) {
-                passwordField.classList.add('error-input');
-                passwordErrorMsg.innerText = "Password cannot be empty";
-                passwordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else if (pwdLength < 6) {
-                passwordField.classList.add('error-input');
-                passwordErrorMsg.innerText = "Password must be at least 6 characters";
-                passwordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                passwordField.classList.remove('error-input');
-                passwordErrorMsg.style.display = "none";
-            }
-
-            // Success action
-            if (isFormValid) {
-                alert("Login successful! Redirecting...");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
             }
         });
+    }, { threshold: 0.1 });
 
-        // Remove error message on typing
-        emailField.addEventListener('input', () => {
-            emailField.classList.remove('error-input');
-            emailErrorMsg.style.display = 'none';
-        });
-
-        passwordField.addEventListener('input', () => {
-            passwordField.classList.remove('error-input');
-            passwordErrorMsg.style.display = 'none';
-        });
-
-        // 4. Scroll Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const animElements = document.querySelectorAll('.anim-element');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            animElements.forEach(el => observer.observe(el));
-        });
+    animElements.forEach(el => observer.observe(el));
+});
     </script>
 </body>
 </html>

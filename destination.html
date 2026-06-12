@@ -2,140 +2,1251 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Menu Navy & Gold Navbar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Menu Navy & Gold Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="destination.css">
 </head>
 
 <body>
 
-    <nav class="navbar" id="navbar">
+  <div id="stackly-loader" class="stackly-loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <h1 class="loader-brand">Stackly</h1>
+      <p class="loader-tagline">Travel & Tourism</p>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="./asset/yellow_logo.webp" alt="logo"></a>
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+      <div class="mobile-header">
         <div class="logo">
-            <a href="index.html">
+          <a href="index.html">
             <img src="./asset/yellow_logo.webp" alt="logo"></a>
         </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
 
-        <div class="menu-container" id="menuContainer">
-            <div class="mobile-header">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="./asset/yellow_logo.webp" alt="logo"></a>
-                </div>
-                <div class="close-btn" id="closeBtn">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="active-pill"><a href="destination.html"><i class="fa-solid fa-map-location-dot"></i> Destinations</a>
+        </li>
+        <li><a href="tours.html"><i class="fa-solid fa-compass"></i> Tours</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-rss"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="register.html" class="cta-btn">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <section class="hero-section" id="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+
+    <div class="hero-content scroll-anim">
+      <div class="hero-breadcrumb">
+        <a href="404page.html">Home</a>
+        <i class="fa-solid fa-angles-right"></i>
+        <span class="current">Destination</span>
+      </div>
+
+      <h1 class="hero-title">Discover Your Dream Destination</h1>
+      <p class="hero-subtitle">Experience the world's most luxurious and breathtaking locations tailored perfectly for
+        your ultimate getaway.</p>
+
+      <div class="hero-dynamic-search">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" id="dynamicSearch" placeholder="">
+        <button class="hero-explore-btn">Explore</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="explore-section">
+    <div class="explore-container">
+
+      <div class="left-sticky">
+        <h2 class="title">Choose Your Next Adventure</h2>
+        <div class="map-container">
+          <img src="./asset/w17.webp" alt="Interactive World Map" class="sticky-map">
+        </div>
+      </div>
+
+      <div class="right-scroll">
+
+        <div class="continent-card">
+          <img src="./asset/w18.webp" alt="Asia Temple" class="card-image">
+          <div class="card-content">
+            <h3>Asia</h3>
+            <p>Discover the mysteries of the East and ancient traditions.</p>
+          </div>
+        </div>
+
+        <div class="continent-card">
+          <img src="./asset/w19.webp" alt="Europe Architecture" class="card-image">
+          <div class="card-content">
+            <h3>Europe</h3>
+            <p>Experience timeless history, diverse cultures, and stunning cities.</p>
+          </div>
+        </div>
+
+        <div class="continent-card">
+          <img src="./asset/w20.webp" alt="Africa Safari" class="card-image">
+          <div class="card-content">
+            <h3>Africa</h3>
+            <p>Witness untamed wildlife and majestic natural landscapes.</p>
+          </div>
+        </div>
+
+        <div class="continent-card">
+          <img src="./asset/w21.webp" alt="America City Skyline" class="card-image">
+          <div class="card-content">
+            <h3>America</h3>
+            <p>Explore vibrant modern cities and breathtaking natural wonders.</p>
+          </div>
+        </div>
+
+        <div class="continent-card">
+          <img src="./asset/w22.webp" alt="Australia Outback" class="card-image">
+          <div class="card-content">
+            <h3>Australia</h3>
+            <p>Dive into the stunning coral reefs and rugged outback.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="destinations-section">
+    <div class="destinations-container">
+      <h2 class="section-title">Top Destinations Collection</h2>
+
+      <div class="cards-grid">
+
+        <!-- Card 1: Paris -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front Side -->
+            <div class="flip-card-front">
+              <img src="./asset/a2.webp" alt="Paris" class="front-image">
+              <div class="front-overlay"></div>
+              <h3 class="front-title">Paris</h3>
             </div>
+            <!-- Back Side -->
+            <div class="flip-card-back">
+              <h3>Paris</h3>
+              <div class="back-details">
+                <p><strong>Best Time:</strong> Apr - Jun, Sep - Oct</p>
+                <p><strong>Price Range:</strong> $20 - $2000</p>
+                <p><strong>Attractions:</strong> Eiffel Tower, Louvre, Seine River</p>
+              </div>
+              <button class="explore-btn" onclick="window.location.href='404page.html'">Explore Now</button>
+            </div>
+          </div>
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li class="active-pill"><a href="destination.html"><i class="fa-solid fa-map-location-dot"></i> Destinations</a></li>
-                <li><a href="tours.html"><i class="fa-solid fa-compass"></i> Tours</a></li>
-                <li><a href="blog.html"><i class="fa-solid fa-rss"></i> Blog</a></li>
-                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <!-- Card 2: Kyoto -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./asset/q3.webp" alt="Kyoto" class="front-image">
+              <div class="front-overlay"></div>
+              <h3 class="front-title">Kyoto</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3>Kyoto</h3>
+              <div class="back-details">
+                <p><strong>Best Time:</strong> Mar - May, Sep - Nov</p>
+                <p><strong>Price Range:</strong> $200</p>
+                <p><strong>Attractions:</strong> Fushimi Inari, Bamboo Forest, Temples</p>
+              </div>
+              <button class="explore-btn" onclick="window.location.href='404page.html'">Explore Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Maldives -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./asset/q1.webp" alt="Maldives" class="front-image">
+              <div class="front-overlay"></div>
+              <h3 class="front-title">Maldives</h3>
+            </div>
+            <div class="flip-card-back">
+              <h3>Maldives</h3>
+              <div class="back-details">
+                <p><strong>Best Time:</strong> Nov - Apr</p>
+                <p><strong>Price Range:</strong> $2000</p>
+                <p><strong>Attractions:</strong> Overwater Villas, Coral Reefs, Diving</p>
+              </div>
+              <button class="explore-btn" onclick="window.location.href='404page.html'">Explore Now</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="attractions-section">
+    <h2 class="section-title">Popular Tourist Attractions</h2>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+
+        <div class="marquee-card">
+          <img src="./asset/r1.webp" alt="Colosseum">
+          <div class="card-title-default">Colosseum</div>
+          <div class="card-overlay">
+            <h3>Colosseum, Rome</h3>
+            <p>Step back in time to the glory of the ancient Roman Empire.</p>
+            <span class="rating">⭐ 4.9 (12k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/r2.webp" alt="Taj Mahal">
+          <div class="card-title-default">Taj Mahal</div>
+          <div class="card-overlay">
+            <h3>Taj Mahal, India</h3>
+            <p>A mesmerizing architectural masterpiece and a symbol of eternal love.</p>
+            <span class="rating">⭐ 4.9 (20k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/a8.webp" alt="Eiffel Tower">
+          <div class="card-title-default">Eiffel Tower</div>
+          <div class="card-overlay">
+            <h3>Eiffel Tower, Paris</h3>
+            <p>Experience the romance and breathtaking city views from the top.</p>
+            <span class="rating">⭐ 4.8 (18k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/r3.webp" alt="Machu Picchu">
+          <div class="card-title-default">Machu Picchu</div>
+          <div class="card-overlay">
+            <h3>Machu Picchu, Peru</h3>
+            <p>Explore the mystical lost city of the Incas high in the Andes.</p>
+            <span class="rating">⭐ 4.9 (9k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/r1.webp" alt="Colosseum">
+          <div class="card-title-default">Colosseum</div>
+          <div class="card-overlay">
+            <h3>Colosseum, Rome</h3>
+            <p>Step back in time to the glory of the ancient Roman Empire.</p>
+            <span class="rating">⭐ 4.9 (12k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/r2.webp" alt="Taj Mahal">
+          <div class="card-title-default">Taj Mahal</div>
+          <div class="card-overlay">
+            <h3>Taj Mahal, India</h3>
+            <p>A mesmerizing architectural masterpiece and a symbol of eternal love.</p>
+            <span class="rating">⭐ 4.9 (20k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/a8.webp" alt="Eiffel Tower">
+          <div class="card-title-default">Eiffel Tower</div>
+          <div class="card-overlay">
+            <h3>Eiffel Tower, Paris</h3>
+            <p>Experience the romance and breathtaking city views from the top.</p>
+            <span class="rating">⭐ 4.8 (18k Reviews)</span>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <img src="./asset/r3.webp" alt="Machu Picchu">
+          <div class="card-title-default">Machu Picchu</div>
+          <div class="card-overlay">
+            <h3>Machu Picchu, Peru</h3>
+            <p>Explore the mystical lost city of the Incas high in the Andes.</p>
+            <span class="rating">⭐ 4.9 (9k Reviews)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="experiences-section">
+    <div class="experiences-container">
+      <h2 class="section-title">Find Your Travel Style</h2>
+
+      <div class="experiences-grid">
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🏖️</span>
+              <h3>Beach</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Relax on pristine white sands and enjoy the ocean breeze.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">⛰️</span>
+              <h3>Mountain</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Conquer majestic peaks and enjoy breathtaking views.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🏕️</span>
+              <h3>Camping</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Sleep under the stars and reconnect with wild nature.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🚢</span>
+              <h3>Cruise</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Sail the oceans with unmatched luxury and endless horizons.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🐘</span>
+              <h3>Wildlife</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Experience thrilling safaris and exotic animal encounters.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🏙️</span>
+              <h3>City Tour</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Dive into the vibrant culture, food, and lights of the metropolis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🏛️</span>
+              <h3>Heritage</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Step back in time and explore ancient monuments and history.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="exp-card-inner">
+            <div class="exp-card-front">
+              <span class="exp-icon">🚗</span>
+              <h3>Road Trip</h3>
+            </div>
+            <div class="exp-card-back">
+              <p>Hit the open road and discover hidden gems along the way.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="timeline-section">
+    <div class="timeline-container">
+      <h2 class="section-title">Plan Your Trip In Simple Steps</h2>
+
+      <div class="timeline">
+        <span class="timeline-line">
+          <span class="timeline-progress" id="timeline-progress"></span>
+        </span>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <img src="./asset/q1.webp" alt="Destination Map" class="step-image">
+            <div class="text-block">
+              <span class="step-icon">📍</span>
+              <h3>Choose Destination</h3>
+              <p>Browse our curated list of exotic locations and pick your dream getaway.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <img src="./asset/a9.webp" alt="Booking Dashboard" class="step-image">
+            <div class="text-block">
+              <span class="step-icon">🎟️</span>
+              <h3>Book Package</h3>
+              <p>Select a personalized travel package that fits your budget and style perfectly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <img src="./asset/q14.webp" alt="Packing Suitcase" class="step-image">
+            <div class="text-block">
+              <span class="step-icon">🧳</span>
+              <h3>Prepare Journey</h3>
+              <p>Pack your bags, get your travel documents ready, and prepare for an adventure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <img src="./asset/w15.webp" alt="Enjoying Beach" class="step-image">
+            <div class="text-block">
+              <span class="step-icon">🌴</span>
+              <h3>Enjoy Vacation</h3>
+              <p>Relax, explore the wonders, and create unforgettable memories on your trip.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <img src="./asset/r4.webp" alt="Sharing Photos" class="step-image">
+            <div class="text-block">
+              <span class="step-icon">📸</span>
+              <h3>Share Memories</h3>
+              <p>Upload your best travel photos and review your trip to inspire other explorers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="stories-section">
+    <div class="stories-container">
+      <h2 class="section-title scroll-animate">Experiences Shared By Travelers</h2>
+
+      <div class="testimonial-slider scroll-animate">
+        <div class="card-stack" id="card-stack">
+
+          <div class="testi-card testi-active" onclick="triggerNext()">
+            <div class="testi-card-content">
+              <img src="./asset/w1.webp" alt="Traveler 1">
+              <div class="traveler-details">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="traveler-name">James Wilson</div>
+                <p>"A perfectly organized trip! The Alps trekking experience was absolutely legendary."</p>
+                <div class="location">📍 Swiss Alps</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card testi-next-1" onclick="triggerNext()">
+            <div class="testi-card-content">
+              <img src="./asset/w2.webp" alt="Traveler 2">
+              <div class="traveler-details">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="traveler-name">Sophia Chen</div>
+                <p>"The beach resorts were heaven on earth. Gold-standard service that made me feel like royalty."</p>
+                <div class="location">📍 Maldives</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card testi-next-2" onclick="triggerNext()">
+            <div class="testi-card-content">
+              <img src="./asset/w4.webp" alt="Traveler 3">
+              <div class="traveler-details">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="traveler-name">Marcus Thorne</div>
+                <p>"Exploring the heritage sites with a private guide was eye-opening. Best history tour ever."</p>
+                <div class="location">📍 Rome, Italy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card testi-next-3" onclick="triggerNext()">
+            <div class="testi-card-content">
+              <img src="./asset/w3.webp" alt="Traveler 4">
+              <div class="traveler-details">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="traveler-name">Isabella Garcia</div>
+                <p>"The wildlife safari was perfectly organized. An unforgettable and thrilling experience."</p>
+                <div class="location">📍 Serengeti</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card testi-next-4" onclick="triggerNext()">
+            <div class="testi-card-content">
+              <img src="./asset/r5.webp" alt="Traveler 5">
+              <div class="traveler-details">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="traveler-name">Aisha Khan</div>
+                <p>"The cultural tours were simply amazing. Perfect service and breathtaking architecture."</p>
+                <div class="location">📍 Jaipur</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-controls">
+          <button class="control-btn next" onclick="triggerNext()">❯</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="gallery-section">
+    <div class="gallery-container">
+      <h2 class="section-title scroll-animate">Moments From Around The World</h2>
+
+      <div class="gallery-layout">
+        <div class="gallery-sticky-side scroll-animate">
+          <div class="sticky-image-container">
+            <img src="./asset/r3.webp" alt="Featured Destination" id="main-sticky-img">
+            <div class="sticky-overlay">
+              <h3 id="sticky-title">Explore The Unseen</h3>
+              <p id="sticky-desc">Discover the hidden beauty of the world's most spectacular landscapes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-scroll-side">
+
+          <div class="gallery-item scroll-animate"
+            onmouseenter="updateStickyImage('https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&w=600', 'Coastal Wonders', 'Experience the raw power and beauty of the ocean.')">
+            <img src="./asset/w8.webp" alt="Coast">
+            <div class="item-overlay glass-effect">
+              <div class="location-badge">📍 Amalfi Coast</div>
+              <div class="floating-icons">
+                <a href="404page.html">
+                  <span>❤️</span></a>
+                <a href="404page.html"><span>📸</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item scroll-animate"
+            onmouseenter="updateStickyImage('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&w=600', 'Mountain Peaks', 'Conquer the heights and touch the clouds.')">
+            <img src="./asset/a7.webp" alt="Mountains">
+            <div class="item-overlay glass-effect">
+              <div class="location-badge">📍 Swiss Alps</div>
+              <div class="floating-icons">
+                <a href="404page.html"><span>❤️</span></a>
+                <a href="404page.html"><span>📸</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item scroll-animate"
+            onmouseenter="updateStickyImage('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&w=600', 'City Lights', 'Immerse yourself in the vibrant energy of the metropolis.')">
+            <img src="./asset/a2.webp" alt="City">
+            <div class="item-overlay glass-effect">
+              <div class="location-badge">📍 Paris</div>
+              <div class="floating-icons">
+                <a href="404page.html"><span>❤️</span></a>
+                <a href="404page.html"><span>📸</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item scroll-animate"
+            onmouseenter="updateStickyImage('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&w=600', 'Road Trips', 'Find freedom on the open road.')">
+            <img src="./asset/w16.webp" alt="Road Trip">
+            <div class="item-overlay glass-effect">
+              <div class="location-badge">📍 Route 66</div>
+              <div class="floating-icons">
+                <a href="404page.html"><span>❤️</span></a>
+                <a href="404page.html"><span>📸</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item scroll-animate"
+            onmouseenter="updateStickyImage('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&w=600', 'Cultural Gems', 'Step into history and marvel at ancient architecture.')">
+            <img src="./asset/w6.webp" alt="Culture">
+            <div class="item-overlay glass-effect">
+              <div class="location-badge">📍 Venice</div>
+              <div class="floating-icons">
+                <a href="404page.html"> <span>❤️</span></a>
+                <a href="404page.html"> <span>📸</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section scroll-animate">
+    <h2 class="section-title"><i class="fas fa-gem"></i> Premium Collections</h2>
+
+    <div class="premium-cards-grid">
+
+      <div class="reveal-card">
+        <div class="reveal-image">
+          <img src="./asset/w22.webp" alt="Secret Island">
+          <div class="reveal-overlay">
+            <h3>Secret Island</h3>
+            <p class="tag">Hidden Gem</p>
+          </div>
+        </div>
+        <div class="reveal-details">
+          <p>Discover untouched beaches and private villas away from the crowd.</p>
+          <div class="reveal-footer">
+            <span class="gold-text">$3,500</span>
+            <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Explore</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="holo-card">
+        <div class="holo-glare"></div>
+        <div class="holo-content">
+          <div class="holo-header">
+            <i class="fas fa-crown gold-text"></i>
+            <span>Elite Membership</span>
+          </div>
+          <h3>Global Access Pass</h3>
+          <p>Unlimited lounge access and priority bookings worldwide.</p>
+          <div class="holo-footer">
+            <span class="member-id">ID: 9802-XXXX</span>
+            <i class="fas fa-wifi"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="stacked-card">
+        <div class="stack-layer layer-3"></div>
+        <div class="stack-layer layer-2"></div>
+        <div class="stack-layer layer-1">
+          <div class="stack-content">
+            <span class="bundle-badge">Family Bundle</span>
+            <h3>Euro Trip 2026</h3>
+            <ul class="bundle-list">
+              <li><i class="fas fa-check"></i> Flights for 4</li>
+              <li><i class="fas fa-check"></i> 5-Star Stays</li>
+              <li><i class="fas fa-check"></i> Guided Tours</li>
             </ul>
+            <button class="outline-gold-btn" style="width: 100%;" onclick="window.location.href='404page.html'">View
+              Bundle</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="nav-actions">
-                <a href="login.html" class="login-btn">Login</a>
-                <a href="register.html" class="cta-btn">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="particles"></div>
+    <div class="container">
+      <div class="glass-card" data-aos="fade-up" data-aos-duration="1000">
+        <h2>Ready To Explore The World?</h2>
+        <p>Join our community and get exclusive travel guides delivered to your inbox.</p>
+
+        <!-- Input Container with Validation -->
+        <div class="input-container">
+          <div class="input-group">
+            <input type="email" id="cta-email" placeholder="Enter your email" required>
+            <button id="subscribe-btn" class="btn-primary">Subscribe</button>
+          </div>
+          <!-- Error Message Placeholder -->
+          <span id="email-error" class="error-msg"></span>
         </div>
 
-        <div class="hamburger" id="hamburger">
-            <i class="fa-solid fa-bars"></i>
+        <div class="button-group">
+          <button class="btn-outline" onclick="window.location.href='404page.html'">Explore Destinations</button>
+          <button class="btn-primary" onclick="window.location.href='404page.html'">Start Your Journey</button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer" id="footer">
-        <div class="footer-container">
+  <!-- Include AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-            <div class="footer-top">
-                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
-                    <div class="logo">
-                        <a href="index.html">
-                        <img src="./asset/yellow_logo.webp" alt="logo"></a>
-                    </div>
-                    <p class="brand-desc">
-                        "Curating extraordinary journeys for the modern traveler. Experience seamless planning, exclusive destinations, and world-class service for your ultimate getaway."
-                    </p>
-                    <div class="social-icons">
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
 
-                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
-                    <h4 class="footer-heading">Platform</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-                        <li><a href="destination.html"><i class="fa-solid fa-angle-right"></i> Destination</a></li>
-                        <li><a href="tours.html"><i class="fa-solid fa-angle-right"></i> Tours</a></li>
-                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
-                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
-                    </ul>
-                </div>
 
-                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
-                    <h4 class="footer-heading">Support</h4>
-                    <ul class="support-info">
-                        <li>
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>support@stackly.travel</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Salem City, Tamil Nadu</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+91 98765 43210</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>Mon - Fri: 9 AM - 6 PM</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-globe"></i>
-                            <span>www.stackly.travel</span>
-                        </li>
-                    </ul>
-                </div>
 
-                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
-                    <h4 class="footer-heading">Newsletter</h4>
-                    <p class="newsletter-desc">
-                        "Ready for your next adventure? Join our mailing list to get early access to special tour packages, seasonal discounts, and expert travel tips."
-                    </p>
-                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
-                        <div class="newsletter-input-group" id="nlInputGroup">
-                            <input type="email" id="nlEmailInput" class="newsletter-input"
-                                placeholder="Enter your email" required>
-                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
-                        </div>
-                        <div id="nlMessage" class="form-message"></div>
-                    </form>
-                </div>
-            </div>
 
-            <div class="footer-bottom">
-                <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
-                <div class="bottom-links">
-                    <a href="404page.html">Terms & Conditions</a>
-                    <a href="404page.html">Privacy Policy</a>
-                    <a href="404page.html">Cookie Policy</a>
-                    <a href="404page.html">Refund Policy</a>
-                </div>
-            </div>
+  <footer class="footer" id="footer">
+    <div class="footer-container">
 
+      <div class="footer-top">
+        <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+          <div class="logo">
+            <a href="index.html">
+              <img src="./asset/yellow_logo.webp" alt="logo"></a>
+          </div>
+          <p class="brand-desc">
+            "Curating extraordinary journeys for the modern traveler. Experience seamless planning, exclusive
+            destinations, and world-class service for your ultimate getaway."
+          </p>
+          <div class="social-icons">
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="destination.html"><i class="fa-solid fa-angle-right"></i> Destination</a></li>
+            <li><a href="tours.html"><i class="fa-solid fa-angle-right"></i> Tours</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="support-info">
+            <li>
+              <i class="fa-regular fa-envelope"></i>
+              <span>support@stackly.travel</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Salem City, Tamil Nadu</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon - Fri: 9 AM - 6 PM</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-globe"></i>
+              <span>www.stackly.travel</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="newsletter-desc">
+            "Ready for your next adventure? Join our mailing list to get early access to special tour packages, seasonal
+            discounts, and expert travel tips."
+          </p>
+          <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-group" id="nlInputGroup">
+              <input type="email" id="nlEmailInput" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+            </div>
+            <div id="nlMessage" class="form-message"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
+        <div class="bottom-links">
+          <a href="404page.html">Terms & Conditions</a>
+          <a href="404page.html">Privacy Policy</a>
+          <a href="404page.html">Cookie Policy</a>
+          <a href="404page.html">Refund Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const exploreBtn = document.querySelector('.hero-explore-btn');
+    const searchInput = document.getElementById('dynamicSearch');
+
+    exploreBtn.addEventListener('click', () => {
+      if (searchInput.value.trim() === "") {
+        // Save current placeholder to restore it later
+        const originalPlaceholder = searchInput.getAttribute('placeholder');
+
+        // Change placeholder to error message
+        searchInput.value = ""; // clear input
+        searchInput.setAttribute('placeholder', "Please enter a destination!");
+        searchInput.classList.add('error-placeholder');
+        searchInput.classList.add('shake-anim');
+
+        // Reset after 2 seconds
+        setTimeout(() => {
+          searchInput.classList.remove('shake-anim');
+          searchInput.classList.remove('error-placeholder');
+          searchInput.setAttribute('placeholder', "Explore Maldives..."); // Or restore original
+        }, 2000);
+      } else {
+        window.location.href = '404page.html'
+      }
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all destination cards
+      const cards = document.querySelectorAll(".continent-card");
+
+      // Create an observer
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          // If the card is in the viewport
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            // Optional: Unobserve if you only want the animation to happen once
+            // observer.unobserve(entry.target); 
+          }
+        });
+      }, {
+        root: null, // viewport
+        threshold: 0.15, // Trigger when 15% of the card is visible
+        rootMargin: "0px 0px -50px 0px" // Trigger slightly before it comes fully into view
+      });
+
+      // Attach observer to each card
+      cards.forEach((card) => {
+        observer.observe(card);
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const flipCards = document.querySelectorAll(".flip-card");
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          // Add animation class when card enters the viewport
+          if (entry.isIntersecting) {
+            // Optional: add a slight delay based on the element's index for a "staggered" effect
+            setTimeout(() => {
+              entry.target.classList.add("animate-in");
+            }, 100); // 100ms delay
+
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.2, // Trigger when 20% of the card is visible
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      flipCards.forEach((card) => {
+        observer.observe(card);
+      });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all circular experience cards
+      const expCards = document.querySelectorAll(".experience-card");
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Adding a slight delay based on index for a cool wave effect
+            setTimeout(() => {
+              entry.target.classList.add("animate-in");
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      expCards.forEach((card) => {
+        observer.observe(card);
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Intersection Observer (Fade-in steps as they appear)
+      const steps = document.querySelectorAll(".timeline-step");
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      steps.forEach((step) => observer.observe(step));
+
+      // 2. Scroll Line Filling Animation
+      const timeline = document.querySelector('.timeline');
+      const progressBar = document.getElementById('timeline-progress');
+
+      window.addEventListener('scroll', () => {
+        if (!timeline) return;
+
+        // Viewport Center (This is where the line hits and fills)
+        const windowCenter = window.innerHeight / 2 + 100; // Offset slightly lower
+        const rect = timeline.getBoundingClientRect();
+
+        // Calculate how far we've scrolled past the top of the timeline
+        let progress = (windowCenter - rect.top) / rect.height;
+
+        // Lock the value between 0 and 1
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Apply progress as height percentage to the Gold line
+        progressBar.style.height = `${progress * 100}%`;
+
+        // Highlight the dot when the scroll line touches it
+        steps.forEach((step) => {
+          const dot = step.querySelector('.timeline-dot');
+          const dotRect = dot.getBoundingClientRect();
+
+          // If dot hits our invisible trigger line
+          if (dotRect.top < windowCenter) {
+            step.classList.add('active-dot');
+          } else {
+            step.classList.remove('active-dot');
+          }
+        });
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Scroll Animation Logic
+      const scrollElements = document.querySelectorAll('.scroll-animate');
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      scrollElements.forEach(el => scrollObserver.observe(el));
+
+      // 2. Stacked Loop with Left Exit Logic
+      let currentIndex = 0;
+      let isAnimating = false; // Prevents clicking rapidly and breaking the animation
+      const cards = document.querySelectorAll('.testi-card');
+      const totalCards = cards.length;
+
+      function updateStack() {
+        cards.forEach((card, i) => {
+          // Clear all classes
+          card.classList.remove('testi-active', 'testi-next-1', 'testi-next-2', 'testi-next-3', 'testi-next-4', 'testi-hidden', 'testi-exit-left');
+
+          // Calculate circular position
+          let position = i - currentIndex;
+          if (position < 0) position += totalCards;
+
+          // Apply stack classes
+          if (position === 0) {
+            card.classList.add('testi-active');
+          } else if (position === 1) {
+            card.classList.add('testi-next-1');
+          } else if (position === 2) {
+            card.classList.add('testi-next-2');
+          } else if (position === 3) {
+            card.classList.add('testi-next-3');
+          } else if (position === 4) {
+            card.classList.add('testi-next-4');
+          } else {
+            card.classList.add('testi-hidden');
+          }
+        });
+      }
+
+      // Function triggered by the Next button or clicking a card
+      window.triggerNext = function () {
+        if (isAnimating) return; // Stop if currently animating
+        isAnimating = true;
+
+        // 1. Find current active card and animate it out to the left
+        const activeCard = document.querySelector('.testi-active');
+        if (activeCard) {
+          activeCard.classList.add('testi-exit-left');
+        }
+
+        // 2. Wait 600ms for the exit CSS transition to finish
+        setTimeout(() => {
+          if (activeCard) {
+            activeCard.classList.remove('testi-exit-left');
+          }
+
+          // 3. Shift index forward to make the next card active
+          currentIndex = (currentIndex + 1) % totalCards;
+
+          // 4. Update the stack to pull the next cards forward
+          updateStack();
+
+          // Unlock animation
+          isAnimating = false;
+        }, 600); // 600ms matches the CSS transition time
+      };
+
+      // Initialize the stack on load
+      updateStack();
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Scroll Animation Logic
+      const scrollElements = document.querySelectorAll('.scroll-animate');
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      scrollElements.forEach(el => scrollObserver.observe(el));
+    });
+
+    // 2. Interactive Image Swap Logic
+    function updateStickyImage(newSrc, newTitle, newDesc) {
+      // Only trigger on larger screens where the sticky layout is active
+      if (window.innerWidth > 992) {
+        const mainImg = document.getElementById('main-sticky-img');
+        const titleElement = document.getElementById('sticky-title');
+        const descElement = document.getElementById('sticky-desc');
+
+        // Prevent unnecessary updates if hovering the same image
+        if (mainImg.src === newSrc) return;
+
+        // Fade out
+        mainImg.classList.add('fade-out');
+
+        // Wait for fade out to complete, then swap source and fade back in
+        setTimeout(() => {
+          mainImg.src = newSrc;
+          titleElement.textContent = newTitle;
+          descElement.textContent = newDesc;
+
+          // Remove fade-out class to trigger fade-in CSS transition
+          mainImg.classList.remove('fade-out');
+        }, 250); // This matches half the transition time in CSS
+      }
+    }
+
+
+    // Initialize AOS Animation
+    AOS.init();
+
+    // Email Validation Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const emailInput = document.getElementById("cta-email");
+      const subscribeBtn = document.getElementById("subscribe-btn");
+      const errorMsg = document.getElementById("email-error");
+
+      // Regular Expression for proper Email format
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      subscribeBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevents page reload
+
+        const emailValue = emailInput.value.trim();
+
+        // 1. Check if empty
+        if (emailValue === "") {
+          emailInput.classList.add("error-border");
+          errorMsg.innerText = "Email cannot be empty!";
+          errorMsg.style.display = "block";
+        }
+        // 2. Check if invalid format
+        else if (!emailValue.match(emailPattern)) {
+          emailInput.classList.add("error-border");
+          errorMsg.innerText = "Please enter a valid email address!";
+          errorMsg.style.display = "block";
+        }
+        // 3. Success!
+        else {
+          emailInput.classList.remove("error-border");
+          errorMsg.style.display = "none";
+
+          // Show Success Alert
+          window.location.href = '404page.html'
+          emailInput.value = ""; // Clear input field after success
+        }
+      });
+
+      // Remove error message automatically when user starts typing again
+      emailInput.addEventListener("input", function () {
+        emailInput.classList.remove("error-border");
+        errorMsg.style.display = "none";
+      });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // --- TIMELINE HIGHLIGHT & PROGRESS LINE ANIMATION ---
+      const sections = document.querySelectorAll('.t-section');
+      const navNodes = document.querySelectorAll('.t-node');
+      const progressLine = document.getElementById('timeline-progress');
+      const timelineArea = document.getElementById('timeline-scroll-area');
+
+      // 1. Highlight Active Section on Scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -70% 0px', // Triggers when section is roughly in the middle
+        threshold: 0
+      };
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const targetId = entry.target.getAttribute('id');
+
+            // Remove active class from all
+            navNodes.forEach(node => node.classList.remove('active'));
+
+            // Add active class to current
+            const activeNode = document.querySelector(`.t-node[data-target="${targetId}"]`);
+            if (activeNode) activeNode.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+      // 2. Animate Progress Line Height on Scroll
+      if (timelineArea && progressLine) {
+        window.addEventListener('scroll', () => {
+          // Get total height of content area
+          const areaRect = timelineArea.getBoundingClientRect();
+
+          // Calculate how far we've scrolled within the area
+          const windowHeight = window.innerHeight;
+          let scrollPercentage = 0;
+
+          // Start filling when area reaches top of screen
+          if (areaRect.top < windowHeight / 2) {
+            const scrolled = (windowHeight / 2) - areaRect.top;
+            const maxScroll = areaRect.height;
+            scrollPercentage = (scrolled / maxScroll) * 100;
+          }
+
+          // Cap the percentage between 0 and 100
+          if (scrollPercentage < 0) scrollPercentage = 0;
+          if (scrollPercentage > 100) scrollPercentage = 100;
+
+          progressLine.style.height = `${scrollPercentage}%`;
+        });
+      }
+
+      // 3. Smooth Scroll when clicking timeline links
+      navNodes.forEach(node => {
+        node.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-target');
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            // Offset by 100px to account for sticky headers
+            const yOffset = -120;
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        });
+      });
+
+    });
+
+  </script>
 </body>
 
 </html>

@@ -546,3 +546,102 @@ body {
         gap: 10px;
     }
 }
+
+
+/* =========================================
+   Stackly Premium Loader
+   ========================================= */
+
+/* Prevent scrolling while loading */
+body.loading-active {
+  overflow: hidden !important;
+}
+
+.stackly-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-navy, #0B192C);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999; /* Always on top */
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+/* Hide class added by JS */
+.stackly-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Optional: Golden Spinning Ring */
+.loader-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--premium-gold, #D4AF37);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  animation: spinRing 2s linear infinite;
+  pointer-events: none;
+}
+
+.loader-brand {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--premium-gold, #D4AF37);
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+.loader-tagline {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #F8F9FA;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  opacity: 0.8;
+  animation: fadeUpTag 1s ease-out forwards;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); transform: scale(1); }
+  100% { text-shadow: 0 0 35px rgba(212, 175, 55, 0.7); transform: scale(1.05); }
+}
+
+@keyframes spinRing {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeUpTag {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 0.8; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .loader-brand { font-size: 3rem; }
+  .loader-tagline { font-size: 0.9rem; letter-spacing: 3px; }
+  .loader-ring { width: 180px; height: 180px; }
+}

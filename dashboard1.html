@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Traveler Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="stackly-loader" class="stackly-loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <h1 class="loader-brand">Stackly</h1>
+    <p class="loader-tagline">Travel & Tourism</p>
+  </div>
+</div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <a href="index.html">
+            <img src="./asset/yellow_logo.webp" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item active" data-target="page-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#" class="nav-item" data-target="page-mytrips"><i class="fas fa-plane"></i> My Trips</a></li>
+            <li><a href="#" class="nav-item" data-target="page-wishlist"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="#" class="nav-item" data-target="page-bookings"><i class="fas fa-calendar-alt"></i> Bookings</a></li>
+            <li><a href="#" class="nav-item" data-target="page-reviews"><i class="fas fa-comments"></i> Reviews</a></li>
+        </ul>
+        <ul class="nav-links bottom-links">
+            <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back To Home</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <h2 id="dynamic-page-title">Traveler Dashboard</h2>
+            </div>
+            
+            <div class="header-right">
+                <div class="notification">
+                  <a href="404page.html">  <i class="fas fa-bell"></i></a>
+                    <span class="badge">3</span>
+                </div>
+                <div class="profile">
+                    <img src="./asset/w4.webp" alt="Profile Image">
+                    <div class="profile-info">
+                        <h4 class="user-name">Surya Prakash</h4>
+                        <p class="user-email-display">loading...</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="page-dashboard" class="page-section active">
+            <section class="section scroll-animate">
+                <h2 class="section-title">Welcome Back!</h2>
+                <div class="profile-banner-card">
+                    <div class="banner-welcome">
+                        <h3>Hello, <span class="user-name">Traveler</span>!</h3>
+                        <p class="important-email-box">
+                            <i class="fas fa-envelope"></i> Logged in as: <strong id="dash-email">loading...</strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section scroll-animate">
+    <h3 class="sub-section-title">Your Next Journey Awaits</h3>
+    
+    <div class="hero-grid">
+        <div class="hero-card">
+            <div class="hero-image-container">
+                <img src="./asset/a3.webp" alt="Paris">
+            </div>
+            <div class="hero-content">
+                <h3>Paris, France</h3>
+                <div class="countdown">
+                    <i class="fas fa-clock"></i> Starts in: <span id="timer1">Loading...</span>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-image-container">
+                <img src="./asset/w15.webp" alt="Santorini">
+            </div>
+            <div class="hero-content">
+                <h3>Santorini, Greece</h3>
+                <div class="countdown">
+                    <i class="fas fa-clock"></i> Starts in: <span id="timer2">Loading...</span>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-image-container">
+                <img src="./asset/q3.webp" alt="Kyoto">
+            </div>
+            <div class="hero-content">
+                <h3>Kyoto, Japan</h3>
+                <div class="countdown">
+                    <i class="fas fa-clock"></i> Starts in: <span id="timer3">Loading...</span>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Book Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- === NEW SECTION 1: Explore by Style (Pill Buttons Design) === -->
+        <section class="section scroll-animate">
+            <h3 class="sub-section-title">Explore by Style</h3>
+            <div class="category-grid">
+                <div class="category-pill">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <span>Beaches</span>
+                </div>
+                <div class="category-pill">
+                    <i class="fas fa-mountain"></i>
+                    <span>Mountains</span>
+                </div>
+                <div class="category-pill">
+                    <i class="fas fa-city"></i>
+                    <span>City Life</span>
+                </div>
+                <div class="category-pill">
+                    <i class="fas fa-campground"></i>
+                    <span>Camping</span>
+                </div>
+                <div class="category-pill">
+                    <i class="fas fa-monument"></i>
+                    <span>Heritage</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NEW SECTION 2: Deal of the Week (Split Banner Design) === -->
+        <section class="section scroll-animate">
+            <h3 class="sub-section-title">Exclusive Deal</h3>
+            <div class="deal-banner">
+                <div class="deal-image">
+                    <img src="./asset/a2.webp" alt="Dubai Deal">
+                </div>
+                <div class="deal-content">
+                    <span class="discount-badge">30% OFF</span>
+                    <h4>Dubai Luxury Safari</h4>
+                    <p>Experience the ultimate luxury in Dubai with an exclusive 5-night package including a premium desert safari and Burj Khalifa entry.</p>
+                    <div class="deal-price">
+                        <strike class="text-muted">$1,500</strike> 
+                        <strong class="gold-text">$1,050</strong>
+                    </div>
+                    <button class="gold-btn" onclick="window.location.href='404page.html'">Claim Deal</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NEW SECTION 3: My Travel Stats (Highlight Box Design) === -->
+        <section class="section scroll-animate">
+            <h3 class="sub-section-title">My Travel Stats</h3>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-info">
+                        <h4>12</h4>
+                        <p>Countries Visited</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-plane"></i></div>
+                    <div class="stat-info">
+                        <h4>45K</h4>
+                        <p>Miles Flown</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-crown"></i></div>
+                    <div class="stat-info">
+                        <h4 class="gold-text">Gold</h4>
+                        <p>Member Status</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div id="page-mytrips" class="page-section">
+    <!-- SECTION 1: Active Trips (Now with 3 Flip Cards) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Active Trips</h2>
+        <div class="flip-grid">
+            <!-- Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url('./asset/a3.webp');">
+                        <h3 class="destination-name">Dubai</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Dubai Trip</h3>
+                        <p><strong>Date:</strong> 15 Oct 2026</p>
+                        <p><strong>Status:</strong> <span class="status confirmed">Upcoming</span></p>
+                        <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 (New) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url('./asset/a6.webp');">
+                        <h3 class="destination-name">Bali</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Bali Retreat</h3>
+                        <p><strong>Date:</strong> 02 Nov 2026</p>
+                        <p><strong>Status:</strong> <span class="status pending">Processing</span></p>
+                        <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 (New) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url('./asset/a12.webp');">
+                        <h3 class="destination-name">Paris</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Paris Getaway</h3>
+                        <p><strong>Date:</strong> 20 Dec 2026</p>
+                        <p><strong>Status:</strong> <span class="status confirmed">Upcoming</span></p>
+                        <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Past Adventures -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Past Adventures</h2>
+        <div class="simple-list-card">
+            <div class="list-item">
+                <i class="fas fa-check-circle gold-text"></i>
+                <div>
+                    <h4>Singapore</h4>
+                    <p>Completed on: Jan 2025</p>
+                </div>
+            </div>
+            <div class="list-item">
+                <i class="fas fa-check-circle gold-text"></i>
+                <div>
+                    <h4>Malaysia</h4>
+                    <p>Completed on: Aug 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Pre-Trip Checklist (NEW DESIGN 1) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Pre-Trip Checklist</h2>
+        <div class="checklist-card">
+            <label class="check-item">
+                <input type="checkbox" checked>
+                <span class="custom-checkbox"><i class="fas fa-check"></i></span>
+                <div class="check-info">
+                    <h4>Book Flight Tickets</h4>
+                    <p>Completed</p>
+                </div>
+            </label>
+            <label class="check-item">
+                <input type="checkbox" checked>
+                <span class="custom-checkbox"><i class="fas fa-check"></i></span>
+                <div class="check-info">
+                    <h4>Reserve Hotel</h4>
+                    <p>Completed</p>
+                </div>
+            </label>
+            <label class="check-item">
+                <input type="checkbox">
+                <span class="custom-checkbox"><i class="fas fa-check"></i></span>
+                <div class="check-info">
+                    <h4>Apply for Visa</h4>
+                    <p>Due in 3 days</p>
+                </div>
+            </label>
+            <label class="check-item">
+                <input type="checkbox">
+                <span class="custom-checkbox"><i class="fas fa-check"></i></span>
+                <div class="check-info">
+                    <h4>Pack Travel Essentials</h4>
+                    <p>Pending</p>
+                </div>
+            </label>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Travel Memories Gallery (NEW DESIGN 2) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Travel Memories</h2>
+        <div class="memory-gallery">
+            <div class="memory-item">
+                <img src="./asset/t1.webp" alt="Maldives">
+                <div class="memory-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Maldives '23</span>
+                </div>
+            </div>
+            <div class="memory-item">
+                <img src="./asset/q1.webp" alt="Swiss">
+                <div class="memory-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Swiss Alps '24</span>
+                </div>
+            </div>
+            <div class="memory-item">
+                <img src="./asset/q3.webp" alt="Tokyo">
+                <div class="memory-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Tokyo '22</span>
+                </div>
+            </div>
+            <div class="memory-item">
+                <img src="./asset/q5.webp" alt="Sydney">
+                <div class="memory-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Sydney '21</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <div id="page-wishlist" class="page-section">
+    <!-- SECTION 1: Dream Destinations (Marquee with 4 unique cards + duplicates for infinite loop) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Dream Destinations</h2>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <!-- Card 1 -->
+                <div class="recom-card glow-border">
+                    <img src="./asset/w15.webp" alt="Maldives">
+                    <div class="recom-info"><h4>Maldives</h4><p>Beach Paradise</p></div>
+                </div>
+                <!-- Card 2 -->
+                <div class="recom-card glow-border">
+                    <img src="./asset/w22.webp" alt="Swiss">
+                    <div class="recom-info"><h4>Switzerland</h4><p>Snow Mountains</p></div>
+                </div>
+                <!-- Card 3 (New) -->
+                <div class="recom-card glow-border">
+                    <img src="./asset/w21.webp" alt="Kyoto">
+                    <div class="recom-info"><h4>Kyoto</h4><p>Cultural Heritage</p></div>
+                </div>
+                <!-- Card 4 (New) -->
+                <div class="recom-card glow-border">
+                    <img src="./asset/r1.webp" alt="Santorini">
+                    <div class="recom-info"><h4>Santorini</h4><p>Coastal Views</p></div>
+                </div>
+                
+                <!-- DUPLICATES FOR CONTINUOUS INFINITE SCROLL -->
+                <div class="recom-card glow-border">
+                    <img src="./asset/w15.webp" alt="Maldives">
+                    <div class="recom-info"><h4>Maldives</h4><p>Beach Paradise</p></div>
+                </div>
+                <div class="recom-card glow-border">
+                    <img src="./asset/w22.webp" alt="Swiss">
+                    <div class="recom-info"><h4>Switzerland</h4><p>Snow Mountains</p></div>
+                </div>
+                <div class="recom-card glow-border">
+                    <img src="./asset/w21.webp" alt="Kyoto">
+                    <div class="recom-info"><h4>Kyoto</h4><p>Cultural Heritage</p></div>
+                </div>
+                <div class="recom-card glow-border">
+                    <img src="./asset/r1.webp" alt="Santorini">
+                    <div class="recom-info"><h4>Santorini</h4><p>Coastal Views</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Saved Activities -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Saved Activities</h2>
+        <div class="simple-list-card">
+            <div class="list-item">
+                <i class="fas fa-parachute-box gold-text"></i>
+                <div>
+                    <h4>Sky Diving in Dubai</h4>
+                    <p>Added 2 weeks ago</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Book</button>
+            </div>
+            <div class="list-item">
+                <i class="fas fa-scuba-diving gold-text"></i>
+                <div>
+                    <h4>Scuba Diving in Maldives</h4>
+                    <p>Added 1 month ago</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Book</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Price Drop Alerts (NEW DESIGN 1) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Price Drop Alerts</h2>
+        <div class="alert-grid">
+            <div class="alert-card">
+                <div class="pulse-dot"></div>
+                <div class="alert-info">
+                    <h4>Flights to Kyoto</h4>
+                    <p>Prices dropped by 15% for your selected dates!</p>
+                    <div class="price-compare">
+                        <strike>$850</strike> <strong>$720</strong>
+                    </div>
+                </div>
+                <button class="outline-gold-btn small-btn" onclick="window.location.href='404page.html'">View Details</button>
+            </div>
+            
+            <div class="alert-card">
+                <div class="pulse-dot"></div>
+                <div class="alert-info">
+                    <h4>Swiss Hotel Packages</h4>
+                    <p>Flash sale! 20% off on 4-star hotels.</p>
+                    <div class="price-compare">
+                        <strike>$1,200</strike> <strong>$960</strong>
+                    </div>
+                </div>
+                <button class="outline-gold-btn small-btn" onclick="window.location.href='404page.html'">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Curated Travel Guides (NEW DESIGN 2) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Saved Travel Guides</h2>
+        <div class="guide-list">
+            <div class="guide-card">
+                <div class="guide-img">
+                    <img src="./asset/q12.webp" alt="Travel Guide">
+                </div>
+                <div class="guide-details">
+                    <span class="guide-tag">Tips & Tricks</span>
+                    <h4>How to pack for a 14-day Europe trip</h4>
+                    <p>10 mins read • Saved 3 days ago</p>
+                </div>
+                <i class="fas fa-bookmark gold-text guide-bookmark"></i>
+            </div>
+            
+            <div class="guide-card">
+                <div class="guide-img">
+                    <img src="./asset/w19.webp" alt="Food Guide">
+                </div>
+                <div class="guide-details">
+                    <span class="guide-tag">Food & Culture</span>
+                    <h4>Top 10 must-try street foods in Japan</h4>
+                    <p>7 mins read • Saved 1 week ago</p>
+                </div>
+                <i class="fas fa-bookmark gold-text guide-bookmark"></i>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <div id="page-bookings" class="page-section">
+    <!-- SECTION 1: Flight Tickets (Added 2 more items) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Flight Tickets</h2>
+        <div class="simple-list-card">
+            <!-- Item 1 -->
+            <div class="list-item">
+                <i class="fas fa-plane-departure gold-text"></i>
+                <div>
+                    <h4>Chennai (MAA) to Paris (CDG)</h4>
+                    <p>Qatar Airways | 12 Nov 2026</p>
+                </div>
+                <span class="status confirmed">Confirmed</span>
+            </div>
+            <!-- Item 2 (New) -->
+            <div class="list-item">
+                <i class="fas fa-plane-departure gold-text"></i>
+                <div>
+                    <h4>Paris (CDG) to Zurich (ZRH)</h4>
+                    <p>Air France | 18 Nov 2026</p>
+                </div>
+                <span class="status confirmed">Confirmed</span>
+            </div>
+            <!-- Item 3 (New) -->
+            <div class="list-item">
+                <i class="fas fa-plane-arrival gold-text"></i>
+                <div>
+                    <h4>Zurich (ZRH) to Chennai (MAA)</h4>
+                    <p>Emirates | 25 Nov 2026</p>
+                </div>
+                <span class="status pending">Processing</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION 2: Hotel Reservations (Added 2 more items) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Hotel Reservations</h2>
+         <div class="simple-list-card">
+            <!-- Item 1 -->
+            <div class="list-item">
+                <i class="fas fa-hotel gold-text"></i>
+                <div>
+                    <h4>Le Grand Paris Hotel</h4>
+                    <p>Check-in: 13 Nov | 4 Nights</p>
+                </div>
+                <span class="status pending">Processing</span>
+            </div>
+            <!-- Item 2 (New) -->
+            <div class="list-item">
+                <i class="fas fa-hotel gold-text"></i>
+                <div>
+                    <h4>Swiss Alps Retreat</h4>
+                    <p>Check-in: 18 Nov | 3 Nights</p>
+                </div>
+                <span class="status confirmed">Confirmed</span>
+            </div>
+            <!-- Item 3 (New) -->
+            <div class="list-item">
+                <i class="fas fa-hotel gold-text"></i>
+                <div>
+                    <h4>Zurich City Inn</h4>
+                    <p>Check-in: 21 Nov | 4 Nights</p>
+                </div>
+                <span class="status confirmed">Confirmed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Transport & Car Rentals (NEW DESIGN 1) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Transport & Car Rentals</h2>
+        <div class="transport-grid">
+            <div class="transport-card">
+                <div class="transport-icon"><i class="fas fa-car"></i></div>
+                <div class="transport-details">
+                    <h4>Premium SUV Rental</h4>
+                    <p>Paris City • 14 Nov to 16 Nov</p>
+                </div>
+                <button class="outline-gold-btn small-btn" onclick="window.location.href='404page.html'">Manage</button>
+            </div>
+            <div class="transport-card">
+                <div class="transport-icon"><i class="fas fa-train"></i></div>
+                <div class="transport-details">
+                    <h4>EuroStar Train Pass</h4>
+                    <p>Paris to Zurich • 18 Nov</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">E-Ticket</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Activity Tickets (NEW DESIGN 2 - Ticket Style) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Activity Tickets</h2>
+        <div class="ticket-wrapper">
+            <div class="activity-ticket">
+                <div class="ticket-date">
+                    <span class="ticket-day">15</span>
+                    <span class="ticket-month">NOV</span>
+                </div>
+                <div class="ticket-info">
+                    <h4>Eiffel Tower Summit Access</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris, France • 10:00 AM</p>
+                    <span class="status confirmed">Paid</span>
+                </div>
+            </div>
+            
+            <div class="activity-ticket">
+                <div class="ticket-date">
+                    <span class="ticket-day">19</span>
+                    <span class="ticket-month">NOV</span>
+                </div>
+                <div class="ticket-info">
+                    <h4>Swiss Alps Ski Pass</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Zermatt, Switzerland • Full Day</p>
+                    <span class="status pending">Reserved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+        <div id="page-reviews" class="page-section">
+    <!-- SECTION 1: My Published Reviews (Added 2 more + Hover effect) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">My Published Reviews</h2>
+        <div class="simple-list-card">
+            <!-- Item 1 -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Singapore Trip</h4>
+                    <p class="gold-text">★★★★★ <span class="white-text">"Amazing experience, very clean city!"</span></p>
+                </div>
+            </div>
+            <!-- Item 2 (New) -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Dubai Desert Safari</h4>
+                    <p class="gold-text">★★★★☆ <span class="white-text">"Thrilling ride, but the food could be better."</span></p>
+                </div>
+            </div>
+            <!-- Item 3 (New) -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Bali Retreat</h4>
+                    <p class="gold-text">★★★★★ <span class="white-text">"Perfect relaxing getaway. Highly recommend the spa!"</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION 2: Pending Reviews (Added 2 more + Hover effect) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Pending Reviews</h2>
+        <div class="simple-list-card">
+            <!-- Item 1 -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Malaysia Tour</h4>
+                    <p>How was your trip? Tell us about it!</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Write Review</button>
+            </div>
+            <!-- Item 2 (New) -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Paris City Tour</h4>
+                    <p>Did you enjoy the Eiffel Tower view?</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Write Review</button>
+            </div>
+            <!-- Item 3 (New) -->
+            <div class="list-item hover-item">
+                <div>
+                    <h4>Swiss Alps Cable Car</h4>
+                    <p>Share your snowy adventure experience!</p>
+                </div>
+                <button class="gold-btn small-btn" onclick="window.location.href='404page.html'">Write Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Reviewer Stats (NEW DESIGN 1 - Badge Style) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">My Reviewer Stats</h2>
+        <div class="review-stats-grid">
+            <div class="stat-badge-card">
+                <i class="fas fa-medal"></i>
+                <h4>Top Guide</h4>
+                <p>Level 4 Reviewer</p>
+            </div>
+            <div class="stat-badge-card">
+                <i class="fas fa-pen-nib"></i>
+                <h4>12</h4>
+                <p>Total Reviews</p>
+            </div>
+            <div class="stat-badge-card">
+                <i class="fas fa-thumbs-up"></i>
+                <h4>450</h4>
+                <p>Helpful Votes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Community Highlights (NEW DESIGN 2 - Speech Bubble Style) -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Community Highlights</h2>
+        <div class="community-grid">
+            <div class="speech-bubble-card">
+                <div class="speech-bubble">
+                    <p class="gold-text">★★★★★</p>
+                    <p class="bubble-text">"The Kyoto heritage tour was simply magical. The tour guide was very knowledgeable."</p>
+                </div>
+                <div class="bubble-user">
+                    <img src="./asset/w2.webp" alt="User">
+                    <div>
+                        <h4>Anita R.</h4>
+                        <p>Reviewed Kyoto, Japan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="speech-bubble-card">
+                <div class="speech-bubble">
+                    <p class="gold-text">★★★★☆</p>
+                    <p class="bubble-text">"Great hotel in Santorini, but the booking process took longer than expected."</p>
+                </div>
+                <div class="bubble-user">
+                    <img src="./asset/w1.webp" alt="User">
+                    <div>
+                        <h4>John D.</h4>
+                        <p>Reviewed Santorini, Greece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    </main>
+
+   <script>
+        // 1. Login page-la save panna email-a edukurom
+        const storedEmail = localStorage.getItem('loggedInEmail');
+        const displayEmail = storedEmail ? storedEmail : "guest@example.com";
+
+        // Email-la irunthu '@' ku munnadi irukka name-a pirichu edukurom
+        let extractedName = displayEmail.split('@')[0];
+        
+        // Name-oda muthal letter-a Capital aaki kaata (Optional but looks good)
+        extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+        
+        const loggedInUser = {
+            name: extractedName, // Ippo dynamic-a email name inga vanthudum
+            email: displayEmail 
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".user-name").forEach(el => el.textContent = loggedInUser.name);
+            document.querySelectorAll(".user-email-display, #dash-email").forEach(el => el.textContent = loggedInUser.email);
+            triggerAnimations();
+        });
+
+        // 2. Mobile Sidebar Toggle
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // 3. Navigation Logic (Switching Pages)
+        const navItems = document.querySelectorAll('.nav-item');
+        const pages = document.querySelectorAll('.page-section');
+        const pageTitle = document.getElementById('dynamic-page-title');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Add active class to clicked link
+                item.classList.add('active');
+
+                // Change Topbar Title
+                pageTitle.textContent = item.textContent.trim();
+
+                // Hide all pages
+                pages.forEach(page => page.classList.remove('active'));
+                
+                // Show targeted page
+                const targetId = item.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+
+                // Close sidebar on mobile after clicking
+                if(window.innerWidth <= 768) {
+                    toggleSidebar();
+                }
+
+                // Retrigger animations for the new page
+                triggerAnimations();
+            });
+        });
+
+        // 4. Countdown Timer
+        const countDownDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+        const timerEl = document.getElementById("timer");
+        if(timerEl) {
+            setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                timerEl.innerHTML = days + "d " + hours + "h " + minutes + "m";
+            }, 1000);
+        }
+
+        // 5. Scroll Animations
+        function triggerAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-animate').forEach((el) => {
+                el.classList.remove('fade-in'); // Reset animation
+                observer.observe(el);
+            });
+        }
+
+
+        // 4. Multiple Countdown Timers Logic
+const trips = [
+    { id: "timer1", daysLeft: 7 },  // Paris in 7 days
+    { id: "timer2", daysLeft: 14 }, // Santorini in 14 days
+    { id: "timer3", daysLeft: 30 }  // Kyoto in 30 days
+];
+
+trips.forEach(trip => {
+    const countDownDate = new Date().getTime() + (trip.daysLeft * 24 * 60 * 60 * 1000);
+    const timerEl = document.getElementById(trip.id);
+    
+    if(timerEl) {
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            if (distance < 0) {
+                timerEl.innerHTML = "Trip Started!";
+                timerEl.style.color = "#00E676"; // Green text when started
+            } else {
+                timerEl.innerHTML = days + "d " + hours + "h " + minutes + "m";
+            }
+        }, 1000);
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Lock the scrollbar immediately when page starts loading
+  document.body.classList.add('loading-active');
+
+  const loader = document.getElementById('stackly-loader');
+
+  if (loader) {
+    // Wait for exactly 2 seconds (2000 milliseconds)
+    setTimeout(() => {
+      // 1. Fade out the loader
+      loader.classList.add('fade-out');
+      
+      // 2. Unlock the scrollbar so user can scroll the website
+      document.body.classList.remove('loading-active');
+
+      // 3. Optional cleanup: Remove the loader from DOM completely after fade finishes (0.6s)
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 600);
+
+    }, 2000);
+  }
+
+});
+</script>
+</body>
+</html>
