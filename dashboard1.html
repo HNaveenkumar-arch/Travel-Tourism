@@ -752,6 +752,21 @@
             document.getElementById('sidebar').classList.toggle('active');
         }
 
+        // --- PUTHUSA ADD PANNA CODE (MOBILE MENU OUTSIDE CLICK CLOSE) ---
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+
+            // Mobile view-la (width <= 768px) mattum idhu work aagum
+            if (window.innerWidth <= 768) {
+                // Sidebar open-la irukka nu check pannum, matrum click panna edam sidebar & button-ku veliya irukka nu check pannum
+                if (sidebar && menuToggle && sidebar.classList.contains('active') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+        // -----------------------------------------------------------------
+
         const navItems = document.querySelectorAll('.nav-item');
         const pages = document.querySelectorAll('.page-section');
         const pageTitle = document.getElementById('dynamic-page-title');

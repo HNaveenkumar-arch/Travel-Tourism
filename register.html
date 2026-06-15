@@ -537,164 +537,175 @@
         </div>
     </main>
 
-    <script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
 
+        document.body.classList.add('loading-active');
 
-        document.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('stackly-loader');
 
-            document.body.classList.add('loading-active');
+        if (loader) {
+            setTimeout(() => {
+                loader.classList.add('fade-out');
 
-            const loader = document.getElementById('stackly-loader');
+                document.body.classList.remove('loading-active');
 
-            if (loader) {
                 setTimeout(() => {
-                    loader.classList.add('fade-out');
+                    loader.style.display = 'none';
+                }, 600);
 
-                    document.body.classList.remove('loading-active');
-
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 600);
-
-                }, 2000);
-            }
-
-        });
-        function selectRole(roleName) {
-            const travelerCard = document.querySelector('.Traveler');
-            const organizerCard = document.querySelector('.Organizer');
-            const buttonText = document.getElementById('selectedRoleText');
-
-            travelerCard.classList.remove('active');
-            organizerCard.classList.remove('active');
-
-            if (roleName === 'Traveler') {
-                travelerCard.classList.add('active');
-                buttonText.innerText = 'Traveler';
-            } else {
-                organizerCard.classList.add('active');
-                buttonText.innerText = 'Tour Organizer';
-            }
+            }, 2000);
         }
 
-        function setupPasswordToggle(toggleId, inputId) {
-            const toggleBtn = document.getElementById(toggleId);
-            const inputField = document.getElementById(inputId);
+    });
 
-            toggleBtn.addEventListener('click', function () {
-                const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
-                inputField.setAttribute('type', type);
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
-            });
+    function selectRole(roleName) {
+        const travelerCard = document.querySelector('.Traveler');
+        const organizerCard = document.querySelector('.Organizer');
+        const buttonText = document.getElementById('selectedRoleText');
+
+        travelerCard.classList.remove('active');
+        organizerCard.classList.remove('active');
+
+        if (roleName === 'Traveler') {
+            travelerCard.classList.add('active');
+            buttonText.innerText = 'Traveler';
+        } else {
+            organizerCard.classList.add('active');
+            buttonText.innerText = 'Tour Organizer';
+        }
+    }
+
+    function setupPasswordToggle(toggleId, inputId) {
+        const toggleBtn = document.getElementById(toggleId);
+        const inputField = document.getElementById(inputId);
+
+        toggleBtn.addEventListener('click', function () {
+            const type = inputField.getAttribute('type') === 'password' ? 'text' : 'password';
+            inputField.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    }
+
+    setupPasswordToggle('togglePassword', 'password');
+    setupPasswordToggle('toggleConfirmPassword', 'confirmPassword');
+
+    const registerForm = document.getElementById('registerForm');
+    const fullnameField = document.getElementById('fullname');
+    const emailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+    const confirmPasswordField = document.getElementById('confirmPassword');
+
+    const nameErrorMsg = document.getElementById('nameErrorMsg');
+    const emailErrorMsg = document.getElementById('emailErrorMsg');
+    const passwordErrorMsg = document.getElementById('passwordErrorMsg');
+    const confirmPasswordErrorMsg = document.getElementById('confirmPasswordErrorMsg');
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const namePattern = /^[A-Za-z\s]+$/; // ONLY LETTERS & SPACES
+
+    registerForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let isFormValid = true;
+
+        // --- NAME VALIDATION UPDATED ---
+        if (fullnameField.value.trim() === "") {
+            fullnameField.classList.add('error-input');
+            nameErrorMsg.innerText = "Full name is required";
+            nameErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else if (!fullnameField.value.match(namePattern)) {
+            fullnameField.classList.add('error-input');
+            nameErrorMsg.innerText = "Please enter letters only (No numbers)";
+            nameErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else {
+            fullnameField.classList.remove('error-input');
+            nameErrorMsg.style.display = "none";
         }
 
-        setupPasswordToggle('togglePassword', 'password');
-        setupPasswordToggle('toggleConfirmPassword', 'confirmPassword');
+        // --- EMAIL VALIDATION ---
+        if (emailField.value.trim() === "") {
+            emailField.classList.add('error-input');
+            emailErrorMsg.innerText = "Email cannot be empty";
+            emailErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else if (!emailField.value.match(emailPattern)) {
+            emailField.classList.add('error-input');
+            emailErrorMsg.innerText = "Please enter a valid email address";
+            emailErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else {
+            emailField.classList.remove('error-input');
+            emailErrorMsg.style.display = "none";
+        }
 
-        const registerForm = document.getElementById('registerForm');
-        const fullnameField = document.getElementById('fullname');
-        const emailField = document.getElementById('email');
-        const passwordField = document.getElementById('password');
-        const confirmPasswordField = document.getElementById('confirmPassword');
+        // --- PASSWORD VALIDATION ---
+        const pwdLength = passwordField.value.trim().length;
+        if (pwdLength === 0) {
+            passwordField.classList.add('error-input');
+            passwordErrorMsg.innerText = "Password cannot be empty";
+            passwordErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else if (pwdLength < 6) {
+            passwordField.classList.add('error-input');
+            passwordErrorMsg.innerText = "Password must be at least 6 characters";
+            passwordErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else {
+            passwordField.classList.remove('error-input');
+            passwordErrorMsg.style.display = "none";
+        }
 
-        const nameErrorMsg = document.getElementById('nameErrorMsg');
-        const emailErrorMsg = document.getElementById('emailErrorMsg');
-        const passwordErrorMsg = document.getElementById('passwordErrorMsg');
-        const confirmPasswordErrorMsg = document.getElementById('confirmPasswordErrorMsg');
+        // --- CONFIRM PASSWORD VALIDATION ---
+        if (confirmPasswordField.value.trim() === "") {
+            confirmPasswordField.classList.add('error-input');
+            confirmPasswordErrorMsg.innerText = "Please confirm your password";
+            confirmPasswordErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else if (confirmPasswordField.value !== passwordField.value) {
+            confirmPasswordField.classList.add('error-input');
+            confirmPasswordErrorMsg.innerText = "Passwords do not match";
+            confirmPasswordErrorMsg.style.display = "block";
+            isFormValid = false;
+        } else {
+            confirmPasswordField.classList.remove('error-input');
+            confirmPasswordErrorMsg.style.display = "none";
+        }
 
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        // --- SUCCESS REDIRECT ---
+        if (isFormValid) {
+            window.location.href = 'login.html'
+        }
+    });
 
-        registerForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+    const inputs = [fullnameField, emailField, passwordField, confirmPasswordField];
+    const errors = [nameErrorMsg, emailErrorMsg, passwordErrorMsg, confirmPasswordErrorMsg];
 
-            let isFormValid = true;
-
-            if (fullnameField.value.trim() === "") {
-                fullnameField.classList.add('error-input');
-                nameErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                fullnameField.classList.remove('error-input');
-                nameErrorMsg.style.display = "none";
-            }
-
-            if (emailField.value.trim() === "") {
-                emailField.classList.add('error-input');
-                emailErrorMsg.innerText = "Email cannot be empty";
-                emailErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else if (!emailField.value.match(emailPattern)) {
-                emailField.classList.add('error-input');
-                emailErrorMsg.innerText = "Please enter a valid email address";
-                emailErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                emailField.classList.remove('error-input');
-                emailErrorMsg.style.display = "none";
-            }
-
-            const pwdLength = passwordField.value.trim().length;
-            if (pwdLength === 0) {
-                passwordField.classList.add('error-input');
-                passwordErrorMsg.innerText = "Password cannot be empty";
-                passwordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else if (pwdLength < 6) {
-                passwordField.classList.add('error-input');
-                passwordErrorMsg.innerText = "Password must be at least 6 characters";
-                passwordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                passwordField.classList.remove('error-input');
-                passwordErrorMsg.style.display = "none";
-            }
-
-            if (confirmPasswordField.value.trim() === "") {
-                confirmPasswordField.classList.add('error-input');
-                confirmPasswordErrorMsg.innerText = "Please confirm your password";
-                confirmPasswordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else if (confirmPasswordField.value !== passwordField.value) {
-                confirmPasswordField.classList.add('error-input');
-                confirmPasswordErrorMsg.innerText = "Passwords do not match";
-                confirmPasswordErrorMsg.style.display = "block";
-                isFormValid = false;
-            } else {
-                confirmPasswordField.classList.remove('error-input');
-                confirmPasswordErrorMsg.style.display = "none";
-            }
-
-            if (isFormValid) {
-                window.location.href = 'login.html'
-            }
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', () => {
+            input.classList.remove('error-input');
+            errors[index].style.display = 'none';
         });
+    });
 
-        const inputs = [fullnameField, emailField, passwordField, confirmPasswordField];
-        const errors = [nameErrorMsg, emailErrorMsg, passwordErrorMsg, confirmPasswordErrorMsg];
+    document.addEventListener('DOMContentLoaded', () => {
+        const animElements = document.querySelectorAll('.anim-element');
 
-        inputs.forEach((input, index) => {
-            input.addEventListener('input', () => {
-                input.classList.remove('error-input');
-                errors[index].style.display = 'none';
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, { threshold: 0.1 });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const animElements = document.querySelectorAll('.anim-element');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            animElements.forEach(el => observer.observe(el));
-        });
-    </script>
+        animElements.forEach(el => observer.observe(el));
+    });
+</script>
 </body>
 
 </html>

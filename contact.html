@@ -584,56 +584,83 @@
 
         document.addEventListener('DOMContentLoaded', () => {
 
-            const contactForm = document.getElementById('luxuryContactForm');
+    const contactForm = document.getElementById('luxuryContactForm');
 
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                    let isFormValid = true;
-                    const inputs = contactForm.querySelectorAll('.input-control');
+            let isFormValid = true;
+            const inputs = contactForm.querySelectorAll('.input-control');
 
-                    inputs.forEach(input => {
-                        const group = input.parentElement;
-                        const errorMsgElement = group.querySelector('.error-message');
+            inputs.forEach(input => {
+                const group = input.parentElement;
+                const errorMsgElement = group.querySelector('.error-message');
 
-                        if (input.value.trim() === '') {
-                            group.classList.add('has-error');
-                            if (errorMsgElement) errorMsgElement.innerText = "This field cannot be empty";
-                            isFormValid = false;
-                        }
-                        else if (input.type === 'text' && !/^[a-zA-Z\s]+$/.test(input.value)) {
-                            group.classList.add('has-error');
-                            if (errorMsgElement) errorMsgElement.innerText = "Please enter letters only (No numbers allowed)";
-                            isFormValid = false;
-                        }
-                        else if (input.type === 'email' && !validateEmail(input.value)) {
-                            group.classList.add('has-error');
-                            if (errorMsgElement) errorMsgElement.innerText = "Please enter a valid email format";
-                            isFormValid = false;
-                        }
-                        else if (input.type === 'tel' && !/^\d+$/.test(input.value)) {
-                            group.classList.add('has-error');
-                            if (errorMsgElement) errorMsgElement.innerText = "Please enter numbers only";
-                            isFormValid = false;
-                        }
-                        else if (input.type === 'tel' && input.value.trim().length !== 10) {
-                            group.classList.add('has-error');
-                            if (errorMsgElement) errorMsgElement.innerText = "Phone number must be exactly 10 digits";
-                            isFormValid = false;
-                        }
-                        else {
-                            group.classList.remove('has-error');
-                        }
-                    });
+                // 1. Basic Empty Check
+                if (input.value.trim() === '') {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "This field cannot be empty";
+                    isFormValid = false;
+                }
+                // 2. TEXTAREA VALIDATION (Min 10 characters check)
+                else if (input.tagName.toLowerCase() === 'textarea' && input.value.trim().length < 10) {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "Please tell us more! (Minimum 10 characters required)";
+                    isFormValid = false;
+                }
+                // 3. Name Field Validation (Letters only)
+                else if (input.type === 'text' && !/^[a-zA-Z\s]+$/.test(input.value)) {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "Please enter letters only (No numbers allowed)";
+                    isFormValid = false;
+                }
+                // 4. Email Validation
+                else if (input.type === 'email' && !validateEmail(input.value)) {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "Please enter a valid email format";
+                    isFormValid = false;
+                }
+                // 5. Phone Number Validation (Numbers only)
+                else if (input.type === 'tel' && !/^\d+$/.test(input.value)) {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "Please enter numbers only";
+                    isFormValid = false;
+                }
+                // 6. Phone Number Validation (Exactly 10 digits)
+                else if (input.type === 'tel' && input.value.trim().length !== 10) {
+                    group.classList.add('has-error');
+                    if (errorMsgElement) errorMsgElement.innerText = "Phone number must be exactly 10 digits";
+                    isFormValid = false;
+                }
+                // 7. Success (No errors)
+                else {
+                    group.classList.remove('has-error');
+                }
+            });
 
-                    if (isFormValid) {
+            // If all fields pass validation
+            if (isFormValid) {
+                window.location.href = '404page.html';
+                contactForm.reset();
+            }
+        });
 
-                        window.location.href = '404page.html';
-
-                        contactForm.reset();
-                    }
-                });
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+        
+        const allInputs = contactForm.querySelectorAll('.input-control');
+        allInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.parentElement.classList.contains('has-error')) {
+                    input.parentElement.classList.remove('has-error');
+                }
+            });
+        });
+    }
+});
 
                 const allInputs = contactForm.querySelectorAll('.input-control');
                 allInputs.forEach(input => {
@@ -643,14 +670,14 @@
                         }
                     });
                 });
-            }
+            
 
             function validateEmail(email) {
                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return re.test(String(email).toLowerCase());
             }
 
-        });
+        
         document.addEventListener("DOMContentLoaded", () => {
 
             const faqItems = document.querySelectorAll('.faq-item');
