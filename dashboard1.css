@@ -1,4 +1,3 @@
-/* Color Palette */
 :root {
   --navy-deep: #0a192f;
   --navy-card: #112240;
@@ -12,11 +11,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Strict box-sizing to prevent overflow */
+  box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* IMPORTANT: Prevents Desktop Horizontal Scroll (Overflow) */
 body,
 html {
   background-color: var(--navy-deep);
@@ -30,7 +28,6 @@ body {
   min-height: 100vh;
 }
 
-/* Helper Text Classes */
 .gold-text {
   color: var(--gold);
 }
@@ -38,7 +35,6 @@ body {
   color: var(--white);
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -50,7 +46,6 @@ body {
   border-radius: 4px;
 }
 
-/* Animation */
 .scroll-animate {
   opacity: 0;
   transform: translateY(20px);
@@ -61,7 +56,6 @@ body {
   transform: translateY(0);
 }
 
-/* === SIDEBAR === */
 .sidebar {
   width: 260px;
   background-color: var(--navy-card);
@@ -112,17 +106,15 @@ body {
   margin-top: auto;
 }
 
-/* === MAIN CONTENT (Fixed width for Desktop Overflow) === */
 .main-content {
   flex: 1;
   margin-left: 260px;
-  width: calc(100% - 260px); /* Strictly minus sidebar width */
+  width: calc(100% - 260px);
   padding: 30px 40px;
   transition: 0.3s ease;
   overflow-x: hidden;
 }
 
-/* PAGE SECTIONS LOGIC */
 .page-section {
   display: none;
 }
@@ -139,7 +131,6 @@ body {
   }
 }
 
-/* TOP PROFILE BAR */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -182,7 +173,7 @@ body {
   cursor: pointer;
   color: var(--white);
 }
-.notification i{
+.notification i {
   color: white;
 }
 .badge {
@@ -217,7 +208,6 @@ body {
   font-size: 13px;
 }
 
-/* GENERAL SECTIONS */
 .section {
   margin-bottom: 50px;
   width: 100%;
@@ -235,7 +225,6 @@ body {
   font-size: 20px;
 }
 
-/* NEW: SIMPLE LIST CARDS (For Bookings, Reviews, Past trips) */
 .simple-list-card {
   background-color: var(--navy-card);
   border-radius: 12px;
@@ -269,7 +258,6 @@ body {
   margin-left: auto;
 }
 
-/* BUTTONS */
 .gold-btn {
   background-color: var(--gold);
   color: var(--navy-deep);
@@ -291,7 +279,6 @@ body {
   margin-top: 0;
 }
 
-/* DASHBOARD BANNER */
 .profile-banner-card {
   background: linear-gradient(
     135deg,
@@ -322,7 +309,6 @@ body {
   font-size: 15px;
 }
 
-/* === NEW: HERO GRID (For Multiple Destinations) === */
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,14 +316,13 @@ body {
   width: 100%;
 }
 
-/* HERO CARD (Updated for Grid Layout) */
 .hero-card {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  height: 300px; /* Reduced from 350px for better grid fit */
+  height: 300px;
   width: 100%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 .hero-image-container {
   width: 100%;
@@ -357,11 +342,11 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 25px; /* Adjusted padding for multiple cards */
+  padding: 25px;
   background: linear-gradient(to top, var(--navy-deep) 90%, transparent);
 }
 .hero-content h3 {
-  font-size: 26px; /* Slightly smaller to fit grid */
+  font-size: 26px;
   color: var(--white);
   margin-bottom: 8px;
 }
@@ -372,7 +357,6 @@ body {
   font-weight: bold;
 }
 
-/* FLIP CARDS */
 .flip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -455,7 +439,6 @@ body {
   color: var(--navy-deep);
 }
 
-/* MARQUEE CARDS */
 .marquee-wrapper {
   width: 100%;
   overflow: hidden;
@@ -523,7 +506,6 @@ body {
   color: rgba(10, 25, 47, 0.8);
 }
 
-/* === 100% MOBILE RESPONSIVE === */
 @media screen and (max-width: 992px) {
   .main-content {
     padding: 20px;
@@ -539,7 +521,7 @@ body {
   }
 
   .main-content {
-    width: 100%; /* Fix width for mobile */
+    width: 100%;
     margin-left: 0;
     padding: 15px;
   }
@@ -549,7 +531,7 @@ body {
   }
   .profile-info {
     display: none;
-  } /* Hide name on mobile */
+  }
   .header-right {
     gap: 15px;
   }
@@ -563,7 +545,6 @@ body {
     font-size: 18px;
   }
 
-  /* Make sure hero grid aligns perfectly on mobile */
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -593,920 +574,877 @@ body {
   }
 }
 
-/* =========================================================
-   NEW DESIGNS: Categories, Deal Banner, and Travel Stats
-========================================================= */
-
-/* --- Section 1: Categories (Pill Design) --- */
 .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
 }
 
 .category-pill {
-    background-color: var(--navy-card);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 50px;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--text-light);
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--navy-card);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .category-pill i {
-    color: var(--gold);
-    font-size: 18px;
-    transition: color 0.3s ease;
+  color: var(--gold);
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .category-pill:hover {
-    background-color: var(--gold);
-    color: var(--navy-deep);
-    transform: translateY(-3px);
+  background-color: var(--gold);
+  color: var(--navy-deep);
+  transform: translateY(-3px);
 }
 
 .category-pill:hover i {
-    color: var(--navy-deep);
+  color: var(--navy-deep);
 }
 
-
-/* --- Section 2: Deal Banner (Split Layout) --- */
 .deal-banner {
-    display: flex;
-    background-color: var(--navy-card);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: flex;
+  background-color: var(--navy-card);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Updated Section 2: Deal Banner (With Image Zoom) --- */
 .deal-image {
-    flex: 1;
-    min-height: 250px;
-    overflow: hidden; /* Zoom aagum pothu veliya varama irukka */
+  flex: 1;
+  min-height: 250px;
+  overflow: hidden;
 }
 
 .deal-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease; /* Smooth zoom animation */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-/* Hover panum pothu zoom aaganum */
 .deal-banner:hover .deal-image img {
-    transform: scale(1.12); /* 12% zoom aagum */
+  transform: scale(1.12);
 }
 
 .deal-content {
-    flex: 1;
-    padding: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 15px;
+  flex: 1;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .discount-badge {
-    background-color: #ff4757;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
+  background-color: #ff4757;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .deal-content h4 {
-    font-size: 26px;
-    color: var(--white);
+  font-size: 26px;
+  color: var(--white);
 }
 
 .deal-content p {
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 15px;
 }
 
 .deal-price {
-    font-size: 22px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
+  font-size: 22px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .deal-price strike {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-
-/* --- Section 3: Travel Stats (Highlight Box Design) --- */
 .stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .stat-box {
-    background-color: rgba(255, 215, 0, 0.05);
-    border-left: 4px solid var(--gold);
-    border-radius: 10px;
-    padding: 20px 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: transform 0.3s ease;
+  background-color: rgba(255, 215, 0, 0.05);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
 }
 
 .stat-box:hover {
-    transform: translateX(5px);
-    background-color: rgba(255, 215, 0, 0.08);
+  transform: translateX(5px);
+  background-color: rgba(255, 215, 0, 0.08);
 }
 
 .stat-icon {
-    background-color: var(--navy-card);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: var(--gold);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: var(--navy-card);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--gold);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .stat-info h4 {
-    font-size: 24px;
-    color: var(--white);
-    margin-bottom: 2px;
+  font-size: 24px;
+  color: var(--white);
+  margin-bottom: 2px;
 }
 
 .stat-info p {
-    font-size: 14px;
-    color: var(--text-muted);
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
-
-/* === MOBILE RESPONSIVE FIXES (Add inside your existing @media screen and (max-width: 768px) block) === */
 @media screen and (max-width: 768px) {
-    .deal-banner {
-        flex-direction: column; /* Stacks image on top, text on bottom */
-    }
-    
-    .deal-image {
-        min-height: 200px;
-    }
+  .deal-banner {
+    flex-direction: column;
+  }
 
-    .deal-content {
-        padding: 25px;
-    }
-    
-    .deal-content h4 {
-        font-size: 22px;
-    }
+  .deal-image {
+    min-height: 200px;
+  }
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 pills per row on mobile */
-    }
+  .deal-content {
+    padding: 25px;
+  }
+
+  .deal-content h4 {
+    font-size: 22px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-
-/* =========================================================
-   NEW DESIGNS: Checklist & Travel Memories
-========================================================= */
-
-/* --- Section 3: Pre-Trip Checklist Design --- */
 .checklist-card {
-    background-color: var(--navy-card);
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  background-color: var(--navy-card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .check-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    border-left: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-left: 3px solid transparent;
 }
 
 .check-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-left-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--gold);
 }
 
 .check-item input {
-    display: none; /* Hide default browser checkbox */
+  display: none;
 }
 
 .custom-checkbox {
-    width: 25px;
-    height: 25px;
-    border: 2px solid var(--text-muted);
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--text-muted);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
 }
 
 .custom-checkbox i {
-    color: var(--navy-deep);
-    font-size: 14px;
-    opacity: 0;
-    transition: 0.3s;
+  color: var(--navy-deep);
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.3s;
 }
 
-/* When checkbox is checked */
 .check-item input:checked ~ .custom-checkbox {
-    background-color: var(--gold);
-    border-color: var(--gold);
+  background-color: var(--gold);
+  border-color: var(--gold);
 }
 
 .check-item input:checked ~ .custom-checkbox i {
-    opacity: 1;
+  opacity: 1;
 }
 
 .check-item input:checked ~ .check-info h4 {
-    text-decoration: line-through;
-    color: var(--text-muted);
+  text-decoration: line-through;
+  color: var(--text-muted);
 }
 
 .check-info h4 {
-    color: var(--white);
-    font-size: 16px;
-    margin-bottom: 4px;
-    transition: 0.3s;
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 4px;
+  transition: 0.3s;
 }
 
 .check-info p {
-    color: var(--text-muted);
-    font-size: 13px;
+  color: var(--text-muted);
+  font-size: 13px;
 }
 
-
-/* --- Section 4: Travel Memories Gallery Design --- */
 .memory-gallery {
-    display: grid;
-    /* responsive grid: creates as many columns as fit */
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
 }
 
 .memory-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 1 / 1; /* Makes the images perfect squares */
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .memory-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .memory-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.3));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    transition: 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 25, 47, 0.9),
+    rgba(10, 25, 47, 0.3)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.4s ease;
 }
 
 .memory-overlay i {
-    color: var(--gold);
-    font-size: 24px;
-    transform: translateY(15px);
-    transition: 0.4s ease;
+  color: var(--gold);
+  font-size: 24px;
+  transform: translateY(15px);
+  transition: 0.4s ease;
 }
 
 .memory-overlay span {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: bold;
-    transform: translateY(15px);
-    transition: 0.4s ease;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  transform: translateY(15px);
+  transition: 0.4s ease;
 }
 
-/* Hover Effects */
 .memory-item:hover img {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .memory-item:hover .memory-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .memory-item:hover .memory-overlay i,
 .memory-item:hover .memory-overlay span {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-/* === MOBILE RESPONSIVE FIXES === */
 @media screen and (max-width: 768px) {
-    .memory-gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
-        gap: 15px;
-    }
-    
-    .memory-overlay span {
-        font-size: 14px;
-    }
-    
-    .memory-overlay i {
-        font-size: 20px;
-    }
+  .memory-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .memory-overlay span {
+    font-size: 14px;
+  }
+
+  .memory-overlay i {
+    font-size: 20px;
+  }
 }
 
-
-
-/* =========================================================
-   WISHLIST PAGE - NEW DESIGNS
-========================================================= */
-
-/* --- Continuous Marquee Update --- */
-.marquee-wrapper { 
-    width: 100%; 
-    overflow: hidden; 
-    padding: 10px 0; 
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
 }
-.marquee-content { 
-    display: inline-flex; 
-    gap: 30px; 
-    /* 20 seconds duration for smooth flow */
-    animation: marquee 25s linear infinite; 
+.marquee-content {
+  display: inline-flex;
+  gap: 30px;
+  animation: marquee 25s linear infinite;
 }
-.marquee-content:hover { 
-    animation-play-state: paused; 
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
-/* Moving exact half width makes the duplicate part loop seamlessly */
-@keyframes marquee { 
-    0% { transform: translateX(0); } 
-    100% { transform: translateX(calc(-50% - 15px)); } 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
 }
 
-
-/* --- Section 3: Price Drop Alerts Design --- */
 .alert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .alert-card {
-    background-color: var(--navy-card);
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-left: 4px solid #ff4757; /* Red accent for alert */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+  background-color: var(--navy-card);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-left: 4px solid #ff4757;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .alert-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .pulse-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #ff4757;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
-    animation: pulse 2s infinite;
-    flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ff4757;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
 }
 
 .alert-info {
-    flex: 1;
+  flex: 1;
 }
 
 .alert-info h4 {
-    color: var(--white);
-    font-size: 16px;
-    margin-bottom: 5px;
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .alert-info p {
-    color: var(--text-muted);
-    font-size: 13px;
-    margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 8px;
 }
 
 .price-compare {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .price-compare strike {
-    color: var(--text-muted);
-    font-size: 14px;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
 .price-compare strong {
-    color: #00E676; /* Green for dropped price */
-    font-size: 18px;
+  color: #00e676;
+  font-size: 18px;
 }
 
 .outline-gold-btn {
-    background: transparent;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 8px 15px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .outline-gold-btn:hover {
-    background: var(--gold);
-    color: var(--navy-deep);
+  background: var(--gold);
+  color: var(--navy-deep);
 }
 
-
-/* --- Section 4: Curated Travel Guides Design --- */
 .guide-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .guide-card {
-    background-color: var(--navy-card);
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    gap: 20px;
-    transition: 0.3s ease;
-    cursor: pointer;
+  background-color: var(--navy-card);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .guide-card:hover {
-    background-color: rgba(255, 215, 0, 0.05);
-    transform: translateX(5px);
+  background-color: rgba(255, 215, 0, 0.05);
+  transform: translateX(5px);
 }
 
 .guide-img {
-    width: 120px;
-    height: 80px;
-    border-radius: 8px;
-    overflow: hidden;
-    flex-shrink: 0;
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .guide-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
 }
 
 .guide-card:hover .guide-img img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .guide-details {
-    flex: 1;
+  flex: 1;
 }
 
 .guide-tag {
-    background-color: rgba(255, 215, 0, 0.1);
-    color: var(--gold);
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: bold;
-    display: inline-block;
-    margin-bottom: 8px;
+  background-color: rgba(255, 215, 0, 0.1);
+  color: var(--gold);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 .guide-details h4 {
-    color: var(--white);
-    font-size: 16px;
-    margin-bottom: 5px;
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .guide-details p {
-    color: var(--text-muted);
-    font-size: 13px;
+  color: var(--text-muted);
+  font-size: 13px;
 }
 
 .guide-bookmark {
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .guide-bookmark:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-
-/* === MOBILE RESPONSIVE FIXES === */
 @media screen and (max-width: 768px) {
-    .alert-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .alert-card button {
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .guide-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-    }
-    
-    .guide-img {
-        width: 100%;
-        height: 150px;
-    }
-    
-    .guide-bookmark {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(10, 25, 47, 0.8);
-        border-radius: 50%;
-        padding: 8px;
-    }
+  .alert-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alert-card button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .guide-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .guide-img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .guide-bookmark {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(10, 25, 47, 0.8);
+    border-radius: 50%;
+    padding: 8px;
+  }
 }
 
-
-/* =========================================================
-   BOOKINGS PAGE - NEW DESIGNS
-========================================================= */
-
-/* --- Section 3: Transport & Car Rentals Design --- */
 .transport-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .transport-card {
-    background-color: var(--navy-card);
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--navy-card);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .transport-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 215, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 215, 0, 0.4);
 }
 
 .transport-icon {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 215, 0, 0.1);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--gold);
-    font-size: 20px;
-    flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 215, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gold);
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .transport-details {
-    flex: 1;
+  flex: 1;
 }
 
 .transport-details h4 {
-    color: var(--white);
-    font-size: 16px;
-    margin-bottom: 5px;
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .transport-details p {
-    color: var(--text-muted);
-    font-size: 13px;
+  color: var(--text-muted);
+  font-size: 13px;
 }
 
-
-/* --- Section 4: Activity Tickets Design (Ticket Style) --- */
 .ticket-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .activity-ticket {
-    display: flex;
-    background-color: var(--navy-card);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    position: relative;
-    transition: transform 0.3s ease;
+  display: flex;
+  background-color: var(--navy-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .activity-ticket:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-/* Dashed border effect for ticket */
 .activity-ticket::before {
-    content: '';
-    position: absolute;
-    left: 80px;
-    top: 0;
-    bottom: 0;
-    border-left: 2px dashed rgba(255, 215, 0, 0.3);
+  content: "";
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  border-left: 2px dashed rgba(255, 215, 0, 0.3);
 }
 
 .ticket-date {
-    background-color: rgba(10, 25, 47, 0.6);
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    color: var(--gold);
+  background-color: rgba(10, 25, 47, 0.6);
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: var(--gold);
 }
 
 .ticket-day {
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .ticket-month {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 5px;
 }
 
 .ticket-info {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .ticket-info h4 {
-    color: var(--white);
-    font-size: 18px;
-    margin: 0;
+  color: var(--white);
+  font-size: 18px;
+  margin: 0;
 }
 
 .ticket-info p {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
 }
 
 .ticket-info p i {
-    color: var(--gold);
-    margin-right: 5px;
+  color: var(--gold);
+  margin-right: 5px;
 }
 
-
-/* === MOBILE RESPONSIVE FIXES === */
 @media screen and (max-width: 768px) {
-    .transport-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 15px;
-    }
-    
-    .transport-card button {
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .activity-ticket {
-        flex-direction: column;
-    }
-    
-    .activity-ticket::before {
-        left: 0;
-        top: 60px;
-        right: 0;
-        bottom: auto;
-        border-left: none;
-        border-top: 2px dashed rgba(255, 215, 0, 0.3);
-    }
-    
-    .ticket-date {
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        gap: 10px;
-    }
+  .transport-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .transport-card button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .activity-ticket {
+    flex-direction: column;
+  }
+
+  .activity-ticket::before {
+    left: 0;
+    top: 60px;
+    right: 0;
+    bottom: auto;
+    border-left: none;
+    border-top: 2px dashed rgba(255, 215, 0, 0.3);
+  }
+
+  .ticket-date {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    gap: 10px;
+  }
 }
 
-/* =========================================================
-   REVIEWS PAGE - HOVER EFFECTS & NEW DESIGNS
-========================================================= */
-
-/* --- List Hover Effect (For Published & Pending Reviews) --- */
 .hover-item {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    border: 1px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }
 
 .hover-item:hover {
-    background-color: rgba(255, 215, 0, 0.05); /* Light gold background */
-    transform: translateX(8px); /* Moves slightly right */
-    border-color: rgba(255, 215, 0, 0.2);
-    padding-left: 20px; /* Indent effect */
-    box-shadow: -5px 0 0 var(--gold); /* Left border highlight */
+  background-color: rgba(255, 215, 0, 0.05);
+  transform: translateX(8px);
+  border-color: rgba(255, 215, 0, 0.2);
+  padding-left: 20px;
+  box-shadow: -5px 0 0 var(--gold);
 }
 
-
-/* --- Section 3: Reviewer Stats Design (Badge Cards) --- */
 .review-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .stat-badge-card {
-    background: var(--navy-card);
-    border: 1px dashed var(--gold);
-    border-radius: 12px;
-    padding: 25px 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--navy-card);
+  border: 1px dashed var(--gold);
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .stat-badge-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to bottom, var(--navy-card), rgba(255, 215, 0, 0.05));
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    to bottom,
+    var(--navy-card),
+    rgba(255, 215, 0, 0.05)
+  );
 }
 
 .stat-badge-card i {
-    font-size: 40px;
-    color: var(--gold);
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  font-size: 40px;
+  color: var(--gold);
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
 }
 
 .stat-badge-card h4 {
-    font-size: 26px;
-    color: var(--white);
-    margin-bottom: 5px;
+  font-size: 26px;
+  color: var(--white);
+  margin-bottom: 5px;
 }
 
 .stat-badge-card p {
-    color: var(--text-muted);
-    font-size: 14px;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-
-/* --- Section 4: Community Highlights Design (Speech Bubbles) --- */
 .community-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .speech-bubble-card {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .speech-bubble {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 15px 15px 15px 0; /* Flat bottom-left corner for bubble effect */
-    border-left: 4px solid var(--gold);
-    position: relative;
-    transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px 15px 15px 0;
+  border-left: 4px solid var(--gold);
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .speech-bubble:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-/* Creating the little speech bubble tail */
 .speech-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: -4px;
-    border-width: 15px 15px 0 0;
-    border-style: solid;
-    border-color: var(--gold) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  border-width: 15px 15px 0 0;
+  border-style: solid;
+  border-color: var(--gold) transparent transparent transparent;
 }
 
 .bubble-text {
-    color: var(--text-light);
-    font-style: italic;
-    line-height: 1.6;
-    margin-top: 8px;
-    font-size: 15px;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 8px;
+  font-size: 15px;
 }
 
 .bubble-user {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 15px;
 }
 
 .bubble-user img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
 }
 
 .bubble-user h4 {
-    color: var(--white);
-    font-size: 15px;
-    margin-bottom: 3px;
+  color: var(--white);
+  font-size: 15px;
+  margin-bottom: 3px;
 }
 
 .bubble-user p {
-    color: var(--text-muted);
-    font-size: 12px;
+  color: var(--text-muted);
+  font-size: 12px;
 }
 
-
-/* === MOBILE RESPONSIVE FIXES === */
 @media screen and (max-width: 768px) {
-    .hover-item:hover {
-        transform: translateX(4px); /* Smaller movement on mobile */
-        padding-left: 15px;
-    }
-    
-    .review-stats-grid {
-        grid-template-columns: 1fr; /* Stack badges vertically on mobile */
-    }
-    
-    .community-grid {
-        grid-template-columns: 1fr;
-    }
+  .hover-item:hover {
+    transform: translateX(4px);
+    padding-left: 15px;
+  }
+
+  .review-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* =========================================
-   Stackly Premium Loader
-   ========================================= */
-
-/* Prevent scrolling while loading */
 body.loading-active {
   overflow: hidden !important;
 }
@@ -1517,15 +1455,16 @@ body.loading-active {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-navy, #0B192C);
+  background-color: var(--bg-navy, #0b192c);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999; /* Always on top */
-  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  z-index: 999999;
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
 }
 
-/* Hide class added by JS */
 .stackly-loader.fade-out {
   opacity: 0;
   visibility: hidden;
@@ -1539,7 +1478,6 @@ body.loading-active {
   align-items: center;
 }
 
-/* Optional: Golden Spinning Ring */
 .loader-ring {
   position: absolute;
   top: 50%;
@@ -1548,7 +1486,7 @@ body.loading-active {
   width: 250px;
   height: 250px;
   border: 2px solid transparent;
-  border-top: 2px solid var(--premium-gold, #D4AF37);
+  border-top: 2px solid var(--premium-gold, #d4af37);
   border-bottom: 2px solid rgba(212, 175, 55, 0.2);
   border-radius: 50%;
   animation: spinRing 2s linear infinite;
@@ -1556,8 +1494,8 @@ body.loading-active {
 }
 
 .loader-brand {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--premium-gold, #D4AF37);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--premium-gold, #d4af37);
   font-size: 4.5rem;
   font-weight: 800;
   letter-spacing: 3px;
@@ -1567,8 +1505,8 @@ body.loading-active {
 }
 
 .loader-tagline {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #F8F9FA;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f8f9fa;
   font-size: 1.2rem;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -1577,25 +1515,47 @@ body.loading-active {
   animation: fadeUpTag 1s ease-out forwards;
 }
 
-/* Animations */
 @keyframes pulseGlow {
-  0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); transform: scale(1); }
-  100% { text-shadow: 0 0 35px rgba(212, 175, 55, 0.7); transform: scale(1.05); }
+  0% {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+    transform: scale(1.05);
+  }
 }
 
 @keyframes spinRing {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes fadeUpTag {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 0.8; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .loader-brand { font-size: 3rem; }
-  .loader-tagline { font-size: 0.9rem; letter-spacing: 3px; }
-  .loader-ring { width: 180px; height: 180px; }
+  .loader-brand {
+    font-size: 3rem;
+  }
+  .loader-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+  .loader-ring {
+    width: 180px;
+    height: 180px;
+  }
 }

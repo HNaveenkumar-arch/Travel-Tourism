@@ -425,12 +425,12 @@
 
             <div class="newsletter-wrapper">
                 <h4>Subscribe to our Newsletter</h4>
-                <form id="newsletterForm" class="newsletter-form">
+                <form id="mainNewsletterForm" class="newsletter-form">
                     <div class="input-wrapper">
-                        <input type="email" id="emailInput" placeholder="Enter your email address...">
-                        <button type="submit" id="subscribeBtn">Subscribe</button>
+                        <input type="email" id="mainEmailInput" placeholder="Enter your email address...">
+                        <button type="submit" id="mainSubscribeBtn">Subscribe</button>
                     </div>
-                    <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                    <span class="error-msg" id="mainEmailError">Please enter a valid email address</span>
                 </form>
             </div>
 
@@ -728,28 +728,40 @@
                 });
             });
 
-            const newsletterForm = document.getElementById('newsletterForm');
-            const emailInput = document.getElementById('emailInput');
+            const mainNewsletterForm = document.getElementById('mainNewsletterForm');
+            const mainEmailInput = document.getElementById('mainEmailInput');
+            const mainEmailError = document.getElementById('mainEmailError');
 
-            if (newsletterForm && emailInput) {
-                newsletterForm.addEventListener('submit', (e) => {
+            const isValidEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            };
+
+            if (mainNewsletterForm && mainEmailInput) {
+                mainNewsletterForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const emailValue = emailInput.value.trim();
+                    const emailValue = mainEmailInput.value.trim();
 
                     if (emailValue === '') {
-                        newsletterForm.classList.add('error');
-                    } else {
-                        newsletterForm.classList.remove('error');
+                        mainNewsletterForm.classList.add('error');
+                        if (mainEmailError) mainEmailError.innerText = "Email address cannot be empty";
+                    }
+                    else if (!isValidEmail(emailValue)) {
+                        mainNewsletterForm.classList.add('error');
+                        if (mainEmailError) mainEmailError.innerText = "Please enter a valid email format (e.g., name@mail.com)";
+                    }
+                    else {
+                        mainNewsletterForm.classList.remove('error');
 
                         window.location.href = '404page.html';
 
-                        newsletterForm.reset();
+                        mainNewsletterForm.reset();
                     }
                 });
 
-                emailInput.addEventListener('input', () => {
-                    if (emailInput.value.trim() !== '') {
-                        newsletterForm.classList.remove('error');
+                mainEmailInput.addEventListener('input', () => {
+                    if (mainEmailInput.value.trim() !== '') {
+                        mainNewsletterForm.classList.remove('error');
                     }
                 });
             }

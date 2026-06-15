@@ -202,9 +202,6 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* --------------------------------------
-   Glassmorphism Dynamic Search
-   -------------------------------------- */
 .hero-dynamic-search {
   display: flex;
   align-items: center;
@@ -260,9 +257,6 @@
   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
 }
 
-/* --------------------------------------
-   Responsive Media Queries
-   -------------------------------------- */
 @media (max-width: 960px) {
   .hero-title {
     font-size: 45px;
@@ -303,13 +297,11 @@
   }
 }
 
-/* Placeholder color change for error */
 .error-placeholder::placeholder {
   color: #ff4d4d !important;
   font-weight: 600;
 }
 
-/* Shake Animation */
 .shake-anim {
   animation: shake 0.4s ease-in-out;
 }
@@ -333,7 +325,6 @@
   }
 }
 
-/* --- Premium Color Palette --- */
 :root {
   --bg-navy: #0b192c;
   --card-navy: #152a4a;
@@ -341,13 +332,11 @@
   --text-light: #f8f9fa;
 }
 
-/* Base Reset for sizing and images */
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Ensures padding doesn't increase width */
+  box-sizing: border-box;
 }
-/* Color Variables (Ensure these match your global colors) */
 :root {
   --bg-navy: #0a192f;
   --card-navy: #112240;
@@ -368,33 +357,28 @@ img {
   height: auto;
   display: block;
 }
-/* --- Global Fix --- */
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-navy);
   color: var(--text-light);
-  overflow-x: clip; /* Semicolon added - very important! */
+  overflow-x: clip;
 }
 
-/* --- Container Fix --- */
 .explore-container {
   display: flex;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  /* CRITICAL: Allows children to have different heights */
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
-/* --- Left Side: Sticky Fix --- */
 .left-sticky {
-  width: 100%; /* Changed from flex: 1 to specific width for sticky stability */
-  position: -webkit-sticky; /* Safari support */
+  width: 100%;
+  position: -webkit-sticky;
   position: sticky;
-  top: 120px; /* Space from top screen when scrolling */
-  /* Remove align-self and height: fit-content, they are not needed if align-items is set */
+  top: 120px;
 }
 
 .title {
@@ -423,16 +407,13 @@ body {
   object-fit: cover;
 }
 
-/* --- Right Side: Scrolling --- */
 .right-scroll {
-  width: 100%; /* Changed from flex: 1 to take remaining space */
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding-bottom: 2rem; /* Reduced padding bottom */
+  padding-bottom: 2rem;
 }
-
-/* ... Keep the rest of your card CSS and Media Queries the same ... */
 
 .continent-card {
   background-color: var(--card-navy);
@@ -443,12 +424,10 @@ body {
     box-shadow 0.3s ease,
     border-color 0.3s ease;
   overflow: hidden;
-  /* Initial State for Animation */
   opacity: 0;
   transform: translateY(60px);
 }
 
-/* Image styling inside the card */
 .card-image {
   width: 100%;
   height: 200px;
@@ -477,7 +456,6 @@ body {
   border-left: 6px solid #ffdf00;
 }
 
-/* Animation Class applied via JS */
 .continent-card.animate-in {
   opacity: 1;
   transform: translateY(0);
@@ -486,19 +464,18 @@ body {
     transform 0.8s ease-out;
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 850px) {
   .explore-section {
     padding: 3rem 1rem;
   }
 
   .explore-container {
-    flex-direction: column; /* Stack vertically */
+    flex-direction: column;
     gap: 2rem;
   }
 
   .left-sticky {
-    position: relative; /* Disable sticky on mobile */
+    position: relative;
     top: 0;
     margin-bottom: 1rem;
   }
@@ -509,12 +486,12 @@ body {
   }
 
   .map-container {
-    height: 250px; /* Shorter map on mobile */
+    height: 250px;
   }
 
   .continent-card {
     border-left: 0;
-    border-top: 4px solid var(--premium-gold); /* Move border to top */
+    border-top: 4px solid var(--premium-gold);
   }
 
   .card-content {
@@ -522,15 +499,11 @@ body {
   }
 }
 
-/* =========================================
-   Destination Flip Cards Section (FULL CSS)
-   ========================================= */
-
 .destinations-section {
   background-color: var(--bg-navy);
   padding: 6rem 2rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden; /* Prevents any accidental horizontal scroll */
+  overflow: hidden;
 }
 
 .destinations-container {
@@ -546,21 +519,18 @@ body {
   margin-bottom: 4rem;
 }
 
-/* --- Responsive Grid --- */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
 }
 
-/* --- 3D Flip Card Container --- */
 .flip-card {
   background-color: transparent;
   width: 100%;
   height: 450px;
   perspective: 1000px;
 
-  /* Initial State for Scroll Animation */
   opacity: 0;
   transform: translateY(50px);
 }
@@ -574,12 +544,10 @@ body {
   transform-style: preserve-3d;
 }
 
-/* Trigger flip on Hover (Desktop) and Focus/Active (Mobile) */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* --- Front and Back Base Styles --- */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -592,7 +560,6 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Front Side Design --- */
 .flip-card-front {
   background-color: var(--card-navy);
   border: 2px solid rgba(212, 175, 55, 0.2);
@@ -604,7 +571,6 @@ body {
   object-fit: cover;
 }
 
-/* Gradient overlay so text is always readable */
 .front-overlay {
   position: absolute;
   bottom: 0;
@@ -629,7 +595,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* --- Back Side Design --- */
 .flip-card-back {
   background-color: var(--card-navy);
   color: var(--text-light);
@@ -693,7 +658,6 @@ body {
   box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* --- Scroll Animation Class --- */
 .flip-card.animate-in {
   opacity: 1;
   transform: translateY(0);
@@ -702,7 +666,6 @@ body {
     transform 0.8s ease-out;
 }
 
-/* --- Mobile Specific Tweaks (OVERFLOW FIXED) --- */
 @media (max-width: 768px) {
   .destinations-section {
     padding: 3rem 1rem;
@@ -759,13 +722,9 @@ body {
   }
 }
 
-/* =========================================
-   Infinite Moving Cards Section
-   ========================================= */
-
 .attractions-section {
   background-color: var(--bg-navy);
-  padding: 6rem 0; /* Full width bleeding, so no side padding */
+  padding: 6rem 0;
   overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -779,7 +738,6 @@ body {
   padding: 0 2rem;
 }
 
-/* --- Marquee Container & Fading Edges --- */
 .marquee-wrapper {
   width: 100%;
   overflow: hidden;
@@ -787,7 +745,6 @@ body {
   padding: 1rem 0;
 }
 
-/* Adds a dark fade effect on the left and right edges */
 .marquee-wrapper::before,
 .marquee-wrapper::after {
   content: "";
@@ -796,7 +753,7 @@ body {
   width: 150px;
   height: 100%;
   z-index: 5;
-  pointer-events: none; /* Lets you hover over cards under the fade */
+  pointer-events: none;
 }
 
 .marquee-wrapper::before {
@@ -809,16 +766,13 @@ body {
   background: linear-gradient(to left, var(--bg-navy) 0%, transparent 100%);
 }
 
-/* --- The Moving Track --- */
 .marquee-track {
   display: flex;
   gap: 2.5rem;
   width: max-content;
-  /* 35s speed. Adjust for faster/slower movement */
   animation: scrollMarquee 35s linear infinite;
 }
 
-/* Pause on Hover */
 .marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -829,10 +783,9 @@ body {
   }
   100% {
     transform: translateX(-50%);
-  } /* Moves exactly half the width to seamlessly loop */
+  }
 }
 
-/* --- Card Design --- */
 .marquee-card {
   width: 350px;
   height: 480px;
@@ -853,7 +806,6 @@ body {
   transition: transform 0.6s ease;
 }
 
-/* The title visible before hovering */
 .card-title-default {
   position: absolute;
   bottom: 25px;
@@ -866,14 +818,12 @@ body {
   z-index: 2;
 }
 
-/* The details overlay (Hidden by default) */
 .card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Dark gradient that goes higher up the card */
   background: linear-gradient(
     to top,
     rgba(11, 25, 44, 0.95) 0%,
@@ -885,7 +835,6 @@ body {
   justify-content: flex-end;
   padding: 2.5rem;
 
-  /* Animation initial state */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.4s ease;
@@ -911,9 +860,8 @@ body {
   font-size: 1rem;
 }
 
-/* --- Hover Effects --- */
 .marquee-card:hover {
-  transform: scale(1.08); /* Enlarges card */
+  transform: scale(1.08);
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.6),
     0 0 25px rgba(212, 175, 55, 0.2);
@@ -921,19 +869,18 @@ body {
 }
 
 .marquee-card:hover img {
-  transform: scale(1.1); /* Slight image zoom */
+  transform: scale(1.1);
 }
 
 .marquee-card:hover .card-title-default {
-  opacity: 0; /* Hides default title */
+  opacity: 0;
 }
 
 .marquee-card:hover .card-overlay {
-  opacity: 1; /* Shows details */
+  opacity: 1;
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .attractions-section .section-title {
     font-size: 2.2rem;
@@ -955,13 +902,9 @@ body {
 
   .marquee-wrapper::before,
   .marquee-wrapper::after {
-    width: 50px; /* Smaller fade edges on mobile */
+    width: 50px;
   }
 }
-
-/* =========================================
-   Interactive Experiences Section (Flip Version - FULL & FIXED)
-   ========================================= */
 
 .experiences-section {
   background-color: var(--bg-navy, #0b192c);
@@ -983,7 +926,6 @@ body {
   margin-bottom: 4rem;
 }
 
-/* --- Responsive Grid --- */
 .experiences-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -991,20 +933,17 @@ body {
   justify-items: center;
 }
 
-/* --- Circular 3D Card Container --- */
 .experience-card {
   background-color: transparent;
-  width: 180px; /* Slightly larger to fit text */
+  width: 180px;
   height: 180px;
-  perspective: 1000px; /* Crucial for 3D depth */
+  perspective: 1000px;
   cursor: pointer;
 
-  /* Initial state for Scroll Animation */
   opacity: 0;
   transform: translateY(40px) scale(0.8);
 }
 
-/* Inner wrapper that actually rotates */
 .exp-card-inner {
   position: relative;
   width: 100%;
@@ -1016,13 +955,11 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover (Desktop) and Touch (Mobile) triggers the flip */
 .experience-card:hover .exp-card-inner {
   transform: rotateY(180deg);
   box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
 }
 
-/* --- Front & Back Base Styles --- */
 .exp-card-front,
 .exp-card-back {
   position: absolute;
@@ -1030,7 +967,7 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 50%; /* Keeps the perfect circle shape */
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1038,7 +975,6 @@ body {
   overflow: hidden;
 }
 
-/* --- Front Face --- */
 .exp-card-front {
   background-color: var(--card-navy, #152a4a);
   border: 3px solid rgba(212, 175, 55, 0.3);
@@ -1064,11 +1000,10 @@ body {
   text-transform: uppercase;
 }
 
-/* --- Back Face (Revealed on Hover/Touch) --- */
 .exp-card-back {
   background-color: var(--premium-gold, #d4af37);
   color: var(--bg-navy, #0b192c);
-  transform: rotateY(180deg); /* Start flipped */
+  transform: rotateY(180deg);
   border: 3px solid var(--card-navy, #152a4a);
   padding: 1.5rem;
 }
@@ -1080,7 +1015,6 @@ body {
   margin: 0;
 }
 
-/* --- Scroll Animation Class --- */
 .experience-card.animate-in {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -1089,7 +1023,6 @@ body {
     transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* --- Mobile Responsiveness (FIXED OVERFLOW) --- */
 @media (max-width: 768px) {
   .experiences-section {
     padding: 4rem 1rem;
@@ -1101,13 +1034,12 @@ body {
   }
 
   .experiences-grid {
-    /* More flexible grid instead of strict 2 columns */
     grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
     gap: 1.5rem 1rem;
   }
 
   .experience-card {
-    width: 135px; /* Shrunk slightly to fit two in a row easily */
+    width: 135px;
     height: 135px;
   }
 
@@ -1121,16 +1053,15 @@ body {
   }
 
   .exp-card-back {
-    padding: 0.8rem; /* Reduced padding to give text more breathing room */
+    padding: 0.8rem;
   }
 
   .exp-card-back p {
-    font-size: 0.75rem; /* Smaller text to ensure it stays inside the circle */
+    font-size: 0.75rem;
     line-height: 1.3;
   }
 }
 
-/* --- For extremely small phones (e.g., 320px width) --- */
 @media (max-width: 350px) {
   .experiences-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1138,7 +1069,7 @@ body {
   }
 
   .experience-card {
-    width: 125px; /* Extra shrink for the smallest screens */
+    width: 125px;
     height: 125px;
   }
 
@@ -1150,10 +1081,6 @@ body {
     font-size: 0.7rem;
   }
 }
-
-/* =========================================
-   Destination Timeline Journey Section (UPDATED)
-   ========================================= */
 
 .timeline-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1170,14 +1097,12 @@ body {
   margin-bottom: 5rem;
 }
 
-/* --- Timeline Wrapper --- */
 .timeline {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* --- Central Vertical Line (Faded Gold) --- */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -1189,25 +1114,22 @@ body {
   border-radius: 4px;
 }
 
-/* --- The Scrolling Highlight Line (Bright Gold) --- */
 .timeline-progress {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--gold-highlight, #ffdf00);
-  height: 0%; /* JS will increase this height as you scroll */
+  height: 0%;
   border-radius: 4px;
 }
 
-/* --- Each Step Container --- */
 .timeline-step {
   position: relative;
   width: 100%;
   display: flex;
-  margin-bottom: 5rem; /* Slightly increased spacing for images */
+  margin-bottom: 5rem;
 
-  /* Initial state for IntersectionObserver fade-in */
   opacity: 0;
   transform: translateY(40px);
   transition:
@@ -1215,7 +1137,6 @@ body {
     transform 0.6s ease-out;
 }
 
-/* Odd items align Left, Even items align Right */
 .timeline-step:nth-of-type(odd) {
   justify-content: flex-start;
 }
@@ -1223,15 +1144,14 @@ body {
   justify-content: flex-end;
 }
 
-/* --- The Content Box (UPDATED to fit Images) --- */
 .timeline-content {
   width: 45%;
   background-color: var(--card-navy, #152a4a);
-  padding: 0; /* REMOVED generic padding */
+  padding: 0;
   border-radius: 16px;
   border: 2px solid rgba(212, 175, 55, 0.2);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  overflow: hidden; /* CRITICAL: keeps image inside border radius */
+  overflow: hidden;
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
@@ -1246,18 +1166,16 @@ body {
   box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
 }
 
-/* --- Image Styling (NEW) --- */
 .step-image {
   width: 100%;
-  height: 200px; /* Base height for images */
-  object-fit: cover; /* Ensures image covers area without stretching */
+  height: 200px;
+  object-fit: cover;
   object-position: center;
-  border-bottom: 2px solid rgba(212, 175, 55, 0.2); /* Separator line */
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
 }
 
-/* --- Text Block Inside Content (NEW) --- */
 .text-block {
-  padding: 2rem; /* Restoration of padding just for text area */
+  padding: 2rem;
 }
 
 .step-icon {
@@ -1279,11 +1197,10 @@ body {
   margin: 0;
 }
 
-/* --- The Number Dot --- */
 .timeline-dot {
   position: absolute;
   left: 50%;
-  top: 60px; /* Adjusted lower because of image top edge */
+  top: 60px;
   transform: translateX(-50%);
   width: 45px;
   height: 45px;
@@ -1300,7 +1217,6 @@ body {
   transition: all 0.4s ease;
 }
 
-/* Dot highlights when active-dot class is added */
 .timeline-step.active-dot .timeline-dot {
   background-color: var(--gold-highlight, #ffdf00);
   border-color: var(--gold-highlight, #ffdf00);
@@ -1308,13 +1224,11 @@ body {
   box-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
 }
 
-/* Base Fade-in Animation Class */
 .timeline-step.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness (Left Aligned Timeline - UPDATED) --- */
 @media (max-width: 768px) {
   .timeline-section {
     padding: 4rem 1rem;
@@ -1343,14 +1257,13 @@ body {
     width: 35px;
     height: 35px;
     font-size: 1rem;
-    top: 30px; /* Dot comes higher because card image is smaller */
+    top: 30px;
   }
 
   .timeline-content {
-    width: calc(100% - 50px); /* Adjusted minus space for line and dot */
+    width: calc(100% - 50px);
   }
 
-  /* Shorter images on mobile */
   .step-image {
     height: 150px;
   }
@@ -1367,10 +1280,6 @@ body {
     font-size: 0.95rem;
   }
 }
-
-/* =========================================
-   Traveler Stories - Continuous Loop & Left Exit
-   ========================================= */
 
 .stories-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1392,7 +1301,6 @@ body {
   margin-bottom: 5rem;
 }
 
-/* --- Scrolling Animation Classes --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -1406,7 +1314,6 @@ body {
   transform: translateY(0);
 }
 
-/* --- Slider Container --- */
 .testimonial-slider {
   position: relative;
   max-width: 600px;
@@ -1421,7 +1328,6 @@ body {
   perspective: 1500px;
 }
 
-/* --- Card Base Styles --- */
 .testi-card {
   position: absolute;
   width: 330px;
@@ -1445,7 +1351,6 @@ body {
   flex-direction: column;
 }
 
-/* --- Stacked Positions (Right Fanning) --- */
 .testi-card.testi-active {
   z-index: 10;
   transform: translateX(0) scale(1);
@@ -1485,7 +1390,6 @@ body {
   pointer-events: none;
 }
 
-/* --- EXIT LEFT ANIMATION CLASS --- */
 .testi-card.testi-exit-left {
   z-index: 20;
   transform: translateX(-250px) translateY(20px) rotate(-15deg) scale(0.9);
@@ -1493,7 +1397,6 @@ body {
   pointer-events: none;
 }
 
-/* --- Details Styling --- */
 .testi-card-content img {
   width: 100%;
   height: 100%;
@@ -1546,7 +1449,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* --- Controls Styling --- */
 .slider-controls {
   position: absolute;
   bottom: -20px;
@@ -1578,7 +1480,6 @@ body {
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-/* --- Mobile Responsiveness (Fixed Overflows) --- */
 @media (max-width: 768px) {
   .stories-section {
     padding: 4rem 1rem;
@@ -1598,7 +1499,6 @@ body {
     margin-left: -135px;
   }
 
-  /* Shorter horizontal shift for mobile screens to prevent overflow */
   .testi-card.testi-next-1 {
     transform: translateX(35px) translateY(10px) scale(0.9);
   }
@@ -1612,7 +1512,6 @@ body {
     transform: translateX(90px) translateY(40px) scale(0.75);
   }
 
-  /* Mobile exit animation */
   .testi-card.testi-exit-left {
     transform: translateX(-150px) translateY(20px) rotate(-10deg) scale(0.9);
   }
@@ -1629,10 +1528,6 @@ body {
     margin-left: -120px;
   }
 }
-
-/* =========================================
-   9️⃣ Sticky Gallery Showcase Section
-   ========================================= */
 
 .gallery-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1654,18 +1549,16 @@ body {
   margin-bottom: 4rem;
 }
 
-/* --- Layout: Sticky Left, Scrolling Right --- */
 .gallery-layout {
   display: flex;
   gap: 3rem;
-  align-items: flex-start; /* Important for sticky to work correctly */
+  align-items: flex-start;
 }
 
-/* --- Left Side: Sticky --- */
 .gallery-sticky-side {
   flex: 1;
   position: sticky;
-  top: 100px; /* Distance from top of viewport when sticking */
+  top: 100px;
   height: calc(100vh - 120px);
   max-height: 700px;
 }
@@ -1684,10 +1577,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease; /* Smooth transition when changing images */
+  transition: opacity 0.5s ease;
 }
 
-/* Fade out class for smooth image swaps via JS */
 .fade-out {
   opacity: 0;
 }
@@ -1715,11 +1607,10 @@ body {
   opacity: 0.9;
 }
 
-/* --- Right Side: True Masonry Scroll --- */
 .gallery-scroll-side {
   flex: 1;
-  column-count: 2; /* Creates 2 vertical columns */
-  column-gap: 1.5rem; /* Space between columns */
+  column-count: 2;
+  column-gap: 1.5rem;
 }
 
 .gallery-item {
@@ -1733,13 +1624,11 @@ body {
     transform 0.4s ease,
     border-color 0.4s ease;
 
-  /* Masonry Fixes */
-  break-inside: avoid; /* Prevents card from splitting across columns */
-  margin-bottom: 1.5rem; /* Vertical space between cards */
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
   height: auto;
 }
 
-/* Give images different aspect ratios to create the uneven masonry look */
 .gallery-item:nth-child(1) img {
   aspect-ratio: 3/4;
 }
@@ -1763,14 +1652,13 @@ body {
   transition: transform 0.6s ease;
 }
 
-/* --- Hover Effects & Glass Overlay --- */
 .item-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(11, 25, 44, 0.6); /* Dark overlay */
+  background: rgba(11, 25, 44, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1779,7 +1667,6 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/* Glassmorphism */
 .glass-effect {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -1792,7 +1679,7 @@ body {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1); /* Zoom effect */
+  transform: scale(1.1);
 }
 
 .gallery-item:hover .item-overlay {
@@ -1819,7 +1706,7 @@ body {
   gap: 1rem;
   align-self: flex-end;
 }
-.floating-icons a{
+.floating-icons a {
   text-decoration: none;
 }
 
@@ -1847,7 +1734,6 @@ body {
   color: var(--bg-navy, #0b192c);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -1861,17 +1747,16 @@ body {
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
   .gallery-layout {
     flex-direction: column;
   }
 
   .gallery-sticky-side {
-    position: relative; /* Disables sticky behavior */
+    position: relative;
     top: 0;
     width: 100%;
-    height: 400px; /* Fixed height for top showcase image on tablet/mobile */
+    height: 400px;
     margin-bottom: 2rem;
   }
 }
@@ -1886,11 +1771,10 @@ body {
   }
 
   .gallery-scroll-side {
-    column-count: 1; /* Changes masonry to a single column on phones */
+    column-count: 1;
   }
 }
 
-/* Color Variables */
 :root {
   --navy-deep: #0a192f;
   --navy-card: #112240;
@@ -1906,7 +1790,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Navy Blue Gradient */
+
   background: radial-gradient(
     circle at center,
     var(--navy-card) 0%,
@@ -1921,7 +1805,7 @@ body {
   background: rgba(17, 34, 64, 0.6);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 215, 0, 0.3); /* Gold border */
+  border: 1px solid rgba(255, 215, 0, 0.3);
   padding: 3rem;
   border-radius: 24px;
   max-width: 550px;
@@ -1945,7 +1829,7 @@ body {
 
 .input-container {
   margin-bottom: 30px;
-  text-align: left; /* Aligns error message to the left */
+  text-align: left;
 }
 
 .input-group {
@@ -1971,18 +1855,16 @@ body {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-/* Error styling for input border */
 .input-group input.error-border {
   border-color: var(--error-red);
   box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
 }
 
-/* Error Message Text */
 .error-msg {
   color: var(--error-red);
   font-size: 13px;
   margin-top: 8px;
-  display: none; /* Hidden by default */
+  display: none;
   padding-left: 5px;
   font-weight: 500;
 }
@@ -1994,7 +1876,6 @@ body {
   margin-top: 20px;
 }
 
-/* Primary Gold Button */
 .btn-primary {
   background: var(--gold);
   color: var(--navy-deep);
@@ -2014,7 +1895,6 @@ body {
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Outline Gold Button */
 .btn-outline {
   background: transparent;
   color: var(--gold);
@@ -2035,7 +1915,6 @@ body {
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* === 100% Mobile Responsive === */
 @media (max-width: 600px) {
   .glass-card {
     padding: 2rem 1.5rem;
@@ -2045,7 +1924,6 @@ body {
     font-size: 1.8rem;
   }
 
-  /* Stack inputs vertically */
   .input-group {
     flex-direction: column;
   }
@@ -2055,7 +1933,6 @@ body {
     padding: 15px;
   }
 
-  /* Stack bottom buttons vertically */
   .button-group {
     flex-direction: column;
   }
@@ -2065,22 +1942,18 @@ body {
   }
 }
 
-/* =========================================================
-   STRICT OVERFLOW FIX FOR DESKTOP & MOBILE
-========================================================= */
 html,
 body {
   max-width: 100%;
-    position: relative;
+  position: relative;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Ensure Main Content doesn't push past the screen */
 .main-content {
-  width: calc(100% - 260px); /* Exact width minus sidebar */
+  width: calc(100% - 260px);
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -2092,20 +1965,14 @@ body {
   }
 }
 
-/* =========================================================
-   PREMIUM CARD DESIGNS
-========================================================= */
-
 .premium-cards-grid {
   display: grid;
-  /* responsive grid that adapts to screen size without overflowing */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   width: 100%;
   padding: 20px;
 }
 
-/* --- DESIGN 1: Interactive Reveal Card --- */
 .reveal-card {
   background: var(--navy-card);
   border-radius: 16px;
@@ -2135,7 +2002,7 @@ body {
 }
 
 .reveal-card:hover .reveal-image {
-  height: 140px; /* Shrinks the image to reveal text below */
+  height: 140px;
   border-radius: 16px 16px 0 0;
 }
 
@@ -2175,7 +2042,7 @@ body {
   left: 0;
   width: 100%;
   padding: 20px;
-  height: 180px; /* Space revealed */
+  height: 180px;
   background: var(--navy-card);
   z-index: 1;
   display: flex;
@@ -2199,7 +2066,6 @@ body {
   font-weight: bold;
 }
 
-/* --- DESIGN 2: VIP Holographic Pass --- */
 .holo-card {
   background: linear-gradient(
     135deg,
@@ -2224,7 +2090,6 @@ body {
   box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
 }
 
-/* Moving shiny glare effect */
 .holo-glare {
   position: absolute;
   top: -50%;
@@ -2284,7 +2149,6 @@ body {
   font-size: 16px;
 }
 
-/* --- DESIGN 3: 3D Stacked Bundle Card --- */
 .stacked-card {
   position: relative;
   height: 320px;
@@ -2368,10 +2232,6 @@ body {
   font-size: 12px;
 }
 
-/* =========================================================
-   PREMIUM GOLD BUTTON STYLES
-========================================================= */
-
 .gold-btn {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
   color: var(--navy-deep);
@@ -2382,14 +2242,14 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); /* Soft gold glow */
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .gold-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5); /* Stronger glow on hover */
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
   background: linear-gradient(135deg, var(--gold-hover) 0%, #e6ac00 100%);
 }
 
@@ -2397,9 +2257,6 @@ body {
   padding: 8px 18px;
   font-size: 13px;
 }
-/* =========================================================
-   OUTLINE GOLD BUTTON STYLES (For "View Bundle", etc.)
-========================================================= */
 
 .outline-gold-btn {
   background: transparent;
@@ -2417,15 +2274,14 @@ body {
 
 .outline-gold-btn:hover {
   background: var(--gold);
-  color: var(--navy-deep); /* Text changes to dark blue on hover */
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); /* Soft glow */
-  transform: translateY(-3px); /* Moves up slightly */
+  color: var(--navy-deep);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  transform: translateY(-3px);
 }
 
-/* === 100% MOBILE RESPONSIVE FIX === */
 @media screen and (max-width: 768px) {
   .premium-cards-grid {
-    grid-template-columns: 1fr; /* Single column on mobile prevents overflow */
-    gap: 40px; /* Extra gap since stacked cards expand vertically on hover */
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }

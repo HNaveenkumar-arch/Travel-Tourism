@@ -1,4 +1,3 @@
-/* --- Blog Hero Section --- */
 .blog-hero-section {
   position: relative;
   width: 100vw;
@@ -11,7 +10,6 @@
   color: #fff;
 }
 
-/* Background Video & Overlay */
 .video-wrapper {
   position: absolute;
   inset: 0;
@@ -34,7 +32,6 @@
   );
 }
 
-/* Mouse Follow Glow Effect */
 .mouse-glow {
   position: absolute;
   width: 400px;
@@ -53,7 +50,6 @@
     height 0.3s;
 }
 
-/* Floating Particles */
 .particles-wrapper {
   position: absolute;
   inset: 0;
@@ -133,7 +129,6 @@
   }
 }
 
-/* Content Container */
 .blog-container {
   position: relative;
   z-index: 10;
@@ -142,7 +137,6 @@
   padding: 100px 0;
 }
 
-/* Breadcrumbs */
 .breadcrumb {
   font-size: 0.95rem;
   margin-bottom: 30px;
@@ -172,7 +166,6 @@
   font-weight: 600;
 }
 
-/* Split Layout */
 .blog-split-layout {
   display: flex;
   align-items: center;
@@ -201,7 +194,6 @@
   max-width: 550px;
 }
 
-/* Glassmorphism Search Bar */
 .blog-search-wrapper {
   flex: 0.8;
   width: 100%;
@@ -271,7 +263,6 @@
   transform: scale(1.05);
 }
 
-/* --- Search Validation Styles --- */
 .search-error-msg {
   color: #ff6b6b;
   font-size: 0.85rem;
@@ -295,7 +286,6 @@
   box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
 }
 
-/* Popular Tags */
 .popular-tags {
   margin-top: 20px;
   display: flex;
@@ -321,7 +311,6 @@
   color: var(--navy-blue);
 }
 
-/* Initial Scroll Load Animations */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
@@ -340,7 +329,6 @@
   transition-delay: 0.4s;
 }
 
-/* --- Mobile Responsiveness FIX --- */
 @media (max-width: 992px) {
   .blog-split-layout {
     flex-direction: column;
@@ -388,7 +376,6 @@
     padding-left: 5px;
   }
 
-  /* Responsive Input Field */
   .search-input-group input {
     width: 100%;
     font-size: 0.95rem;
@@ -413,7 +400,6 @@
   }
 }
 
-/* --- Magazine Section Base --- */
 .magazine-section {
   width: 100vw;
   background-color: var(--navy-blue);
@@ -423,7 +409,6 @@
   overflow-x: hidden;
 }
 
-/* Header */
 .mag-header {
   text-align: center;
   margin-bottom: 60px;
@@ -446,7 +431,6 @@
   font-size: 4.5rem;
 }
 
-/* --- Magazine Grid Layout --- */
 .magazine-grid {
   width: 90%;
   max-width: 1200px;
@@ -456,7 +440,6 @@
   gap: 40px;
 }
 
-/* Universal Article Setup */
 .mag-item {
   position: relative;
   overflow: hidden;
@@ -543,7 +526,6 @@
   transition: transform 0.3s;
 }
 
-/* --- Hover Effects --- */
 .mag-item:hover .mag-img-box img {
   transform: scale(1.08);
 }
@@ -561,13 +543,11 @@
   transform: translateX(5px);
 }
 
-/* --- Left Side: Featured Article --- */
 .featured-item {
   height: 100%;
   min-height: 800px;
 }
 
-/* --- Right Side: Asymmetrical Layout --- */
 .mag-right-col {
   display: flex;
   flex-direction: column;
@@ -583,7 +563,6 @@
   font-size: 1.6rem;
 }
 
-/* Small Item Paragraph Hide/Show on Hover */
 .hover-desc {
   opacity: 0;
   height: 0;
@@ -599,7 +578,6 @@
   margin-top: 10px;
 }
 
-/* Staggered Positioning */
 .offset-right {
   width: 85%;
   align-self: flex-end;
@@ -609,7 +587,6 @@
   align-self: flex-start;
 }
 
-/* --- Scroll Animations --- */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -631,7 +608,6 @@
   transition-delay: 0.5s;
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 900px) {
   .magazine-grid {
     grid-template-columns: 1fr;
@@ -652,7 +628,6 @@
     font-size: 1.8rem;
   }
 
-  /* Remove offset & show descriptions fully on mobile for better readability */
   .offset-right,
   .offset-left {
     width: 100%;
@@ -667,14 +642,13 @@
   }
   .mag-content {
     transform: translateY(0);
-  } /* Keep content visible on mobile */
+  }
   .read-link {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/* --- Category Explorer Ribbon Section --- */
 .category-ribbon-section {
   position: relative;
   width: 100vw;
@@ -707,13 +681,11 @@
   font-size: 1.1rem;
 }
 
-/* Ribbon Track Layout */
 .ribbon-wrapper {
   width: 100%;
   overflow: hidden;
   position: relative;
   padding: 20px 0;
-  /* Soft glowing borders top & bottom */
   border-top: 1px solid rgba(255, 215, 0, 0.2);
   border-bottom: 1px solid rgba(255, 215, 0, 0.2);
   background: rgba(255, 255, 255, 0.02);
@@ -731,7 +703,6 @@
   padding-right: 30px;
 }
 
-/* Pause scroll on hover */
 .ribbon-wrapper:hover .ribbon-track {
   animation-play-state: paused;
 }
@@ -745,7 +716,6 @@
   }
 }
 
-/* Individual Category Items */
 .ribbon-item {
   position: relative;
   width: 250px;
@@ -763,7 +733,6 @@
   justify-content: center;
 }
 
-/* Background Image (Hidden by default) */
 .item-bg {
   position: absolute;
   inset: 0;
@@ -777,7 +746,6 @@
   z-index: 1;
 }
 
-/* Overlay to ensure text readability when BG shows */
 .item-overlay {
   position: absolute;
   inset: 0;
@@ -789,7 +757,6 @@
   z-index: 2;
 }
 
-/* Content (Icon & Text) */
 .item-content {
   position: relative;
   z-index: 3;
@@ -827,10 +794,9 @@
   white-space: nowrap;
 }
 
-/* --- HOVER & TOUCH EFFECTS (Mobile Fix Included) --- */
 .ribbon-item:hover,
 .ribbon-item.active {
-  width: 400px; /* Category Expands */
+  width: 400px;
   border-color: var(--gold);
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
   transform: translateY(-5px);
@@ -838,18 +804,17 @@
 
 .ribbon-item:hover .item-bg,
 .ribbon-item.active .item-bg {
-  opacity: 1; /* Background Changes/Reveals */
+  opacity: 1;
   transform: scale(1);
 }
 
 .ribbon-item:hover .item-icon,
 .ribbon-item.active .item-icon {
-  transform: rotate(360deg); /* Icon Rotates */
+  transform: rotate(360deg);
   background: var(--gold);
   color: var(--navy-blue);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .ribbon-header h2 {
     font-size: 2.2rem;
@@ -879,16 +844,11 @@
     height: 16px;
   }
 
-  /* Touch Expand Size for Mobile */
   .ribbon-item:hover,
   .ribbon-item.active {
     width: 280px;
   }
 }
-
-/* =========================================
-   Blog Timeline Section
-   ========================================= */
 
 .blog-timeline-section {
   background-color: var(--bg-navy, #0b192c);
@@ -919,7 +879,6 @@
   letter-spacing: 2px;
 }
 
-/* --- Split Layout --- */
 .timeline-split-layout {
   display: flex;
   max-width: 1200px;
@@ -928,7 +887,6 @@
   align-items: flex-start;
 }
 
-/* --- Left Side: Sticky Nav --- */
 .timeline-left {
   flex: 0 0 30%;
   position: sticky;
@@ -1012,7 +970,6 @@
   transform: scale(1.3);
 }
 
-/* --- Right Side: Blog Content --- */
 .timeline-right {
   flex: 1;
   padding-bottom: 10vh;
@@ -1126,7 +1083,6 @@
   transform: translateX(8px);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -1140,7 +1096,6 @@
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness (Interactive Timeline) --- */
 @media (max-width: 992px) {
   .timeline-left {
     flex: 0 0 25%;
@@ -1182,7 +1137,6 @@
     margin-bottom: 3.5rem;
   }
 
-  /* Interactive Dot on Mobile */
   .blog-card::before {
     content: "";
     position: absolute;
@@ -1198,7 +1152,6 @@
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  /* Active/Hover State for Mobile Dot */
   .blog-card:hover::before,
   .blog-card.is-active::before {
     background: var(--premium-gold);
@@ -1223,10 +1176,6 @@
     line-height: 1.5;
   }
 }
-
-/* =========================================
-   5️⃣ Floating Article Showcase
-   ========================================= */
 
 .floating-articles-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1259,7 +1208,6 @@
   letter-spacing: 2px;
 }
 
-/* --- Infinite Scrolling Track --- */
 .article-track-container {
   width: 100%;
   overflow: hidden;
@@ -1269,7 +1217,6 @@
   min-height: 650px;
 }
 
-/* Gradient Fade Edges */
 .article-track-container::before,
 .article-track-container::after {
   content: "";
@@ -1318,7 +1265,6 @@
   padding: 0 2rem;
 }
 
-/* --- Floating Items & Bobbing --- */
 .article-item {
   position: relative;
   flex: 0 0 auto;
@@ -1335,7 +1281,6 @@
   }
 }
 
-/* Organic Scattering */
 .delay-1 {
   animation-delay: 0s;
 }
@@ -1359,12 +1304,11 @@
   margin-top: 150px;
 }
 
-/* --- "Cardless" Image Wrap --- */
 .article-img-wrap {
   position: relative;
   width: 320px;
   height: 450px;
-  border-radius: 40px; /* Soft pill-like shape */
+  border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(212, 175, 55, 0.2);
@@ -1379,7 +1323,6 @@
   display: block;
 }
 
-/* Hover: Enlarge, Glow, Border */
 .article-item:hover .article-img-wrap {
   transform: scale(1.08);
   border-color: var(--premium-gold);
@@ -1390,7 +1333,6 @@
   transform: scale(1.1);
 }
 
-/* --- Glassmorphism Preview Label (Default View) --- */
 .glass-preview-label {
   position: absolute;
   bottom: 30px;
@@ -1411,20 +1353,18 @@
   white-space: nowrap;
 }
 
-/* Hide preview label on hover */
 .article-item:hover .glass-preview-label {
   opacity: 0;
   pointer-events: none;
 }
 
-/* --- Glassmorphism Hover Content (Reveal) --- */
 .glass-hover-content {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: auto;
-  min-height: 60%; /* Covers bottom 60% of image */
+  min-height: 60%;
   background: linear-gradient(
     to top,
     rgba(11, 25, 44, 0.95) 0%,
@@ -1437,7 +1377,6 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  /* Hidden by default */
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1488,7 +1427,6 @@
   transform: translateX(5px);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -1501,7 +1439,6 @@
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .floating-articles-section {
     padding: 4rem 0;
@@ -1523,7 +1460,6 @@
     padding: 0 1rem;
   }
 
-  /* Mobile Item Sizing */
   .article-img-wrap {
     width: 260px;
     height: 380px;
@@ -1545,7 +1481,6 @@
     margin-bottom: 1rem;
   }
 
-  /* For Mobile Touch: Keep it slightly visible or react on active */
   .article-item:active .article-img-wrap {
     transform: scale(1.05);
   }
@@ -1557,10 +1492,6 @@
     transform: translateY(0);
   }
 }
-
-/* =========================================
-   6️⃣ Author Spotlight Section
-   ========================================= */
 
 .author-spotlight-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1588,14 +1519,13 @@
   letter-spacing: 2px;
 }
 
-/* --- Layout --- */
 .authors-container {
   display: flex;
   justify-content: center;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap;
 }
 
 .author-item {
@@ -1606,14 +1536,13 @@
   cursor: pointer;
 }
 
-/* --- Circular Image Wrapper --- */
 .author-img-wrap {
   position: relative;
   width: 260px;
   height: 260px;
   border-radius: 50%;
   border: 4px solid rgba(212, 175, 55, 0.3);
-  padding: 8px; /* Creates a gap between border and image */
+  padding: 8px;
   margin-bottom: 1.5rem;
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -1627,7 +1556,6 @@
   display: block;
 }
 
-/* Hover: Rotate, Zoom, and Gold Glow */
 .author-item:hover .author-img-wrap {
   border-color: var(--premium-gold, #d4af37);
   box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
@@ -1635,16 +1563,15 @@
 }
 
 .author-item:hover .author-img-wrap img {
-  transform: scale(1.08) rotate(5deg); /* Slight rotate and zoom */
+  transform: scale(1.08) rotate(5deg);
 }
 
-/* --- Glassmorphism Hover Overlay --- */
 .author-overlay {
   position: absolute;
   top: 8px;
   left: 8px;
   right: 8px;
-  bottom: 8px; /* Fits exactly inside the padding gap */
+  bottom: 8px;
   border-radius: 50%;
   background: rgba(11, 25, 44, 0.7);
   backdrop-filter: blur(6px);
@@ -1655,7 +1582,6 @@
   align-items: center;
   padding: 2rem;
 
-  /* Hidden by default */
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
@@ -1680,12 +1606,11 @@
   transform: translateY(0);
 }
 
-/* --- Social Icons Fade In --- */
 .author-socials {
   display: flex;
   gap: 15px;
   transform: translateY(15px);
-  transition: transform 0.4s ease 0.1s; /* Slight delay after quote */
+  transition: transform 0.4s ease 0.1s;
 }
 
 .author-item:hover .author-socials {
@@ -1713,7 +1638,6 @@
   transform: scale(1.1);
 }
 
-/* --- Author Info Text --- */
 .author-info h3 {
   font-size: 1.5rem;
   color: var(--premium-gold, #d4af37);
@@ -1733,7 +1657,6 @@
   color: #fff;
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -1746,7 +1669,6 @@
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
   .authors-container {
     gap: 2.5rem;
@@ -1785,7 +1707,6 @@
     font-size: 0.95rem;
   }
 
-  /* For Mobile Touch Devices: Treat active like hover */
   .author-item:active .author-overlay {
     opacity: 1;
     visibility: visible;
@@ -1795,10 +1716,6 @@
     border-color: var(--premium-gold);
   }
 }
-
-/* =========================================
-   7️⃣ Story Journey Section
-   ========================================= */
 
 .story-journey-section {
   background-color: var(--bg-navy, #0b192c);
@@ -1827,7 +1744,6 @@
   letter-spacing: 2px;
 }
 
-/* --- Journey Container & Animated Line --- */
 .journey-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1851,13 +1767,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 0%; /* JS will control this */
+  height: 0%;
   background: var(--premium-gold, #d4af37);
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
   transition: height 0.1s ease-out;
 }
 
-/* --- Journey Steps (Zig-Zag) --- */
 .journey-step {
   display: flex;
   align-items: center;
@@ -1875,7 +1790,6 @@
   flex-direction: row-reverse;
 }
 
-/* Center Glowing Node */
 .journey-node {
   position: absolute;
   left: 50%;
@@ -1890,7 +1804,6 @@
   transition: all 0.5s ease;
 }
 
-/* Active Node State */
 .journey-step.node-active .journey-node {
   background: var(--premium-gold);
   border-color: var(--premium-gold);
@@ -1898,7 +1811,6 @@
   transform: translate(-50%, -50%) scale(1.3);
 }
 
-/* --- Image & Parallax --- */
 .journey-image-wrap {
   width: 45%;
   height: 450px;
@@ -1919,14 +1831,12 @@
 }
 
 .journey-step:hover .parallax-img {
-  transform: scale(1.05); /* Slow inner zoom */
+  transform: scale(1.05);
 }
 
-/* --- Content Overlap (No Cards) --- */
 .journey-content {
   width: 45%;
   padding: 3rem;
-  /* Glassmorphism setup */
   background: rgba(11, 25, 44, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1936,12 +1846,11 @@
   z-index: 4;
 }
 
-/* Overlapping Magic */
 .step-left .journey-content {
-  margin-left: -15%; /* Pulls left to overlap image */
+  margin-left: -15%;
 }
 .step-right .journey-content {
-  margin-right: -15%; /* Pulls right to overlap image */
+  margin-right: -15%;
 }
 
 .journey-phase {
@@ -1968,7 +1877,6 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -1981,7 +1889,6 @@
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
   .journey-content {
     width: 55%;
@@ -2007,7 +1914,6 @@
     align-items: flex-start;
   }
 
-  /* Move line to the left edge */
   .journey-line-bg {
     left: 20px;
     transform: none;
@@ -2020,11 +1926,10 @@
   .journey-image-wrap {
     width: 100%;
     height: 300px;
-    margin-left: 40px; /* Make room for the line */
+    margin-left: 40px;
     width: calc(100% - 40px);
   }
 
-  /* Disable parallax on mobile due to iOS bug with background-attachment */
   .parallax-img {
     background-attachment: scroll;
   }
@@ -2033,7 +1938,7 @@
     width: calc(100% - 20px);
     margin-left: 20px !important;
     margin-right: 0 !important;
-    margin-top: -15%; /* Overlap vertically on mobile */
+    margin-top: -15%;
     padding: 2rem 1.5rem;
   }
 
@@ -2045,13 +1950,9 @@
   }
 }
 
-/* =========================================
-   8️⃣ Travel Memories Wall (Polaroids)
-   ========================================= */
-
 .travel-memories-section {
   background-color: var(--bg-navy, #0b192c);
-  padding: 6rem 0; /* Full width edge-to-edge */
+  padding: 6rem 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-light, #f8f9fa);
   overflow: hidden;
@@ -2078,7 +1979,6 @@
   letter-spacing: 2px;
 }
 
-/* --- Infinite Scrolling Marquee --- */
 .marquee-container {
   width: 100%;
   overflow: hidden;
@@ -2113,7 +2013,6 @@
   animation: polaroidScroll 40s linear infinite;
 }
 
-/* Pause on hover */
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -2135,19 +2034,16 @@
   flex-shrink: 0;
 }
 
-/* --- Polaroid Item Wrapper --- */
 .polaroid-item {
   flex: 0 0 auto;
   position: relative;
   cursor: pointer;
-  /* Smooth transition for hover snap-to-straight */
   transition:
     transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
     z-index 0s;
   z-index: 1;
 }
 
-/* Random Scattered Looks */
 .tilt-left {
   transform: rotate(-6deg);
 }
@@ -2171,10 +2067,9 @@
   margin-top: 100px;
 }
 
-/* --- The Physical Polaroid Frame --- */
 .polaroid-frame {
-  background: #f8f9fa; /* Vintage White */
-  padding: 12px 12px 60px 12px; /* Thick bottom for caption */
+  background: #f8f9fa;
+  padding: 12px 12px 60px 12px;
   border-radius: 4px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   width: 280px;
@@ -2182,7 +2077,6 @@
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Image Area inside Polaroid */
 .polaroid-img-wrap {
   width: 100%;
   height: 320px;
@@ -2198,22 +2092,20 @@
   transition:
     transform 0.8s ease,
     filter 0.4s ease;
-  filter: sepia(20%) brightness(0.9); /* Slight vintage filter */
+  filter: sepia(20%) brightness(0.9);
 }
 
-/* Memory Note Overlay (Slides up) */
 .memory-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(11, 25, 44, 0.85); /* Navy transparent */
+  background: rgba(11, 25, 44, 0.85);
   backdrop-filter: blur(5px);
   padding: 1.5rem 1rem;
   text-align: center;
   border-top: 2px solid var(--premium-gold);
 
-  /* Initial hidden state */
   transform: translateY(100%);
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -2227,7 +2119,6 @@
   line-height: 1.5;
 }
 
-/* Location Caption */
 .polaroid-caption {
   position: absolute;
   bottom: 15px;
@@ -2244,46 +2135,35 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  /* Hidden by default */
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.4s ease 0.1s;
 }
 
-/* =========================================
-   Hover Interactions
-   ========================================= */
-
-/* 1. Snap straight, scale up, bring to front */
 .polaroid-item:hover {
   transform: rotate(0deg) scale(1.15) !important;
   z-index: 10;
 }
 
-/* 2. Gold Glow on Frame */
 .polaroid-item:hover .polaroid-frame {
   box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
 }
 
-/* 3. Image clear up (remove vintage filter) */
 .polaroid-item:hover .polaroid-img-wrap img {
   filter: sepia(0%) brightness(1);
   transform: scale(1.05);
 }
 
-/* 4. Slide up Memory Note */
 .polaroid-item:hover .memory-overlay {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* 5. Fade in Location */
 .polaroid-item:hover .location-text {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -2296,9 +2176,6 @@
   transform: translateY(0);
 }
 
-/* =========================================
-   Mobile Responsiveness
-   ========================================= */
 @media (max-width: 768px) {
   .travel-memories-section {
     padding: 4rem 0;
@@ -2316,7 +2193,6 @@
     gap: 2.5rem;
   }
 
-  /* Smaller Polaroids for Mobile */
   .polaroid-frame {
     width: 220px;
     padding: 10px 10px 50px 10px;
@@ -2341,7 +2217,6 @@
     bottom: 12px;
   }
 
-  /* Touch Interaction */
   .polaroid-item:active {
     transform: rotate(0deg) scale(1.05) !important;
     z-index: 10;
@@ -2356,10 +2231,6 @@
   }
 }
 
-/* =========================================
-   🔟 Community CTA Section
-   ========================================= */
-
 .community-cta-section {
   position: relative;
   background-color: var(--bg-navy, #0b192c);
@@ -2372,7 +2243,6 @@
   align-items: center;
 }
 
-/* --- Aurora Background Magic --- */
 .aurora-wrapper {
   position: absolute;
   top: 0;
@@ -2381,7 +2251,7 @@
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  filter: blur(80px); /* Blurs the blobs completely to make a smooth glow */
+  filter: blur(80px);
 }
 
 .aurora-blob {
@@ -2391,7 +2261,6 @@
   animation: auroraMove 15s infinite alternate ease-in-out;
 }
 
-/* Deep Blue/Cyan Glow */
 .blob-1 {
   width: 600px;
   height: 600px;
@@ -2401,7 +2270,6 @@
   animation-delay: 0s;
 }
 
-/* Premium Gold Glow */
 .blob-2 {
   width: 500px;
   height: 500px;
@@ -2411,7 +2279,6 @@
   animation-delay: -5s;
 }
 
-/* Deep Purple Glow */
 .blob-3 {
   width: 450px;
   height: 450px;
@@ -2433,7 +2300,6 @@
   }
 }
 
-/* --- Floating Stars --- */
 .floating-stars-container {
   position: absolute;
   top: 0;
@@ -2463,7 +2329,6 @@
   }
 }
 
-/* --- Center Glassmorphism Panel --- */
 .glass-cta-panel {
   position: relative;
   z-index: 10;
@@ -2497,7 +2362,6 @@
   margin: 0 auto 3.5rem;
 }
 
-/* --- Animated Counters --- */
 .stats-row {
   display: flex;
   justify-content: center;
@@ -2530,7 +2394,6 @@
   font-weight: 600;
 }
 
-/* --- Buttons --- */
 .cta-action-buttons {
   display: flex;
   justify-content: center;
@@ -2575,7 +2438,6 @@
   background: rgba(212, 175, 55, 0.05);
 }
 
-/* --- Scroll Animations --- */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -2588,7 +2450,6 @@
   transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
   .stats-row {
     gap: 3rem;
@@ -2615,7 +2476,6 @@
     margin-bottom: 2.5rem;
   }
 
-  /* Stack Counters */
   .stats-row {
     flex-direction: column;
     gap: 2rem;
@@ -2628,7 +2488,6 @@
     font-size: 0.9rem;
   }
 
-  /* Stack Buttons */
   .cta-action-buttons {
     flex-direction: column;
     gap: 1rem;
