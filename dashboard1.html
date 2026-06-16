@@ -202,7 +202,7 @@
             <section class="section scroll-animate">
                 <h2 class="section-title">Active Trips</h2>
                 <div class="flip-grid">
-                    
+
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front" style="background-image: url('./asset/a3.webp');">
@@ -348,7 +348,7 @@
                 <h2 class="section-title">Dream Destinations</h2>
                 <div class="marquee-wrapper">
                     <div class="marquee-content">
-                    
+
                         <div class="recom-card glow-border">
                             <img src="./asset/w15.webp" alt="Maldives">
                             <div class="recom-info">
@@ -497,7 +497,7 @@
             <section class="section scroll-animate">
                 <h2 class="section-title">Flight Tickets</h2>
                 <div class="simple-list-card">
-                
+
                     <div class="list-item">
                         <i class="fas fa-plane-departure gold-text"></i>
                         <div>
@@ -642,7 +642,7 @@
             <section class="section scroll-animate">
                 <h2 class="section-title">Pending Reviews</h2>
                 <div class="simple-list-card">
-                    
+
                     <div class="list-item hover-item">
                         <div>
                             <h4>Malaysia Tour</h4>
@@ -738,7 +738,7 @@
         extractedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
 
         const loggedInUser = {
-            name: extractedName, 
+            name: extractedName,
             email: displayEmail
         };
 
@@ -752,20 +752,17 @@
             document.getElementById('sidebar').classList.toggle('active');
         }
 
-        // --- PUTHUSA ADD PANNA CODE (MOBILE MENU OUTSIDE CLICK CLOSE) ---
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const sidebar = document.getElementById('sidebar');
             const menuToggle = document.querySelector('.menu-toggle');
 
-            // Mobile view-la (width <= 768px) mattum idhu work aagum
             if (window.innerWidth <= 768) {
-                // Sidebar open-la irukka nu check pannum, matrum click panna edam sidebar & button-ku veliya irukka nu check pannum
+
                 if (sidebar && menuToggle && sidebar.classList.contains('active') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
                     sidebar.classList.remove('active');
                 }
             }
         });
-        // -----------------------------------------------------------------
 
         const navItems = document.querySelectorAll('.nav-item');
         const pages = document.querySelectorAll('.page-section');
@@ -776,7 +773,7 @@
                 e.preventDefault();
 
                 navItems.forEach(nav => nav.classList.remove('active'));
-                
+
                 item.classList.add('active');
 
                 pageTitle.textContent = item.textContent.trim();
@@ -817,16 +814,16 @@
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.scroll-animate').forEach((el) => {
-                el.classList.remove('fade-in'); 
+                el.classList.remove('fade-in');
                 observer.observe(el);
             });
         }
 
 
         const trips = [
-            { id: "timer1", daysLeft: 7 },  
-            { id: "timer2", daysLeft: 14 }, 
-            { id: "timer3", daysLeft: 30 }  
+            { id: "timer1", daysLeft: 7 },
+            { id: "timer2", daysLeft: 14 },
+            { id: "timer3", daysLeft: 30 }
         ];
 
         trips.forEach(trip => {
@@ -844,7 +841,7 @@
 
                     if (distance < 0) {
                         timerEl.innerHTML = "Trip Started!";
-                        timerEl.style.color = "#00E676"; 
+                        timerEl.style.color = "#00E676";
                     } else {
                         timerEl.innerHTML = days + "d " + hours + "h " + minutes + "m";
                     }
