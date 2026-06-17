@@ -471,11 +471,15 @@ body.loading-active {
 .contact-map-side {
   flex: 1;
   position: relative;
-  background: url("./asset/map.webp") center/cover no-repeat;
+  /* background: url("./asset/map.webp") center/cover no-repeat; */
   min-height: 100%;
 }
 
-.contact-map-side::before {
+.contact-map-side iframe{
+  z-index: 1000;
+}
+
+/* .contact-map-side::before {
   content: "";
   position: absolute;
   top: 0;
@@ -483,7 +487,7 @@ body.loading-active {
   width: 100%;
   height: 100%;
   background: rgba(11, 25, 44, 0.6);
-}
+} */
 
 .map-overlay-content {
   position: absolute;
